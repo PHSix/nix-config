@@ -32,8 +32,9 @@
     initExtra = ''
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-	  export EDITOR=nvim
-	  export PATH="$HOME/.npm-packages/bin:$PATH"
+      export EDITOR=nvim
+      export PATH="$HOME/.npm-packages/bin:$PATH"
+      source ~/.proxy.sh
     '';
   };
   home.packages = with pkgs; [
