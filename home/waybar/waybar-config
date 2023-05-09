@@ -28,7 +28,8 @@
 
   "network": {
     "format-wifi": "<span size='11000' foreground='#C34043'>󰤨  </span>{essid} <span size='11000' foreground='#3B82F6'> </span>{bandwidthUpBytes} <span size='11000' foreground='#22C55E'> </span>{bandwidthDownBytes}",
-    "format-disconnected": "<span size='11000' foreground='#C34043'>󰤭  </span>Disconnected"
+    "format-disconnected": "<span size='11000' foreground='#C34043'>󰤭  </span>Disconnected",
+	"interval": 1
     // "on-click": "~/.config/rofi/launchers/wifi/launch.sh"
   },
 
