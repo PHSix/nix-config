@@ -146,8 +146,8 @@ in
       wqy_zenhei
       lxgw-wenkai
     ]) ++ [
-      pkgs.nerdfonts
-      # nerdfonts
+      # pkgs.nerdfonts
+      nerdfonts
     ];
   };
 }
