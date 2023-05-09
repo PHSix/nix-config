@@ -68,6 +68,7 @@
             ./home/tmux.nix
             ./home/kitty.nix
             ./home/zsh.nix
+            ./home/proxychains.nix
             ./home/vim
             ./home/waybar
             ./home/hyprland
