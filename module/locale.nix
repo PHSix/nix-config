@@ -68,11 +68,7 @@ in
       };
       defaultFonts.emoji = [ "Twitter Color Emoji" "Noto Color Emoji" ];
       defaultFonts.monospace =
-        [
-          # "UbuntuMono Nerd Font Mono"
-          "Noto Sans CJK SC"
-          "Sarasa Mono SC"
-        ];
+        [ "UbuntuMono Nerd Font Mono" "Noto Sans CJK SC" "Sarasa Mono SC" ];
       defaultFonts.sansSerif =
         [ "Noto Sans CJK SC" "LXGW WenKai Mono" "DejaVu Sans" ];
       defaultFonts.serif = [ "Noto Sans CJK SC" "LXGW WenKai Mono" ];
@@ -151,7 +147,7 @@ in
       lxgw-wenkai
     ]) ++ [
       # pkgs.nerdfonts
-      # nerdfonts
+      nerdfonts
     ];
   };
 }
