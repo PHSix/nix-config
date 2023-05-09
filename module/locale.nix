@@ -23,13 +23,15 @@ in
         fcitx5-lua
         fcitx5-gtk
         fcitx5-chewing
-        fcitx5-pinyin-zhiwiki
+        # fcitx5-pinyin-zhiwiki
 
         libsForQt5.fcitx5-qt
       ];
     };
 
   };
+  systemd.services.nix-daemon.environment.http_proxy = "http://localhost:7890";
+  systemd.services.nix-daemon.environment.https_proxy = "http://localhost:7890";
   console = {
     font = "Lat2-Terminus16";
     # keyMap = "us";
@@ -66,7 +68,11 @@ in
       };
       defaultFonts.emoji = [ "Twitter Color Emoji" "Noto Color Emoji" ];
       defaultFonts.monospace =
-        [ "UbuntuMono Nerd Font Mono" "Noto Sans CJK SC" "Sarasa Mono SC" ];
+        [
+          # "UbuntuMono Nerd Font Mono"
+          "Noto Sans CJK SC"
+          "Sarasa Mono SC"
+        ];
       defaultFonts.sansSerif =
         [ "Noto Sans CJK SC" "LXGW WenKai Mono" "DejaVu Sans" ];
       defaultFonts.serif = [ "Noto Sans CJK SC" "LXGW WenKai Mono" ];
@@ -145,7 +151,7 @@ in
       lxgw-wenkai
     ]) ++ [
       # pkgs.nerdfonts
-      nerdfonts
+      # nerdfonts
     ];
   };
 }
