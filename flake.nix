@@ -44,7 +44,7 @@
           inherit pkgs;
           modules = [
             ./hardware/hardware-configuration.nix
-            ./module/gnome.nix
+            # ./module/gnome.nix
             ./module/hyprland.nix
             ./module/network.nix
             ./module/grub.nix
