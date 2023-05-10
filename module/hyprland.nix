@@ -18,11 +18,13 @@
     light.enable = true;
   };
 
-  services = {
-
-    gnome = { gnome-keyring = { enable = true; }; };
-    xserver = {
-      displayManager.gdm.enable = true;
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";
+      };
     };
   };
 
