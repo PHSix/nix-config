@@ -22,8 +22,8 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
-        user = "greeter";
+        command = "${pkgs.greetd.gtkgreet}/bin/gtkgreet --time --cmd Hyprland";
+        user = "ph";
       };
     };
   };
