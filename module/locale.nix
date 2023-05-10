@@ -3,6 +3,7 @@
 #     input method
 { config, pkgs, lib, ... }:
 let
+  # nerdfonts package default have too many font zip to download, override for it
   nerdfonts = pkgs.nerdfonts.override {
     fonts = [
       "FiraCode"
@@ -30,13 +31,10 @@ in
     };
 
   };
+
+  # set nix daemon proxy for user(it's important for chinese users)
   systemd.services.nix-daemon.environment.http_proxy = "http://localhost:7890";
   systemd.services.nix-daemon.environment.https_proxy = "http://localhost:7890";
-  console = {
-    font = "Lat2-Terminus16";
-    # keyMap = "us";
-  };
-
 
   location = {
     latitude = 23.0;
@@ -44,6 +42,8 @@ in
   };
   environment = {
     sessionVariables = {
+      # to fix chrome or edge which core is chormium v8 case input trrigger unstable on wayland
+      # this solution is copy from: https://github.com/NixOS/nixpkgs/issues/129442#issuecomment-875972207
       NIX_PROFILES =
         "${builtins.concatStringsSep " " (lib.reverseList config.environment.profiles)}";
       GTK_IM_MODULE = "fcitx";
@@ -133,7 +133,6 @@ in
       twitter-color-emoji
       unicode-emoji
       # vistafonts # many windows font(include consolas)
-      # TODO: Monaco font and Monego font
       maple-mono-NF
       monego
 
