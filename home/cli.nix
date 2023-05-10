@@ -18,6 +18,7 @@
     nodejs
     go
     rustup
+    python3
 
     # nix language server and formatter
     nil
