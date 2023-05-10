@@ -20,5 +20,9 @@
     wofi
     copyq
     networkmanagerapplet
+
+    cliphist
+    wl-clipboard
+    udiskie
   ];
 }
