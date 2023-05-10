@@ -13,9 +13,19 @@
   };
 
   xdg.portal.wlr.enable = true;
+
   programs = {
     light.enable = true;
   };
+
+  services = {
+
+    gnome = { gnome-keyring = { enable = true; }; };
+    xserver = {
+      displayManager.gdm.enable = true;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
     wofi
     copyq
