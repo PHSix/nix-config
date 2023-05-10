@@ -1,1 +1,1 @@
-python3 ~/.py-scripts/swwl.py &
+python3 ~/.config/hypr/scripts/swwl.py &
