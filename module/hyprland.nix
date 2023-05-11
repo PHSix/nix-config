@@ -25,7 +25,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.greetd}/bin/greetd --time --cmd Hyprland";
+        command = "${pkgs.greetd.greetd}/bin/greetd --cmd Hyprland";
         user = "ph";
       };
     };
