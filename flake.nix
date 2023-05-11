@@ -72,6 +72,7 @@
             ./home/vim
             ./home/waybar
             ./home/hyprland
+            ./home/neovim-deps.nix
           ];
         };
       };
