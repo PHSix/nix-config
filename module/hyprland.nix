@@ -21,12 +21,6 @@
     light.enable = true;
   };
 
-
-  environment.sessionVariables = {
-    # fix gtk application start slow problem, like waybar and clash-verge
-    GTK_USE_PORTAL = 0;
-  };
-
   services.greetd = {
     enable = true;
     settings = {
