@@ -12,7 +12,10 @@
     nvidiaPatches = false;
   };
 
-  xdg.portal.wlr.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+  };
 
   programs = {
     light.enable = true;
@@ -22,7 +25,7 @@
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd.gtkgreet}/bin/gtkgreet --time --cmd Hyprland";
+        command = "${pkgs.greetd.greetd}/bin/greetd --time --cmd Hyprland";
         user = "ph";
       };
     };
