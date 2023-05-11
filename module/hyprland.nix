@@ -40,5 +40,6 @@
     cliphist
     wl-clipboard
     udiskie
+    xfce.thunar
   ];
 }
