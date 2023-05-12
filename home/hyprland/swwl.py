@@ -9,7 +9,7 @@ from typing import List
 WALLPAPER_DIR = '/home/ph/Pictures/wallpapers'
 SLEEP_TIME = 3 * 60
 
-def reduce_files(_fp: str):
+def find_imgs(_fp: str):
     fps = [_fp]
     ret: List[str] = []
     while len(fps) > 0:
@@ -42,17 +42,16 @@ def main():
         syscall("swww init")
     except:
         pass
-    files = reduce_files(WALLPAPER_DIR)
+    files = find_imgs(WALLPAPER_DIR)
     file: str | None = None
 
     while True:
         file = guest(files, file)
         # os.system(f"swww img {file}")
-        # try:
-        #     pass
-        # except:
-        #     pass
-        syscall(f"swww img --transition-type wipe --transition-angle 30 --transition-step 90 {file}")
+        try:
+            syscall(f"swww img --transition-type wipe --transition-angle 30 --transition-step 90 {file}")
+        except:
+            files = find_imgs(WALLPAPER_DIR)
         time.sleep(SLEEP_TIME)
 
 
