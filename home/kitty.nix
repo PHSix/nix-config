@@ -1,7 +1,7 @@
 {...}:
 let
   fontName = "Cascadia Code PL";
-  symbolMapFont = "FiraCode Nerd Font";
+  symbolMapFont = "UbuntuMono Nerd Font Mono";
 	opacity = "0.8";
 	fontSize =14;
   colorscheme = ''
