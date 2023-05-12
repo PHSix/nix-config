@@ -27,4 +27,10 @@
     nixpkgs-fmt
     sumneko-lua-language-server
   ];
+
+  home.file.".npmrc" = {
+    text = ''
+    prefix=~/.npm-packages
+    '';
+  };
 }
