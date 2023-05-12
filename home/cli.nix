@@ -2,6 +2,8 @@
   home.packages = with pkgs; [
     htop
     clang
+    libstdcxx5 # for treesitter compiling deps
+
     xsel
     ripgrep
     fzf

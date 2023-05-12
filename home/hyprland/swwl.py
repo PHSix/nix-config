@@ -7,6 +7,7 @@ from typing import List
 ### a wallpappers auto switcher script
 
 WALLPAPER_DIR = '/home/ph/Pictures/wallpapers'
+SLEEP_TIME = 3 * 60
 
 def reduce_files(_fp: str):
     fps = [_fp]
@@ -30,11 +31,11 @@ def guest(list: List[str], item: str | None):
             return list[idx + 1]
     else:
        return list[idx]
-        
+
 def syscall(cmd: str):
     print(cmd)
     os.system(cmd)
-        
+
 
 def main():
     try:
@@ -47,9 +48,13 @@ def main():
     while True:
         file = guest(files, file)
         # os.system(f"swww img {file}")
+        # try:
+        #     pass
+        # except:
+        #     pass
         syscall(f"swww img --transition-type wipe --transition-angle 30 --transition-step 90 {file}")
-        time.sleep(3 * 60)
-        
+        time.sleep(SLEEP_TIME)
+
 
 if __name__ == "__main__":
     main()
