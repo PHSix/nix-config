@@ -20,7 +20,7 @@
     nodejs
     go
     rustup
-    python3
+    python311
 
     # nix language server and formatter
     nil

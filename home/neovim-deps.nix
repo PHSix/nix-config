@@ -1,7 +1,10 @@
 { pkgs, ... }:
 {
-  home.file.sumneko-lua-language-server = {
-    source = pkgs.sumneko-lua-language-server;
-    target = ".local/share/sumneko-lua-language-server";
-  };
+  home.packages = with pkgs.python311Packages; [
+    python-lsp-server
+    pylsp-mypy
+    pyls-isort
+    python-lsp-black
+    python-lsp-ruff
+  ];
 }
