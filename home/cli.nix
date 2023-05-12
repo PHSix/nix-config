@@ -1,8 +1,8 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     htop
-    clang
-    clangStdenv # for treesitter compiling deps
+    gcc
+    gccStdenv # for treesitter compiling deps
 
     xsel
     ripgrep
