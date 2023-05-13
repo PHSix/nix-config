@@ -15,6 +15,10 @@
     lazygit
     ranger
     jq
+    fx
+    neofetch
+    bat
+
     emacs
 
     nodejs
@@ -30,7 +34,7 @@
 
   home.file.".npmrc" = {
     text = ''
-    prefix=~/.npm-packages
+      prefix=~/.npm-packages
     '';
   };
 }
