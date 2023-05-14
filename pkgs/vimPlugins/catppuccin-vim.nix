@@ -7,7 +7,7 @@ vimUtils.buildVimPluginFrom2Nix {
     owner = "catppuccin";
     repo = "vim";
     rev = "cf186cffa9b3b896b03e94247ac4b56994a09e34";
-    sha256 = "1rvlx21kw8865dg6q97hx9i2s1n8mn1nyhn0m7dkx625pghsx3js";
+    hash = "sha256-G3RLkRu6+A6E9b5rHpo9yJwnfkkPon/AkXqQUz8YsZ0=";
   };
   meta.homepage = "https://github.com/catppuccin/vim";
 }
