@@ -21,6 +21,10 @@
     bat
     navi # shell command history finder
 
+    # some nix cli utils tool
+    nurl
+    mpv
+
     emacs
 
     nodejs
