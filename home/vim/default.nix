@@ -4,6 +4,7 @@
     plugins = with pkgs.vimPlugins; [
       lightline-vim
       catppuccin-vim
+      YouCompleteMe
     ];
     settings = {
       ignorecase = true;
