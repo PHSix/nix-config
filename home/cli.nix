@@ -19,6 +19,7 @@
     fx
     neofetch
     bat
+    navi # shell command history finder
 
     emacs
 
