@@ -3,6 +3,7 @@
     htop
     gcc
     gccStdenv # for treesitter compiling deps
+    gnumake
 
     xsel
     ripgrep

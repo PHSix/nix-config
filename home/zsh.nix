@@ -32,14 +32,20 @@
     initExtra = ''
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-      export EDITOR=nvim
-      export PATH="$HOME/.npm-packages/bin:$PATH"
+      eval "$(zoxide init zsh)"
     '';
   };
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+  home.sessionPath = [
+    "$HOME/.npm-packages/bin"
+  ];
   home.packages = with pkgs; [
     # zinit
     zsh-vi-mode
-	zsh-fzf-tab
+    zsh-fzf-tab
   ];
   programs.starship = {
     enable = true;
