@@ -15,6 +15,7 @@
     sqlite
     lazygit
     ranger
+    joshuto # ranger like
     jq
     fx
     neofetch
@@ -41,6 +42,16 @@
   home.file.".npmrc" = {
     text = ''
       prefix=~/.npm-packages
+    '';
+  };
+
+  home.file.".cargo/config" = {
+    text = ''
+    [source.crates-io]
+    replace-with = 'mirror'
+
+    [source.mirror]
+    registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
     '';
   };
 }
