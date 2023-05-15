@@ -1,17 +1,17 @@
 import os
 import random
-import math
 import time
 from typing import List
-### a wallpappers auto switcher script
+# a wallpappers auto switcher script
 
 WALLPAPER_DIR = '/home/ph/Pictures/wallpapers'
 SLEEP_TIME = 3 * 60
 SWITCH_CMDS = [
-        "swww img --transition-type wipe --transition-angle 30 --transition-step 90",
-        "swww img --transition-type left",
-        "swww img --transition-type any",
-        ]
+    "swww img --transition-type wipe --transition-angle 30 --transition-step 90",
+    "swww img --transition-type left",
+    "swww img --transition-type any",
+]
+
 
 def find_imgs(_fp: str):
     fps = [_fp]
@@ -30,6 +30,7 @@ def choice(counts: List[str], current: str | None):
     if len(counts) == 1:
         return counts[0]
     return random.choice(list(filter(lambda x: x == current, counts))) if current else random.choice(counts)
+
 
 def syscall(cmd: str):
     print(cmd)
