@@ -5,9 +5,9 @@
     clash-verge
     microsoft-edge
     vscode-fhs
-	postman
-	flameshot
-	# apifox
+    postman
+    flameshot
+    # apifox
     # alacritty
     # microsoft-edge
   ];
