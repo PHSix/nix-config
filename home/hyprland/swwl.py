@@ -27,6 +27,8 @@ def find_imgs(_fp: str):
 
 
 def choice(counts: List[str], current: str | None):
+    if len(counts) == 1:
+        return counts[0]
     return random.choice(list(filter(lambda x: x == current, counts))) if current else random.choice(counts)
 
 def syscall(cmd: str):
@@ -40,6 +42,9 @@ def main():
     except:
         pass
     files = find_imgs(WALLPAPER_DIR)
+    if len(files) == 0:
+        return
+
     file: str | None = None
 
     while True:
