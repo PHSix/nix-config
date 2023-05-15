@@ -26,14 +26,14 @@ def find_imgs(_fp: str):
     return ret
 
 
-def choice(counts: List[str], current: str | None):
-    if len(counts) == 1:
-        return counts[0]
-    return random.choice(list(filter(lambda x: x == current, counts))) if current else random.choice(counts)
+def choice(l: List[str], c: str | None):
+    if len(l) == 1:
+        return l[0]
+    return random.choice(list(filter(lambda x: x != c, l)))
 
 
 def syscall(cmd: str):
-    print(cmd)
+    print(cmd) # log output
     os.system(cmd)
 
 
