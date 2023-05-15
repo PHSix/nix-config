@@ -36,6 +36,23 @@
           })
         ];
       };
+      genHomeConfiguration = inputs: {
+        imports = [
+          ./home
+          ./home/cli.nix
+          ./home/packages.nix
+          ./home/misc.nix
+          ./home/tmux.nix
+          ./home/kitty.nix
+          ./home/zsh.nix
+          ./home/vim
+          ./home/waybar
+          ./home/hyprland
+          ./home/neovim-deps.nix
+          ./home/mpd.nix
+        ];
+
+      };
     in
     {
       nixosConfigurations = {
@@ -55,6 +72,13 @@
             ./module/locale.nix
             ./module/graphics.nix
             ./module/proxychains.nix
+
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.users.ph = genHomeConfiguration;
+            }
           ];
         };
       };
