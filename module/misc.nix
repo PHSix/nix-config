@@ -12,7 +12,7 @@
 
 
   # for sercet
-  services.gnome.gnome-keyring.enable
+  services.gnome.gnome-keyring.enable = true;
 
 
   # enable docker service
