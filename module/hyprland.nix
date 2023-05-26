@@ -43,5 +43,7 @@
     xfce.thunar
     xdg-utils
     numix-cursor-theme
+    catppuccin-cursors
+    catppuccin-gtk
   ];
 }
