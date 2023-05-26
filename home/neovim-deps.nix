@@ -16,7 +16,7 @@
     nodePackages.typescript-language-server
     python310Packages.python-lsp-server # for python
 
-    rust-analyzer
+    # rust-analyzer
 
   ]);
 }
