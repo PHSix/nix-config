@@ -4,7 +4,7 @@
     google-chrome
     clash-verge
     microsoft-edge
-    vscode-fhs
+    # vscode-fhs
     postman
     flameshot
     # apifox
