@@ -42,6 +42,6 @@
     udiskie
     xfce.thunar
     xdg-utils
-    lxappearance
+    numix-cursor-theme
   ];
 }
