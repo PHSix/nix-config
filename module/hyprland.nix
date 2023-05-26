@@ -41,5 +41,7 @@
     wl-clipboard
     udiskie
     xfce.thunar
+    xdg-utils
+    lxappearance
   ];
 }
