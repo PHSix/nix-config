@@ -45,5 +45,7 @@
     numix-cursor-theme
     catppuccin-cursors
     catppuccin-gtk
+    gtk3
+    gtk4
   ];
 }
