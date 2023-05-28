@@ -50,6 +50,7 @@
           ./home/hyprland
           ./home/neovim-deps.nix
           ./home/mpd.nix
+          ./home/joshuto
         ];
 
       };
