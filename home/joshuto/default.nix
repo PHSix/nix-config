@@ -11,9 +11,9 @@ let
 in
 lib.mkMerge [
   {
-    home.package = with pkgs; [ joshuto ];
+    home.packages = with pkgs; [ joshuto ];
   }
-  (lib.mkMerge [
-    (map (c: { home.file.".config/joshuto/${c}.toml" = config [ c ]; }) (builtins.attrNames config))
-  ])
+  (lib.mkMerge  (map (c: { home.file.".config/joshuto/${c}.toml" = {
+  text = config."${c}";
+  }; }) (builtins.attrNames config)) )
 ]

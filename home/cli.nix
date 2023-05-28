@@ -30,9 +30,9 @@
 
     nodejs
     go
-    # rustup
-    rustc
-    cargo
+    rustup
+    # rustc
+    # cargo
     python310
 
     # nix language server and formatter

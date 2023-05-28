@@ -21,16 +21,17 @@
     light.enable = true;
   };
 
-  services.greetd = {
-    enable = true;
-    settings = {
-      default_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        # command = "${pkgs.greetd.greetd}/bin/greetd --cmd Hyprland";
-        user = "ph";
-      };
-    };
-  };
+  # greetd service do not set password on system startup
+  # services.greetd = {
+  #   enable = true;
+  #   settings = {
+  #     default_session = {
+  #       command = "${pkgs.hyprland}/bin/Hyprland";
+  #       # command = "${pkgs.greetd.greetd}/bin/greetd --cmd Hyprland";
+  #       user = "ph";
+  #     };
+  #   };
+  # };
 
   environment.systemPackages = with pkgs; [
     wofi
