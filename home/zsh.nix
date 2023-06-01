@@ -25,6 +25,10 @@
       gl = "git clone";
       n = "neofetch";
       nvi = "nvim";
+      "'??'" = "gitcli command";
+      "'commit?'" = "gitcli commit";
+      "'chat?'" = "gitcli chat";
+      "'t?'"= "gitcli translate";
     };
     # plugins = with pkgs; [
     #   zsh-vi-mode
