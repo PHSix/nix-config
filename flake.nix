@@ -15,15 +15,16 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = inputs@ { nixpkgs, home-manager, flake-parts, ... }:
+  outputs = inputs @ { nixpkgs, home-manager, flake-parts, ... }:
     let
-      mypkgs = import ./pkgs;
+      pkgs' = import ./pkgs;
       # pkgs = nixpkgs.legacyPackages.${system};
-      parts = flake-parts;
+      system = "x86_64-linux";
       pkgs = import nixpkgs {
+        system = system;
         config.allowUnfree = true;
         overlays = [
-          mypkgs
+          pkgs'
 
           # patch waybar to support hyprland desktop environment
           (final: prev: {
@@ -36,7 +37,7 @@
           })
         ];
       };
-      genHomeConfiguration = inputs: {
+      genHomeConfiguration = _: {
         imports = [
           ./home
           ./home/cli.nix
@@ -55,13 +56,18 @@
 
       };
     in
-    parts.lib.mkFlake { inherit inputs; } {
-      system = [ "x86_64-linux" ];
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
+      imports = [ ];
+
+      perSystem = _: { };
 
       flake = {
         nixosConfigurations = {
           nixosSystem = nixpkgs.lib.nixosSystem {
             inherit pkgs;
+            inherit system;
+            # pkgs = nixpkgs;
             modules = [
               ./hardware/hardware-configuration.nix
               # ./module/gnome.nix
