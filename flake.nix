@@ -12,15 +12,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts.url = "github:hercules-ci/flake-parts";
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = inputs@ { nixpkgs, home-manager, flake-parts, ... }:
     let
       mypkgs = import ./pkgs;
-      system = "x86_64-linux";
       # pkgs = nixpkgs.legacyPackages.${system};
+      parts = flake-parts;
       pkgs = import nixpkgs {
-        inherit system;
         config.allowUnfree = true;
         overlays = [
           mypkgs
@@ -55,52 +55,37 @@
 
       };
     in
-    {
-      nixosConfigurations = {
-        nixosSystem = nixpkgs.lib.nixosSystem {
-          inherit system;
-          inherit pkgs;
-          modules = [
-            ./hardware/hardware-configuration.nix
-            # ./module/gnome.nix
-            ./module/hyprland.nix
-            ./module/network.nix
-            ./module/grub.nix
-            ./module/misc.nix
-            ./module/nixos.nix
-            ./module/user.nix
-            ./module/packages.nix
-            ./module/locale.nix
-            ./module/graphics.nix
-            ./module/proxychains.nix
+    parts.lib.mkFlake { inherit inputs; } {
+      system = [ "x86_64-linux" ];
 
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.ph = genHomeConfiguration;
-            }
-          ];
-        };
-      };
-      homeConfigurations = {
-        nixosUser = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [
-            ./home
-            ./home/cli.nix
-            ./home/packages.nix
-            ./home/misc.nix
-            ./home/tmux.nix
-            ./home/kitty.nix
-            ./home/zsh.nix
-            ./home/vim
-            ./home/waybar
-            ./home/hyprland
-            ./home/neovim-deps.nix
-            ./home/mpd.nix
-          ];
+      flake = {
+        nixosConfigurations = {
+          nixosSystem = nixpkgs.lib.nixosSystem {
+            inherit pkgs;
+            modules = [
+              ./hardware/hardware-configuration.nix
+              # ./module/gnome.nix
+              ./module/hyprland.nix
+              ./module/network.nix
+              ./module/grub.nix
+              ./module/misc.nix
+              ./module/nixos.nix
+              ./module/user.nix
+              ./module/packages.nix
+              ./module/locale.nix
+              ./module/graphics.nix
+              ./module/proxychains.nix
+
+              home-manager.nixosModules.home-manager
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.ph = genHomeConfiguration;
+              }
+            ];
+          };
         };
       };
     };
 }
+
