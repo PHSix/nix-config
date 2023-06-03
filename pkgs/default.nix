@@ -17,6 +17,7 @@ self: super: {
   myVimPlugins = {
     catppuccin-vim = super.callPackage ./vimPlugins/catppuccin-vim.nix { };
   };
+  catppuccin-frappe-gtk = super.callPackage ./catppuccin-frappe-gtk.nix { };
   # vimPlugins = super.vimPlugins.override {
   #   catppuccin-vim = super.callPackage ./vimPlugins/catppuccin-vim.nix { };
   # };
