@@ -127,7 +127,7 @@
       # set -g status-right "#[fg=white,bg=$gray, bold] %Y-%m-%d %H:%M $git_status#[fg=$green, bold]PM "
       set -g status-right "#[fg=white,bg=$gray, bold] %Y-%m-%d %H:%M "
       set -g status-right-length 150
-      run-shell /home/ph/.tmux/tmux-window-name/tmux_window_name.tmux
+      # run-shell /home/ph/.tmux/tmux-window-name/tmux_window_name.tmux
       # Plugins of list
       # TPM管理的插件
       # set -g @plugin 'tmux-plugins/tpm'
