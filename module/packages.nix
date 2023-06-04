@@ -5,6 +5,7 @@
     firefox
     neovim
     xplorer
+    pkg-config
 
     wpsoffice-cn
     qq

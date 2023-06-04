@@ -14,6 +14,7 @@
     gopls # for golang
     nodePackages.typescript
     nodePackages.typescript-language-server
+    nodePackages.volar
     python310Packages.python-lsp-server # for python
 
     # rust-analyzer
