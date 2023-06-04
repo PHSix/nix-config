@@ -4,6 +4,7 @@
     wget
     firefox
     neovim
+    xplorer
 
     wpsoffice-cn
     qq
