@@ -15,6 +15,7 @@
     sqlite
     lazygit
     ranger
+    w3m
     joshuto # ranger like
     jq
     fx
