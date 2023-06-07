@@ -13,6 +13,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = inputs @ { nixpkgs, home-manager, flake-parts, ... }:
@@ -25,6 +26,7 @@
         config.allowUnfree = true;
         overlays = [
           pkgs'
+          inputs.neovim-nightly-overlay.overlay
 
           # patch waybar to support hyprland desktop environment
           (final: prev: {
