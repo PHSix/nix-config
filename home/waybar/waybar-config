@@ -26,7 +26,7 @@
     }
   },
   "network": {
-    "format-wifi": "<span size='11000' foreground='#C34043'>󰤨  </span>{essid} ",
+    "format-wifi": "<span size='11000' foreground='#C34043'>󰤨  </span>{essid} {ipaddr}",
     "format-disconnected": "<span size='11000' foreground='#C34043'>󰤭  </span>Disconnected",
 	"interval": 1
     // "on-click": "~/.config/rofi/launchers/wifi/launch.sh"
