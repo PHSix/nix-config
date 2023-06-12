@@ -58,6 +58,7 @@ in
       GTK_USE_PORTAL = "0";
     };
   };
+  services.dbus.enable = true;
 
   fonts = {
     enableDefaultFonts = true;

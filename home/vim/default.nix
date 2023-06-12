@@ -17,8 +17,10 @@
     };
     extraConfig = ''
       set mouse=a
+      set nowrap
       set cursorline
       colorscheme catppuccin_mocha
+      noremap ; :
       let g:lightline = {'colorscheme': 'catppuccin_mocha'}
     '';
   };

@@ -25,7 +25,6 @@
       // "urgent": "󰀨"
     }
   },
-
   "network": {
     "format-wifi": "<span size='11000' foreground='#C34043'>󰤨  </span>{essid} ",
     "format-disconnected": "<span size='11000' foreground='#C34043'>󰤭  </span>Disconnected",
@@ -54,7 +53,7 @@
   },
 
   "clock": {
-    "format": "<span size='11000' foreground='#5d57a3'>  </span>{:%a %d %H:%M}"
+    "format": "<span size='11000' foreground='#5d57a3'>  </span>星期{:%a %d %H:%M}"
   },
 
   "tray": {
