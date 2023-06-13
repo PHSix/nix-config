@@ -47,6 +47,7 @@
           ./home/misc.nix
           ./home/tmux.nix
           ./home/kitty.nix
+          ./home/alacritty.nix
           ./home/zsh.nix
           ./home/vim
           ./home/waybar
