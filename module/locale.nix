@@ -147,6 +147,7 @@ in
       wqy_microhei
       wqy_zenhei
       lxgw-wenkai
+      intel-one-mono
     ]) ++ [
       # pkgs.nerdfonts
       nerdfonts
