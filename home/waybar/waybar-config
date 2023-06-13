@@ -3,8 +3,8 @@
   "position": "top",
   "layer": "top",
   "modules-left": ["wlr/workspaces"],
-  "modules-center": ["hyprland/window"],
-  "modules-right": ["network", "pulseaudio", "battery", "clock", "tray"],
+  "modules-center": ["hyprland/window", "network" ],
+  "modules-right": ["pulseaudio", "battery", "clock", "tray"],
 
   "wlr/workspaces": {
     "format": "{icon}",
