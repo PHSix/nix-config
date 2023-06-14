@@ -50,6 +50,7 @@
     wl-clipboard
     udiskie
     xfce.thunar
+    gnome.nautilus
     xdg-utils
     numix-cursor-theme
     catppuccin-cursors
