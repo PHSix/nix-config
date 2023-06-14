@@ -22,23 +22,23 @@
   };
 
   # greetd service do not set password on system startup
-  services.greetd = {
-    enable = true;
-    package = pkgs.greetd.gtkgreet;
-    settings = {
-      default_session = {
-        # command = "gtkgreet";
-        command = "${lib.makeBinPath [pkgs.greetd.gtkgreet] }/gtkgreet --command=Hyprland";
-        # command = "${pkgs.hyprland}/bin/Hyprland";
-        # command = "${pkgs.greetd.greetd}/bin/greetd --cmd Hyprland";
-        user = "greeter";
-      };
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "ph";
-      };
-    };
-  };
+  # services.greetd = {
+  #   enable = true;
+  #   package = pkgs.greetd.gtkgreet;
+  #   settings = {
+  #     default_session = {
+  #       # command = "gtkgreet";
+  #       command = "${lib.makeBinPath [pkgs.greetd.gtkgreet] }/gtkgreet --command=Hyprland";
+  #       # command = "${pkgs.hyprland}/bin/Hyprland";
+  #       # command = "${pkgs.greetd.greetd}/bin/greetd --cmd Hyprland";
+  #       user = "greeter";
+  #     };
+  #     initial_session = {
+  #       command = "${pkgs.hyprland}/bin/Hyprland";
+  #       user = "ph";
+  #     };
+  #   };
+  # };
 
   environment.systemPackages = with pkgs; [
     greetd.gtkgreet
