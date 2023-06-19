@@ -16,11 +16,11 @@
     GDK_BACKEND="wayland,x11";
     QT_QPA_PLATFORM="wayland;xcb";
   };
-  # home.pointerCursor = {
-  #   package = pkgs.catppuccin-cursors;
-  #   name = "Catppuccin-Frappe-Dark";
-  #   size = 12;
-  # };
+  home.pointerCursor = {
+    package = pkgs.numix-cursor-theme;
+    name = "Numix-Cursor";
+    size = 12;
+  };
   home.pointerCursor.gtk.enable = true;
 
 
