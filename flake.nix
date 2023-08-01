@@ -55,6 +55,7 @@
           ./home/neovim-deps.nix
           ./home/mpd.nix
           ./home/joshuto
+          ./home/gitui
         ];
 
       };

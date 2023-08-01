@@ -18,7 +18,8 @@
       lx = "exa -lbhHigUmuSa@ --time-style=long-iso --git --color-scale";
       lS = "exa -1";
       lt = "exa --tree --level=2";
-      ra = "ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd \"$LASTDIR\"";
+      # ra = "ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd \"$LASTDIR\"";
+      ra = "joshuto --change-directory";
       cn = "touch";
       mk = "mkdir";
       gl = "git clone";
