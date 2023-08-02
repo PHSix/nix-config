@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }: {
+{ pkgs, ... }: {
   programs.hyprland = {
     enable = true;
     # default options, you don't need to set them
@@ -14,7 +14,7 @@
 
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
+    # wlr.enable = true;
   };
 
   programs = {

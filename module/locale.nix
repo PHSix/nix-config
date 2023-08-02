@@ -62,7 +62,6 @@ in
   services.dbus.enable = true;
 
   fonts = {
-    enableDefaultFonts = true;
     fontconfig = {
       enable = true;
       hinting = {
