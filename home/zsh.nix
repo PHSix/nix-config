@@ -5,7 +5,7 @@
     enable = true;
     dotDir = ".config/zsh";
     enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    syntaxHighlighting = { enable = true; };
     defaultKeymap = "emacs";
     shellAliases = {
       lg = "lazygit";
