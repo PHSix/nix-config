@@ -13,6 +13,7 @@
 self: super: {
   monego = super.callPackage ./monego.nix { };
   monaco-nerd-font = super.callPackage ./monaco-nerd-font.nix { };
+  monaco-font = super.callPackage ./monaco-font.nix { };
   apifox = super.callPackage ./apifox.nix { };
   fcitx5-pinyin-zhiwiki = super.callPackage ./fcitx5-pinyin-zhiwiki.nix { };
   myVimPlugins = {

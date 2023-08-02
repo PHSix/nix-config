@@ -1,6 +1,6 @@
 { stdenv, fetchgit, ... }:
 stdenv.mkDerivation {
-  pname = "monego";
+  pname = "monaco-nerd-fonts";
   version = "1.0.0";
   src = fetchgit {
     url = "https://github.com/Karmenzind/monaco-nerd-fonts";

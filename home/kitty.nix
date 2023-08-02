@@ -1,7 +1,8 @@
 {...}:
 let
-  fontName = "Monaco Nerd Font Mono";
-  symbolMapFont = "Maple Mono NF";
+  # fontName = "Maple Mono NF";
+  fontName = "Monaco";
+  symbolMapFont = "FiraCode Nerd Font Mono";
 	opacity = "0.8";
 	fontSize =14;
   colorscheme = ''

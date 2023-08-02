@@ -124,7 +124,7 @@ in
 
     fontDir.enable = true;
     enableGhostscriptFonts = true;
-    fonts = (with pkgs; [
+    packages = (with pkgs; [
       # noto-fonts-cjk
       fira
       fira-code
@@ -149,7 +149,6 @@ in
       wqy_zenhei
       lxgw-wenkai
       intel-one-mono
-      monaco-nerd-font
     ]) ++ [
       # pkgs.nerdfonts
       nerdfonts
