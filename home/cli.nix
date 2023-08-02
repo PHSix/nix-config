@@ -8,18 +8,20 @@
     xsel
     ripgrep
     fzf
-    exa
+    eza
     tree
     zoxide
     mycli
     sqlite
     lazygit
     ranger
+    yazi
     w3m
     joshuto # ranger like
     jq
     fx
     neofetch
+    fastfetch
     bat
     navi # shell command history finder
 
@@ -50,11 +52,11 @@
 
   home.file.".cargo/config" = {
     text = ''
-    [source.crates-io]
-    replace-with = 'mirror'
+      [source.crates-io]
+      replace-with = 'mirror'
 
-    [source.mirror]
-    registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+      [source.mirror]
+      registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
     '';
   };
 }

@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   services = {
     gnome = { gnome-keyring = { enable = true; }; };
     xserver = {
@@ -32,7 +32,7 @@
     # net-speed-simplified
     pip-on-top
     frequency-boost-switch
-	tray-icons-reloaded
+    tray-icons-reloaded
 
   ]) ++ (with pkgs.gnome; [
     gnome-tweaks

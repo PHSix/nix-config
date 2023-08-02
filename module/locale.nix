@@ -12,8 +12,7 @@ let
       "NerdFontsSymbolsOnly"
     ];
   };
-in
-{
+in {
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
     supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
@@ -45,8 +44,8 @@ in
     sessionVariables = {
       # to fix chrome or edge which core is chormium v8 case input trrigger unstable on wayland
       # this solution is copy from: https://github.com/NixOS/nixpkgs/issues/129442#issuecomment-875972207
-      NIX_PROFILES =
-        "${builtins.concatStringsSep " " (lib.reverseList config.environment.profiles)}";
+      NIX_PROFILES = "${builtins.concatStringsSep " "
+        (lib.reverseList config.environment.profiles)}";
       GTK_IM_MODULE = "fcitx";
       QT_IM_MODULE = "fcitx";
       XMODIFIERS = "@im=fcitx";
@@ -70,8 +69,12 @@ in
         # hintstyle = "hintslight(10px,12px)";
       };
       defaultFonts.emoji = [ "Twitter Color Emoji" "Noto Color Emoji" ];
-      defaultFonts.monospace =
-        [ "UbuntuMono Nerd Font Mono" "Noto Sans CJK SC" "Sarasa Mono SC" ];
+      defaultFonts.monospace = [
+        "UbuntuMono Nerd Font Mono"
+        "Symbols Nerd Font"
+        "Noto Sans CJK SC"
+        "Sarasa Mono SC"
+      ];
       defaultFonts.sansSerif =
         [ "Noto Sans CJK SC" "LXGW WenKai Mono" "DejaVu Sans" ];
       defaultFonts.serif = [ "Noto Sans CJK SC" "LXGW WenKai Mono" ];
@@ -149,8 +152,8 @@ in
       lxgw-wenkai
       intel-one-mono
     ]) ++ [
-      # pkgs.nerdfonts
-      nerdfonts
+      pkgs.nerdfonts
+      # nerdfonts
     ];
   };
 }

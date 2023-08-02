@@ -1,42 +1,9 @@
-{ lib
-, stdenv
-, fetchurl
-, makeDesktopItem
-, wrapGAppsHook , atk , at-spi2-atk
-, at-spi2-core
-, alsa-lib
-, cairo
-, cups
-, dbus
-, expat
-, gdk-pixbuf
-, glib
-, gtk3
-, freetype
-, fontconfig
-, nss
-, nspr
-, pango
-, udev
-, libuuid
-, libX11
-, libxcb
-, libXi
-, libXcursor
-, libXdamage
-, libXrandr
-, libXcomposite
-, libXext
-, libXfixes
-, libXrender
-, libXtst
-, libXScrnSaver
-, libxkbcommon
-, libdrm
-, mesa
-, xorg
-, copyDesktopItems
-}:
+{ lib, stdenv, fetchurl, makeDesktopItem, wrapGAppsHook, atk, at-spi2-atk
+, at-spi2-core, alsa-lib, cairo, cups, dbus, expat, gdk-pixbuf, glib, gtk3
+, freetype, fontconfig, nss, nspr, pango, udev, libuuid, libX11, libxcb, libXi
+, libXcursor, libXdamage, libXrandr, libXcomposite, libXext, libXfixes
+, libXrender, libXtst, libXScrnSaver, libxkbcommon, libdrm, mesa, xorg
+, copyDesktopItems }:
 stdenv.mkDerivation rec {
 
   pname = "apifox";
@@ -100,18 +67,17 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ wrapGAppsHook copyDesktopItems ];
 
   installPhase = ''
-        runHook preInstall
-    	mkdir $out/share/apifox -p
-		cp -R ./* $out/share/apifox
-		ls $out/share/apifox/
-		
-    	mkdir $out/bin
-    	ln -s $out/share/apifox/apifox $out/bin/apifox
-    	mkdir -p $out/share/icons/hicolor/128x128/apps
-        ln -s $out/share/apifox/resources/app/dist/assets/logo.png $out/share/icons/apifox.png
-        ln -s $out/share/apifox/resources/app/dist/assets/logo.png $out/share/icons/hicolor/128x128/apps/apifox.png
-        runHook postInstall
+            runHook preInstall
+        	mkdir $out/share/apifox -p
+    		cp -R ./* $out/share/apifox
+    		ls $out/share/apifox/
+    		
+        	mkdir $out/bin
+        	ln -s $out/share/apifox/apifox $out/bin/apifox
+        	mkdir -p $out/share/icons/hicolor/128x128/apps
+            ln -s $out/share/apifox/resources/app/dist/assets/logo.png $out/share/icons/apifox.png
+            ln -s $out/share/apifox/resources/app/dist/assets/logo.png $out/share/icons/hicolor/128x128/apps/apifox.png
+            runHook postInstall
   '';
-
 
 }

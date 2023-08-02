@@ -1,5 +1,5 @@
 { rustPlatform, fetchgit, lib }:
-rustPlatform.buildRustPackage rec{
+rustPlatform.buildRustPackage rec {
   pname = "wl-clip-persist";
   version = "0.3.1";
 
@@ -14,9 +14,9 @@ rustPlatform.buildRustPackage rec{
   cargoSha256 = "sha256-vNxNvJ5tA323EVArJ6glNslkq/Q6u7NsIpTYO1Q3GEw=";
 
   cargoInstallHook = ''
-  echo "cargo install hook: "
-  ls
-  pwd
+    echo "cargo install hook: "
+    ls
+    pwd
   '';
   # cargoSha256 = lib.fakeSha256;
 }

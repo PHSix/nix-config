@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{ pkgs, ... }: {
   # home.packages = with pkgs.python311Packages; [
   #   python-lsp-server
   #   pylsp-mypy
@@ -7,18 +6,19 @@
   #   python-lsp-black
   #   python-lsp-ruff
   # ];
-  home.packages = (with pkgs.python310Packages; [
-    autopep8
+  home.packages = (with pkgs.python310Packages;
+    [
+      autopep8
 
-  ]) ++ (with pkgs; [
-    gopls # for golang
-    nodePackages.typescript
-    nodePackages.typescript-language-server
-    nodePackages.volar
-    python310Packages.python-lsp-server # for python
+    ]) ++ (with pkgs; [
+      gopls # for golang
+      nodePackages.typescript
+      nodePackages.typescript-language-server
+      nodePackages.volar
+      python310Packages.python-lsp-server # for python
 
-    # rust-analyzer
-    # rustfmt
+      # rust-analyzer
+      # rustfmt
 
-  ]);
+    ]);
 }

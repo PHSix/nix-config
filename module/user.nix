@@ -1,7 +1,6 @@
 { pkgs, ... }:
 let username = "ph";
-in
-{
+in {
   security.doas.enable = true;
   users.users."${username}" = {
     isNormalUser = true;

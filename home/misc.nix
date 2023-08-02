@@ -1,5 +1,4 @@
-{ ... }:
-{
+{ ... }: {
 
   # for git config
   programs.git = {
@@ -15,12 +14,9 @@
         proxy = "http://localhost:7890";
 
       };
-      https = {
-        proxy = "http://localhost:7890";
-      };
+      https = { proxy = "http://localhost:7890"; };
     };
   };
-
 
   programs.gpg = { enable = true; };
   # services.gpg-agent = { enable = true; };

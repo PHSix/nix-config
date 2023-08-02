@@ -8,6 +8,6 @@ stdenv.mkDerivation {
     sha256 = "sha256-UKXrqleQACZljCxd2emX1/zRCjQegjPhc3DN2YoOQ2U=";
   };
   installPhase = ''
-	find . -name '*.otf'    -exec install -Dt $out/share/fonts/opentype {} \;
+    find . -name '*.otf'    -exec install -Dt $out/share/fonts/opentype {} \;
   '';
 }

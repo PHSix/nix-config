@@ -10,10 +10,8 @@
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-
   # for sercet
   services.gnome.gnome-keyring.enable = true;
-
 
   # enable docker service
   virtualisation.docker.enable = true;

@@ -1,9 +1,7 @@
 {
-  description = "My nixos config `flake.nix`.";
+  description = "Personal nixos config `flake.nix`.";
   inputs = {
-    nixpkgs = {
-      url = "nixpkgs/nixos-unstable";
-    };
+    nixpkgs = { url = "nixpkgs/nixos-unstable"; };
     nixos-cn = {
       url = "github:nixos-cn/flakes";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,53 +12,33 @@
     };
     flake-parts.url = "github:hercules-ci/flake-parts";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    devshell.url = "github:numtide/devshell";
   };
 
-  outputs = inputs @ { nixpkgs, home-manager, flake-parts, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-parts, devshell, ... }:
     let
-      pkgs' = import ./pkgs;
-      # pkgs = nixpkgs.legacyPackages.${system};
+      local-pkgs-overlay = import ./pkgs;
       system = "x86_64-linux";
+
+      # patch waybar to support hyprland desktop environment
+      waybar-overlay = (final: prev: {
+        waybar = prev.waybar.overrideAttrs (oldAttrs: {
+          mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+          postPatch = (oldAttrs.postPatch or "") + ''
+            sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp'';
+        });
+      });
       pkgs = import nixpkgs {
         system = system;
         config.allowUnfree = true;
         overlays = [
-          pkgs'
+          local-pkgs-overlay
           inputs.neovim-nightly-overlay.overlay
 
-          # patch waybar to support hyprland desktop environment
-          (final: prev: {
-            waybar =
-              prev.waybar.overrideAttrs (oldAttrs: {
-                mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
-                postPatch = (oldAttrs.postPatch or "") + ''
-                  sed -i 's/zext_workspace_handle_v1_activate(workspace_handle_);/const std::string command = "hyprctl dispatch workspace " + name_;\n\tsystem(command.c_str());/g' src/modules/wlr/workspace_manager.cpp'';
-              });
-          })
+          waybar-overlay
         ];
       };
-      genHomeConfiguration = _: {
-        imports = [
-          ./home
-          ./home/cli.nix
-          ./home/packages.nix
-          ./home/misc.nix
-          ./home/tmux.nix
-          ./home/kitty.nix
-          ./home/alacritty.nix
-          ./home/zsh.nix
-          ./home/vim
-          ./home/waybar
-          ./home/hyprland
-          ./home/neovim-deps.nix
-          ./home/mpd.nix
-          ./home/joshuto
-          ./home/gitui
-        ];
-
-      };
-    in
-    flake-parts.lib.mkFlake { inherit inputs; } {
+    in flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
       imports = [ ];
 
@@ -68,31 +46,13 @@
 
       flake = {
         nixosConfigurations = {
-          nixosSystem = nixpkgs.lib.nixosSystem {
+          laptop = import ./hosts/laptop.nix {
             inherit pkgs;
-            inherit system;
-            # pkgs = nixpkgs;
-            modules = [
-              ./hardware/hardware-configuration.nix
-              # ./module/gnome.nix
-              ./module/hyprland.nix
-              ./module/network.nix
-              ./module/grub.nix
-              ./module/misc.nix
-              ./module/nixos.nix
-              ./module/user.nix
-              ./module/packages.nix
-              ./module/locale.nix
-              ./module/graphics.nix
-              ./module/proxychains.nix
-
-              home-manager.nixosModules.home-manager
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.ph = genHomeConfiguration;
-              }
-            ];
+            inherit home-manager;
+          };
+          master = import ./hosts/master.nix {
+            inherit pkgs;
+            inherit home-manager;
           };
         };
       };
