@@ -1,6 +1,6 @@
 {...}:
 let
-  fontName = "Maple Mono NF";
+  fontName = "Monaco Nerd Font Mono";
   symbolMapFont = "Maple Mono NF";
 	opacity = "0.8";
 	fontSize =14;

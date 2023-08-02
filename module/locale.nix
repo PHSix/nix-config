@@ -9,6 +9,7 @@ let
       "FiraCode"
       # "Noto"
       "UbuntuMono"
+      "NerdFontsSymbolsOnly"
     ];
   };
 in
