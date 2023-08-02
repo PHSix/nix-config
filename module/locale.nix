@@ -148,6 +148,7 @@ in
       wqy_zenhei
       lxgw-wenkai
       intel-one-mono
+      monaco-nerd-font
     ]) ++ [
       # pkgs.nerdfonts
       nerdfonts
