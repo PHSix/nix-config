@@ -39,10 +39,19 @@
         ];
       };
     in flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [ "x86_64-linux" ];
-      imports = [ ];
+      systems = [ "x86_64-linux" "aarch64-linux" ];
+      imports = [ inputs.devshell.flakeModule ];
 
-      perSystem = _: { };
+      perSystem = { config, pkgs, ... }: {
+        devshells.default = {
+          commands = [{
+            help = "format project nix files.";
+            name = "nixformat";
+            command = "nixfmt *.nix && nixfmt ./**/*.nix";
+          }];
+          packages = with pkgs; [ vim git lazygit nixfmt ];
+        };
+      };
 
       flake = {
         nixosConfigurations = {
@@ -51,6 +60,10 @@
             inherit home-manager;
           };
           master = import ./hosts/master.nix {
+            inherit pkgs;
+            inherit home-manager;
+          };
+          orb-vm = import ./hosts/orb-vm {
             inherit pkgs;
             inherit home-manager;
           };
