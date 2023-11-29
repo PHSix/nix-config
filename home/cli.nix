@@ -40,6 +40,7 @@
 
     # nix language server and formatter
     nil
+    nixfmt
     nixpkgs-fmt
     sumneko-lua-language-server
   ];

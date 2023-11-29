@@ -49,7 +49,22 @@
             name = "nixformat";
             command = "nixfmt *.nix && nixfmt ./**/*.nix";
           }];
-          packages = with pkgs; [ vim git lazygit nixfmt ];
+          packages = with pkgs; [
+            vim
+            git
+            lazygit
+            nixfmt
+            ripgrep
+            fzf
+            lua-language-server
+            nil
+            neovim
+            nurl
+            gnumake
+            gcc
+            gccStdenv
+            htop
+          ];
         };
       };
 
