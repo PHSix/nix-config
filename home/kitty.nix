@@ -1,6 +1,6 @@
 { ... }:
 let
-  fontName = "Monaco";
+  fontName = "Macon";
   opacity = "0.8";
   fontSize = 14;
   colorscheme = ''

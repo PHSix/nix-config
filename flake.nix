@@ -49,12 +49,12 @@
           };
           rebuild = {
             description = "Build a nixos for boot.";
-            exec = "doas nixos-rebuild boot --flake";
+            exec = "sudo nixos-rebuild boot --flake";
             category = "nixos";
           };
           switch = {
             description = "Build a nixos and switch.";
-            exec = "doas nixos-rebuild switch --flake";
+            exec = "sudo nixos-rebuild switch --flake";
             category = "nixos";
           };
         };

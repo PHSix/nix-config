@@ -4,7 +4,7 @@ import time
 from typing import List
 # a wallpappers auto switcher script
 
-WALLPAPER_DIR = '/home/ph/Pictures/wallpapers'
+WALLPAPER_DIR = os.path.expanduser('~/.wallpapers')
 SLEEP_TIME = 3 * 60
 SWITCH_CMDS = [
     "swww img --transition-type wipe --transition-angle 30 --transition-step 90",
@@ -13,16 +13,16 @@ SWITCH_CMDS = [
 ]
 
 
-def find_imgs(_fp: str):
-    fps = [_fp]
+def find_imgs(dir: str):
+    files = [dir]
     ret: List[str] = []
-    while len(fps) > 0:
-        fp = fps.pop()
-        if os.path.isdir(fp):
-            for f in os.listdir(fp):
-                fps.append(os.path.join(fp, f))
+    while len(files) > 0:
+        file = files.pop()
+        if os.path.exists(file) and os.path.isdir(file):
+            for f in os.listdir(file):
+                files.append(os.path.join(file, f))
         else:
-            ret.append(fp)
+            ret.append(file)
     return ret
 
 
@@ -43,6 +43,7 @@ def main():
     except:
         pass
     files = find_imgs(WALLPAPER_DIR)
+
     if len(files) == 0:
         return
 

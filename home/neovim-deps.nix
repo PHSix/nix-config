@@ -15,6 +15,7 @@
     typescript
     nodePackages.typescript-language-server
     nodePackages.volar
+    nodePackages.pyright
     python310Packages.python-lsp-server # for python
     nil
     nixfmt

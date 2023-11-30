@@ -14,7 +14,7 @@ let
     selfPkgs
     inputs.neovim-nightly-overlay.overlay
 
-    waybar-overlay
+    # waybar-overlay
   ];
 
 in
