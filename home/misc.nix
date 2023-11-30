@@ -10,11 +10,11 @@
     #   signByDefault = true;
     # };
     extraConfig = {
-      http = {
-        proxy = "http://localhost:7890";
+      # http = {
+      #   proxy = "http://localhost:7890";
 
-      };
-      https = { proxy = "http://localhost:7890"; };
+      # };
+      # https = { proxy = "http://localhost:7890"; };
     };
   };
 

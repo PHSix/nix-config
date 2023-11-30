@@ -8,6 +8,6 @@ stdenv.mkDerivation {
     sha256 = "sha256-NJjyOsDCQ+QmCMlP6ZwBOBdEcKqRQdevUIilWr21snU=";
   };
   installPhase = ''
-    find ./dist -name '*.ttf'    -exec install -Dt $out/share/fonts/opentype {} \;
+    find ./dist -name '*.ttf'    -exec install -Dt $out/share/fonts/truetype {} \;
   '';
 }

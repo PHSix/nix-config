@@ -1,4 +1,4 @@
-{ nixpkgs, neovim-nightly-overlay, home-manager, ... }@inputs:
+{ nixpkgs, home-manager, ... }@inputs:
 nixpkgs.lib.nixosSystem rec {
 
   specialArgs = inputs // { inherit system; };
@@ -39,6 +39,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/tmux.nix
           ../home/kitty.nix
           ../home/alacritty.nix
+          ../home/wezterm
           ../home/zsh.nix
           ../home/vim
           ../home/waybar

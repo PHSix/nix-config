@@ -39,7 +39,7 @@
           };
           proxy = {
             description = "Setup http and https proxy for 7890 port(for clash).";
-            exec = "export http_proxy=http://localhost:7890; export https_proxy=http://localhost:7890;";
+            exec = "export http_proxy=http://localhost:7890 && export https_proxy=http://localhost:7890";
             category = "Tools";
           };
           buildOs = {
@@ -49,12 +49,12 @@
           };
           rebuild = {
             description = "Build a nixos for boot.";
-            exec = "nixos-rebuild boot --flake";
+            exec = "doas nixos-rebuild boot --flake";
             category = "nixos";
           };
           switch = {
             description = "Build a nixos and switch.";
-            exec = "nixos-rebuild switch --flake";
+            exec = "doas nixos-rebuild switch --flake";
             category = "nixos";
           };
         };
@@ -75,9 +75,15 @@
             gcc
             gccStdenv
             htop
+            doas
           ];
           inputsFrom =
             [ config.flake-root.devShell config.mission-control.devShell ];
+
+          shellHook = ''
+            alias lg=lazygit
+            alias yz=yazi
+          '';
         };
       };
 

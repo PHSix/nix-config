@@ -8,6 +8,7 @@ let
     fonts = [
       "FiraCode"
       "UbuntuMono"
+      "NerdFontsSymbolsOnly"
     ];
   };
 in
@@ -32,8 +33,8 @@ in
   };
 
   # set nix daemon proxy for user(it's important for chinese users)
-  systemd.services.nix-daemon.environment.http_proxy = "http://localhost:7890";
-  systemd.services.nix-daemon.environment.https_proxy = "http://localhost:7890";
+  # systemd.services.nix-daemon.environment.http_proxy = "http://localhost:7890";
+  # systemd.services.nix-daemon.environment.https_proxy = "http://localhost:7890";
 
   location = {
     latitude = 23.0;
@@ -150,6 +151,7 @@ in
       wqy_zenhei
       lxgw-wenkai
       intel-one-mono
+      icursive-nerd-font
     ]) ++ [
       # pkgs.nerdfonts
       nerdfonts
