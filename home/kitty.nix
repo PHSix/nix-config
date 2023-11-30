@@ -103,7 +103,8 @@ let
     # Misc Code Point Fixes
     symbol_map U+21B5,U+25B8,U+2605,U+2630,U+2632,U+2714,U+E0A3,U+E615,U+E62B Symbols Nerd Font
   '';
-in {
+in
+{
   programs.kitty = {
     enable = true;
     font = {

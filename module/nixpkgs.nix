@@ -17,7 +17,8 @@ let
     waybar-overlay
   ];
 
-in {
+in
+{
 
   nixpkgs.overlays = overlays;
   nixpkgs = {

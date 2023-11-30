@@ -95,6 +95,21 @@
         "type": "indirect"
       }
     },
+    "flake-root": {
+      "locked": {
+        "lastModified": 1692742795,
+        "narHash": "sha256-f+Y0YhVCIJ06LemO+3Xx00lIcqQxSKJHXT/yk1RTKxw=",
+        "owner": "srid",
+        "repo": "flake-root",
+        "rev": "d9a70d9c7a5fd7f3258ccf48da9335e9b47c3937",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srid",
+        "repo": "flake-root",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems_2"
@@ -167,6 +182,21 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "mission-control": {
+      "locked": {
+        "lastModified": 1701205489,
+        "narHash": "sha256-xqggNXBHyYHx6miXw7Aefre6MNCwzuDg2Mz0BOY1D9o=",
+        "owner": "Platonic-Systems",
+        "repo": "mission-control",
+        "rev": "f9582470f8e9b97a665cde84d42d6c4c0fbef03a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Platonic-Systems",
+        "repo": "mission-control",
         "type": "github"
       }
     },
@@ -306,7 +336,9 @@
       "inputs": {
         "devshell": "devshell",
         "flake-parts": "flake-parts",
+        "flake-root": "flake-root",
         "home-manager": "home-manager",
+        "mission-control": "mission-control",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
         "nixos-cn": "nixos-cn",
         "nixpkgs": "nixpkgs_3"

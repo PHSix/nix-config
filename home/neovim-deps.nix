@@ -11,18 +11,18 @@
       autopep8
 
     ]) ++ (with pkgs; [
-      gopls # for golang
-      typescript
-      nodePackages.typescript-language-server
-      nodePackages.volar
-      python310Packages.python-lsp-server # for python
-      nil
-      nixfmt
-      nixpkgs-fmt
-      lua-language-server
+    gopls # for golang
+    typescript
+    nodePackages.typescript-language-server
+    nodePackages.volar
+    python310Packages.python-lsp-server # for python
+    nil
+    nixfmt
+    nixpkgs-fmt
+    lua-language-server
 
-      # rust-analyzer
-      # rustfmt
+    # rust-analyzer
+    # rustfmt
 
-    ]);
+  ]);
 }
