@@ -8,7 +8,6 @@
     xplorer
     pkg-config
 
-    wpsoffice-cn
     qq
 
     git # important, for nix flake dependence

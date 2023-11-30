@@ -1,5 +1,6 @@
 { ... }: {
   system.stateVersion = "24.05";
+
   nix = {
     extraOptions = ''
       experimental-features = nix-command flakes
@@ -14,9 +15,4 @@
       dates = "Sun 19:00";
     };
   };
-  nixpkgs.config = {
-    allowUnfree = true;
-    allowAliases = false;
-  };
-  nixpkgs.system = "x86_64-linux";
 }

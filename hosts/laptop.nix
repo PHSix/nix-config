@@ -1,4 +1,4 @@
-{ pkgs, home-manager }:
+{ pkgs, home-manager, ... }:
 pkgs.lib.nixosSystem {
   inherit pkgs;
 

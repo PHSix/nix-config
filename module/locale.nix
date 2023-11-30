@@ -134,7 +134,7 @@ in {
       jetbrains-mono
       font-awesome
 
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       rofi-emoji
       twitter-color-emoji
       unicode-emoji
@@ -152,8 +152,8 @@ in {
       lxgw-wenkai
       intel-one-mono
     ]) ++ [
-      pkgs.nerdfonts
-      # nerdfonts
+      # pkgs.nerdfonts
+      nerdfonts
     ];
   };
 }

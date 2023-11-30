@@ -12,10 +12,14 @@
 
     ]) ++ (with pkgs; [
       gopls # for golang
-      nodePackages.typescript
+      typescript
       nodePackages.typescript-language-server
       nodePackages.volar
       python310Packages.python-lsp-server # for python
+      nil
+      nixfmt
+      nixpkgs-fmt
+      lua-language-server
 
       # rust-analyzer
       # rustfmt

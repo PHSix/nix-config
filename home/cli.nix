@@ -37,12 +37,6 @@
     # rustc
     # cargo
     python310
-
-    # nix language server and formatter
-    nil
-    nixfmt
-    nixpkgs-fmt
-    sumneko-lua-language-server
   ];
 
   home.file.".npmrc" = {

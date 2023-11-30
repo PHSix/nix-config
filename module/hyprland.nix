@@ -1,15 +1,8 @@
 { pkgs, ... }: {
   programs.hyprland = {
     enable = true;
-    # default options, you don't need to set them
-    # package = hyprland.packages.${pkgs.system}.default;
 
-    xwayland = {
-      enable = true;
-      hidpi = false;
-    };
-
-    nvidiaPatches = false;
+    xwayland = { enable = true; };
   };
 
   xdg.portal = {

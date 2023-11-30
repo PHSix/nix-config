@@ -1,6 +1,14 @@
-{ pkgs }:
-pkgs.lib.nixosSystem {
-  inherit pkgs;
+{ nixpkgs, neovim-nightly-overlay, home-manager, ... }@inputs:
+nixpkgs.lib.nixosSystem rec {
+
+  specialArgs = inputs // { inherit system; };
+  # pkgs = import nixpkgs {
+  #   config = { allowUnfree = true;
+  #     allowAliases = false;
+  #   };
+  #
+  #   system = system;
+  # };
   system = "x86_64-linux";
 
   modules = [
@@ -13,6 +21,7 @@ pkgs.lib.nixosSystem {
     ../module/nixos.nix
     ../module/user.nix
     ../module/packages.nix
+    ../module/nixpkgs.nix
     ../module/locale.nix
     ../module/proxychains.nix
 

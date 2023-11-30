@@ -96,43 +96,40 @@
       # set-window-option -g pane-base-index 1 # pane set base index start on 1
       # theme setting
       # inpresied from tokyo-night-tmux(https://github.com/janoamaral/tokyo-night-tmux)
+      # theme setting
+      # inpresied from tokyo-night-tmux(https://github.com/janoamaral/tokyo-night-tmux)
       #################################################
       #                 colors variable               #
       #################################################
-      dark_background="#1F2937"
+      dark_background="#3B4251"
       gray="#475569"
       warnning="#EAB308"
-      green="#34D399"
-      violet="#A78BFA"
-      lightrose="#FB7185"
+      active_background="#5E81AB"
+      cyan="#88C0D0"
+      brightblack="#4B5769"
       #################################################
       #                 theme option                  #
       #################################################
       set-option -g status-style fg=colour15,bg=$dark_background
-      set -g pane-active-border-style fg=#84B7D9
-      set -g pane-border-style fg=#827B7C
-      #################################################
-      #                     scripts                   #
-      #################################################
-      # git_status="#(~/.scripts/git-status.sh #{pane_current_path})"
       #################################################
       #                 window status                 #
       #################################################
-      set -g window-status-current-format "#[fg=white,bg=#1F2335]   #I #W  " # focus status
-      set -g window-status-format "#[fg=brightwhite,bg=default,nobold,noitalics,nounderscore]   #I #W #F  " # unfocus status
+      set -g window-status-format "#[fg=$dark_background,bg=$brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=$brightblack]#I #[fg=white,bg=$brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=$brightblack]#W #F #[fg=$brightblack,bg=$dark_background,nobold,noitalics,nounderscore]"
+      set -g window-status-current-format "#[fg=$dark_background,bg=$cyan,nobold,noitalics,nounderscore] #[fg=black,bg=$cyan]#I #[fg=black,bg=$cyan,nobold,noitalics,nounderscore] #[fg=black,bg=$cyan]#W #F #[fg=$cyan,bg=$dark_background,nobold,noitalics,nounderscore]"
       set -g window-status-separator ""
+
+
       # left component setting
-      set -g status-left "#[fg=black,bg=#{?client_prefix,yellow,green},bold] #S #[fg=blue,bg=default,nobold,noitalics,nounderscore]"
+      set -g status-left "#[fg=#E5E9F0,bg=#2E3440,bold] #S #[fg=#2E3440,bg=$dark_background,nobold,noitalics,nounderscore]"
+
       # right component
-      # set -g status-right "#[fg=white,bg=$gray, bold] %Y-%m-%d %H:%M $git_status#[fg=$green, bold]PM "
-      set -g status-right "#[fg=white,bg=$gray, bold] %Y-%m-%d %H:%M "
-      set -g status-right-length 150
-      # Plugins of list
-      # TPM管理的插件
-      # set -g @plugin 'tmux-plugins/tpm'
-      # set -g @plugin 'tmux-plugins/tmux-sensible'
-      # set -g @plugin "janoamaral/tokyo-night-tmux"
-      # run '~/.tmux/plugins/tpm/tpm'
+      # set -g status-right "#[fg=$cyan,bg=$dark_background,nobold,noitalics,nounderscore]#[fg=black,bg=$cyan,bold] #H"
+      set -g status-right "#[fg=$cyan,bg=$dark_background,nobold,noitalics,nounderscore]#[fg=black,bg=$cyan,bold] #H #[fg=#2E3440,bg=$cyan,nobold,noitalics,nounderscore]#[fg=#E5E9F0,bg=#2E3440,bold] %Y.%m.%d %H:%M "
+
+      set -g pane-border-style bg=default,fg=$brightblack
+      set -g pane-active-border-style bg=default,fg=$cyan,bold
+      set -g display-panes-colour black
+      set -g display-panes-active-colour $brightblack
     '';
   };
 
