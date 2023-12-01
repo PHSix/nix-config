@@ -16,6 +16,12 @@
     nodePackages.typescript-language-server
     nodePackages.volar
     nodePackages.pyright
+    nodePackages.eslint
+    nodePackages.prettier
+    nodePackages.vscode-css-languageserver-bin
+    nodePackages.vscode-json-languageserver-bin
+    nodePackages.vscode-html-languageserver-bin
+    tailwindcss-language-server
     python310Packages.python-lsp-server # for python
     nil
     nixfmt
@@ -24,6 +30,5 @@
 
     # rust-analyzer
     # rustfmt
-
   ]);
 }

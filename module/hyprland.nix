@@ -48,6 +48,8 @@
     catppuccin-gtk
     gtk3
     gtk4
+
+    swww
   ];
 
 }

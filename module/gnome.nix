@@ -34,7 +34,7 @@
     xterm
   ]) ++ (with pkgs.gnome; [
     cheese
-    gedit
+    # gedit
     epiphany
     geary
     evince

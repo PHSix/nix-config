@@ -8,7 +8,6 @@ WALLPAPER_DIR = os.path.expanduser('~/.wallpapers')
 SLEEP_TIME = 3 * 60
 SWITCH_CMDS = [
     "swww img --transition-type wipe --transition-angle 30 --transition-step 90",
-    "swww img --transition-type left",
     "swww img --transition-type any",
 ]
 

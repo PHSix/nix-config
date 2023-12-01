@@ -20,4 +20,6 @@
 
   programs.gpg = { enable = true; };
   # services.gpg-agent = { enable = true; };
+
+  xdg.configFile."user-dirs.dirs".source = ./user-dirs.dirs;
 }
