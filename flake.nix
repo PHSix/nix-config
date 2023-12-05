@@ -57,6 +57,11 @@
             exec = "sudo nixos-rebuild switch --flake";
             category = "nixos";
           };
+          gc = {
+            description = "run collect garbage remove unused package.";
+            exec = "sudo nix-collect-garbage -d";
+            category = "nix";
+          };
         };
         devShells.default = pkgs.mkShell {
           packages = with pkgs; [
