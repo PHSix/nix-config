@@ -2,18 +2,18 @@ inputs@{ nixpkgs, home-manager, ... }:
 nixpkgs.lib.nixosSystem rec {
 
   specialArgs = inputs // { inherit system; };
-  # pkgs = import nixpkgs {
-  #   config = { allowUnfree = true;
-  #     allowAliases = false;
-  #   };
-  #
-  #   system = system;
-  # };
+
   system = "aarch64-linux";
 
   modules = [
-
-    { }
+    ({ modulesPath, ... }: {
+      imports = [
+        "${modulesPath}/virtualisation/lxc-container.nix"
+      ];
+    })
+    ../module/nixos.nix
+    ../module/nixpkgs.nix
+    ../module/user.nix
 
     home-manager.nixosModules.home-manager
     {
@@ -35,6 +35,5 @@ nixpkgs.lib.nixosSystem rec {
       };
     }
   ];
-
 }
 

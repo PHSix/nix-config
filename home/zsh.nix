@@ -24,17 +24,27 @@
       n = "fastfetch";
       nvi = "nvim";
     };
-    plugins = [{
-      name = "zsh-nix-shell";
-      file = "nix-shell.plugin.zsh";
-      src = pkgs.fetchFromGitHub {
-        owner = "chisui";
-        repo = "zsh-nix-shell";
-        rev = "v0.5.0";
-        sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
-      };
-    }
-      #   zsh-vi-mode
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.5.0";
+          sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+        };
+      }
+      {
+        name = "zap-prompt";
+        file = "zap-prompt.zsh-theme";
+        src = pkgs.fetchFromGitHub {
+          owner = "zap-zsh";
+          repo = "zap-prompt";
+          rev = "7cf4762cc23761493f0b4f86270b780b55254c20";
+          sha256 = "sha256-s6uaqI/mjtOqr8mKsKb/u+JzLxaaeItonRCRdmoZx5g=";
+        };
+      }
     ];
     initExtra = ''
       if type "yazi" > /dev/null; then
@@ -50,7 +60,7 @@
       fi
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-      eval "$(zoxide init zsh)"
+      # eval "$(zoxide init zsh)"
     '';
   };
 
@@ -63,9 +73,9 @@
     zsh-fast-syntax-highlighting
     zsh-completions
   ];
-  programs.starship = {
-    enable = true;
-    enableZshIntegration = true;
-    enableBashIntegration = true;
-  };
+  # programs.starship = {
+  #   enable = true;
+  #   enableZshIntegration = true;
+  #   enableBashIntegration = true;
+  # };
 }

@@ -5,6 +5,8 @@
     gccStdenv # for treesitter compiling deps
     gnumake
 
+    neovim-nightly
+    wget
     xsel
     ripgrep
     fzf

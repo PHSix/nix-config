@@ -3,8 +3,6 @@
     vim
     wget
     firefox
-    # neovim
-    neovim-nightly
     xplorer
     pkg-config
 
