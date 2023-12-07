@@ -16,6 +16,8 @@
     devshell.url = "github:numtide/devshell";
     mission-control.url = "github:Platonic-Systems/mission-control";
     flake-root.url = "github:srid/flake-root";
+
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs =

@@ -4,14 +4,15 @@ local act = wezterm.action
 return {
   font = wezterm.font_with_fallback({
     "Macon", -- "Monaco"
-    "Symbols Nerd Font Mono",
+    "Symbols Nerd Font",
     "Noto Color Emoji",
     "霞鹜文楷",
     "monospace",
   }),
-  font_size = 20,
+  font_size = 16,
   enable_tab_bar = false,
   color_scheme = "Nord (base16)",
+  enable_wayland = false,
   window_padding = {
     left = 0,
     right = 0,

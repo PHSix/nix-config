@@ -1,4 +1,4 @@
-inputs@{ system, ... }:
+inputs@{ system, hyprland, ... }:
 let
   selfPkgs = import ../pkgs;
 

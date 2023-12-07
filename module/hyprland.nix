@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, system, hyprland, ... }: {
   programs.hyprland = {
     enable = true;
 
     xwayland = { enable = true; };
+    package = hyprland.packages.${system}.hyprland;
   };
 
   xdg.portal = {
