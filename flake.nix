@@ -20,14 +20,8 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs =
-    inputs@{ nixpkgs
-    , home-manager
-    , flake-parts
-    , flake-root
-    , mission-control
-    , ...
-    }:
+  outputs = inputs@{ nixpkgs, home-manager, flake-parts, flake-root
+    , mission-control, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" ];
       imports = [ flake-root.flakeModule mission-control.flakeModule ];
@@ -40,11 +34,13 @@
             category = "Tools";
           };
           proxy = {
-            description = "Setup http and https proxy for 7890 port(for clash).";
-            exec = "export http_proxy=http://localhost:7890 && export https_proxy=http://localhost:7890";
+            description =
+              "Setup http and https proxy for 7890 port(rencently use for clash).";
+            exec =
+              "export http_proxy=http://localhost:7890 && export https_proxy=http://localhost:7890";
             category = "Tools";
           };
-          buildOs = {
+          build = {
             description = "Test build a nixos flake output.";
             exec = ''nixos-rebuild build --flake "$1"'';
             category = "nixos";
@@ -101,5 +97,3 @@
       flake = { nixosConfigurations = (import ./hosts/default.nix inputs); };
     };
 }
-
-

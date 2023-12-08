@@ -32,7 +32,7 @@ pkgs.lib.nixosSystem {
           ../home/tmux.nix
           ../home/kitty.nix
           ../home/alacritty.nix
-          ../home/zsh.nix
+          ../home/zsh
           ../home/vim
           ../home/waybar
           ../home/hyprland

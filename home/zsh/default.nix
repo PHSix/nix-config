@@ -35,16 +35,16 @@
           sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
         };
       }
-      {
-        name = "zap-prompt";
-        file = "zap-prompt.zsh-theme";
-        src = pkgs.fetchFromGitHub {
-          owner = "zap-zsh";
-          repo = "zap-prompt";
-          rev = "7cf4762cc23761493f0b4f86270b780b55254c20";
-          sha256 = "sha256-s6uaqI/mjtOqr8mKsKb/u+JzLxaaeItonRCRdmoZx5g=";
-        };
-      }
+      # {
+      #   name = "zap-prompt";
+      #   file = "zap-prompt.zsh-theme";
+      #   src = pkgs.fetchFromGitHub {
+      #     owner = "zap-zsh";
+      #     repo = "zap-prompt";
+      #     rev = "7cf4762cc23761493f0b4f86270b780b55254c20";
+      #     sha256 = "sha256-s6uaqI/mjtOqr8mKsKb/u+JzLxaaeItonRCRdmoZx5g=";
+      #   };
+      # }
     ];
     initExtra = ''
       if type "yazi" > /dev/null; then
@@ -60,6 +60,9 @@
       fi
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+      source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+
+      source ~/.config/zsh/.p10k.zsh
       # eval "$(zoxide init zsh)"
     '';
   };
@@ -72,10 +75,13 @@
     zsh-fzf-tab
     zsh-fast-syntax-highlighting
     zsh-completions
+    pure-prompt
+    zsh-powerlevel10k
   ];
   # programs.starship = {
   #   enable = true;
   #   enableZshIntegration = true;
   #   enableBashIntegration = true;
   # };
+  xdg.configFile."zsh/.p10k.zsh".source = ./p10k.zsh;
 }

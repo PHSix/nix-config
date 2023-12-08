@@ -46,14 +46,6 @@ in
       # this solution is copy from: https://github.com/NixOS/nixpkgs/issues/129442#issuecomment-875972207
       NIX_PROFILES = "${builtins.concatStringsSep " "
         (lib.reverseList config.environment.profiles)}";
-      # GTK_IM_MODULE = "fcitx";
-      QT_IM_MODULE = "fcitx";
-      XMODIFIERS = "@im=fcitx";
-      XIM = "fcitx";
-      XIM_PROGRAM = "fcitx";
-      INPUT_METHOD = "fcitx";
-      SDL_IM_MODULE = "fcitx";
-      GLFW_IM_MODULE = "ibus";
       # to fix gtk application start slow problem, like waybar and clash-verge
       GTK_USE_PORTAL = "0";
     };

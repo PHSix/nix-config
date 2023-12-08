@@ -40,7 +40,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/kitty.nix
           ../home/alacritty.nix
           ../home/wezterm
-          ../home/zsh.nix
+          ../home/zsh
           ../home/vim
           ../home/waybar
           ../home/hyprland

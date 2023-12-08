@@ -26,7 +26,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/cli.nix
           ../home/misc.nix
           ../home/tmux.nix
-          ../home/zsh.nix
+          ../home/zsh
           ../home/vim
           ../home/neovim-deps.nix
           ../home/gitui
