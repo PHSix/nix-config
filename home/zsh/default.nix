@@ -17,6 +17,8 @@
       lx = "eza -lbhHigUmuSa@ --time-style=long-iso --git --color-scale";
       lS = "eza -1";
       lt = "eza --tree --level=2";
+      gp = "git pull";
+      gP = "git push";
       # ra = "ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd \"$LASTDIR\"";
       cn = "touch";
       mk = "mkdir";

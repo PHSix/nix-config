@@ -20,8 +20,14 @@
     hyprland.url = "github:hyprwm/Hyprland";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, flake-parts, flake-root
-    , mission-control, ... }:
+  outputs =
+    inputs@{ nixpkgs
+    , home-manager
+    , flake-parts
+    , flake-root
+    , mission-control
+    , ...
+    }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" "aarch64-linux" ];
       imports = [ flake-root.flakeModule mission-control.flakeModule ];

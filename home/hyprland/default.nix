@@ -10,11 +10,11 @@
   home.sessionVariables = {
     GTK_THEME = "Catppuccin-Frappe-Pink";
     XCURSOR_THEME = "Numix-Cursor";
-    XDG_CURRENT_DESKTOP = "Hyprland";
-    XDG_SESSION_TYPE = "wayland";
-    XDG_SESSION_DESKTOP = "Hyprland";
+    # XDG_CURRENT_DESKTOP = "Hyprland";
+    # XDG_SESSION_TYPE = "wayland";
+    # XDG_SESSION_DESKTOP = "Hyprland";
     GDK_BACKEND = "wayland,x11";
-    QT_QPA_PLATFORM = "wayland;xcb";
+    # QT_QPA_PLATFORM = "wayland;xcb";
 
 
     EDITOR = "nvim";
@@ -90,4 +90,3 @@
     '';
   };
 }
-

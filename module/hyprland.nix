@@ -1,4 +1,4 @@
-{ pkgs, system, hyprland, ... }: {
+{ pkgs, system, hyprland, lib, ... }: {
   programs.hyprland = {
     enable = true;
 
@@ -18,12 +18,12 @@
 
   # greetd service do not set password on system startup
   services.greetd = {
-    enable = true;
-    package = pkgs.greetd.gtkgreet;
+    enable = false;
+    # package = pkgs.greetd.gtkgreet;
     settings = {
       default_session = {
         # command = "gtkgreet";
-        command = "${lib.makeBinPath [pkgs.greetd.tuigreetd] }/tuigreetd --time --cmd Hyprland";
+        command = "${lib.makeBinPath [pkgs.greetd.tuigreet] }/tuigreetd --time --cmd Hyprland";
         # command = "${lib.makeBinPath [pkgs.greetd.gtkgreet] }/gtkgreet --command=Hyprland";
         # command = "${pkgs.hyprland}/bin/Hyprland";
         # command = "${pkgs.greetd.greetd}/bin/greetd --cmd Hyprland";
