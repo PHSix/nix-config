@@ -9,7 +9,7 @@ return {
     "霞鹜文楷",
     "monospace",
   }),
-  font_size = 13,
+  font_size = 12,
   enable_tab_bar = false,
   color_scheme = "Nord (base16)",
   enable_wayland = false,
