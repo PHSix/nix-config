@@ -53,22 +53,28 @@
           };
           rebuild = {
             description = "Build a nixos for boot.";
-            exec = ''
-              sudo nixos-rebuild boot --flake "$1"
-            '';
+            exec = ''sudo nixos-rebuild boot --flake "$1"'';
             category = "nixos";
           };
           switch = {
             description = "Build a nixos and switch.";
-            exec = ''
-              sudo nixos-rebuild switch --flake "$1" 
-            '';
+            exec = ''sudo nixos-rebuild switch --flake "$1" '';
             category = "nixos";
           };
           gc = {
             description = "run collect garbage remove unused package.";
             exec = "sudo nix-collect-garbage -d";
             category = "nix";
+          };
+          list-generations = {
+            description = "list all generations";
+            exec = "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations";
+            category = "nixos";
+          };
+          remove-generations = {
+            description = "remove some system generations profile";
+            exec = ''sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations "$1"'';
+            category = "nixos";
           };
         };
         devShells.default = pkgs.mkShell {
@@ -96,6 +102,12 @@
           shellHook = ''
             alias lg=lazygit
             alias yz=yazi
+
+            # auto setup zsh env after enter development environment.
+            if command -v zsh &> /dev/null
+            then
+              zsh
+            fi
           '';
         };
       };

@@ -1,10 +1,13 @@
 { pkgs, ... }: {
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
   xdg.configFile."hypr/autostart.sh".source = ./autostart.sh;
-  home.file.".config/hypr/scripts/swwl.py".source = ./swwl.py;
+  xdg.configFile."hypr/scripts/swwl.py".source = ./swwl.py;
 
-  home.packages = [
-    pkgs.mako
+  home.packages = with pkgs; [
+    mako
+    waybar
+    adwaita-qt
+    gnome.adwaita-icon-theme
   ];
 
   home.sessionVariables = {
@@ -18,11 +21,8 @@
 
 
     EDITOR = "nvim";
-    BROWSER = "firefox";
-    TERMINAL = "kitty";
-    # GTK_IM_MODULE = "fcitx5";
-    # QT_IM_MODULE = "fcitx5";
-    # XMODIFIERS = "@im=fcitx5";
+    BROWSER = "microsoft-edge-stable";
+    TERMINAL = "wezterm";
     QT_QPA_PLATFORMTHEME = "gtk3";
     QT_SCALE_FACTOR = "1";
     MOZ_ENABLE_WAYLAND = "1";
@@ -72,7 +72,7 @@
     };
 
     font = {
-      name = "JetBrains Mono";
+      name = "LXGW WenKai Mono";
       # name = "Maple Mono NF";
       size = 12;
     };
@@ -89,4 +89,10 @@
       gtk-xft-rgba="rgb"
     '';
   };
+
+  programs.waybar = {
+    enable = true;
+  };
+  xdg.configFile."waybar/config".source = ./waybar-config;
+  xdg.configFile."waybar/style.css".source = ./waybar.css;
 }

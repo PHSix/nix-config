@@ -15,6 +15,7 @@ nixpkgs.lib.nixosSystem rec {
     ../hardware/hardware-configuration.nix
 
     ../module/hyprland.nix
+    # ../module/wayfire.nix
     ../module/network.nix
     ../module/grub.nix
     ../module/misc.nix
@@ -24,6 +25,8 @@ nixpkgs.lib.nixosSystem rec {
     ../module/nixpkgs.nix
     ../module/locale.nix
     ../module/proxychains.nix
+    ../module/amd.nix
+    # ../module/gnome.nix
 
     home-manager.nixosModules.home-manager
     {
@@ -42,7 +45,8 @@ nixpkgs.lib.nixosSystem rec {
           ../home/wezterm
           ../home/zsh
           ../home/vim
-          ../home/waybar
+          # ../home/gnome.nix
+          # ../home/wayfire
           ../home/hyprland
           ../home/mako
           ../home/wofi

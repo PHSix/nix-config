@@ -1,3 +1,8 @@
-{...}: {
-	home.file.".config/wayfire.ini".source = ./wayfire.ini
+{ pkgs, ... }: {
+  home.file.".config/wayfire.ini".source = ./wayfire.ini;
+
+  home.packages = with pkgs; [
+    adwaita-qt
+    gnome.adwaita-icon-theme
+  ];
 }

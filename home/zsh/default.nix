@@ -80,10 +80,6 @@
     pure-prompt
     zsh-powerlevel10k
   ];
-  # programs.starship = {
-  #   enable = true;
-  #   enableZshIntegration = true;
-  #   enableBashIntegration = true;
-  # };
+
   xdg.configFile."zsh/.p10k.zsh".source = ./p10k.zsh;
 }

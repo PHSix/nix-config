@@ -13,8 +13,8 @@
       libinput.enable = true;
       displayManager = {
         gdm.enable = true;
-        autoLogin.enable = true;
-        autoLogin.user = "ph";
+        # autoLogin.enable = true;
+        # autoLogin.user = "ph";
       };
     };
     udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
