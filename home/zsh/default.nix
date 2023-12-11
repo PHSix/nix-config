@@ -37,16 +37,6 @@
           sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
         };
       }
-      # {
-      #   name = "zap-prompt";
-      #   file = "zap-prompt.zsh-theme";
-      #   src = pkgs.fetchFromGitHub {
-      #     owner = "zap-zsh";
-      #     repo = "zap-prompt";
-      #     rev = "7cf4762cc23761493f0b4f86270b780b55254c20";
-      #     sha256 = "sha256-s6uaqI/mjtOqr8mKsKb/u+JzLxaaeItonRCRdmoZx5g=";
-      #   };
-      # }
     ];
     initExtra = ''
       if type "yazi" > /dev/null; then
@@ -81,5 +71,5 @@
     zsh-powerlevel10k
   ];
 
-  xdg.configFile."zsh/.p10k.zsh".source = ./p10k.zsh;
+  home.file.".config/zsh/.p10k.zsh".source = ./p10k.zsh;
 }

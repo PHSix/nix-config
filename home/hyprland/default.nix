@@ -1,6 +1,14 @@
 { pkgs, ... }: {
   xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
-  xdg.configFile."hypr/autostart.sh".source = ./autostart.sh;
+  xdg.configFile."hypr/autostart.sh".text = ''
+    nm-applet &
+    python3 ~/.config/hypr/scripts/swwl.py &
+    udiskie &
+    fcitx5 &
+    mako &
+    rm /tmp/v2rayA-running.log
+    v2rayA --lite >> /tmp/v2rayA-running.log &
+  '';
   xdg.configFile."hypr/scripts/swwl.py".source = ./swwl.py;
 
   home.packages = with pkgs; [
@@ -21,9 +29,7 @@
 
 
     EDITOR = "nvim";
-    BROWSER = "microsoft-edge-stable";
-    TERMINAL = "wezterm";
-    QT_QPA_PLATFORMTHEME = "gtk3";
+    BROWSER = "microsoft-edge";
     QT_SCALE_FACTOR = "1";
     MOZ_ENABLE_WAYLAND = "1";
     SDL_VIDEODRIVER = "wayland";
