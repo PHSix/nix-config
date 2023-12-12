@@ -2,20 +2,12 @@ inputs@{ nixpkgs, home-manager, ... }:
 nixpkgs.lib.nixosSystem rec {
 
   specialArgs = inputs // { inherit system; };
-  # pkgs = import nixpkgs {
-  #   config = { allowUnfree = true;
-  #     allowAliases = false;
-  #   };
-  #
-  #   system = system;
-  # };
   system = "x86_64-linux";
 
   modules = [
     ../hardware/hardware-configuration.nix
 
-    ../module/hyprland.nix
-    # ../module/wayfire.nix
+    ../desktop/hyprland.nix
     ../module/network.nix
     ../module/grub.nix
     ../module/misc.nix
@@ -26,7 +18,6 @@ nixpkgs.lib.nixosSystem rec {
     ../module/locale.nix
     ../module/proxychains.nix
     ../module/amd.nix
-    # ../module/gnome.nix
 
     home-manager.nixosModules.home-manager
     {
@@ -45,8 +36,6 @@ nixpkgs.lib.nixosSystem rec {
           ../home/wezterm
           ../home/zsh
           ../home/vim
-          # ../home/gnome.nix
-          # ../home/wayfire
           ../home/hyprland
           ../home/mako
           ../home/wofi

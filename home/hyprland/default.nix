@@ -17,17 +17,14 @@
     waybar
     adwaita-qt
     gnome.adwaita-icon-theme
+
+    bibata-cursors
   ];
 
   home.sessionVariables = {
     GTK_THEME = "Catppuccin-Frappe-Pink";
-    XCURSOR_THEME = "Numix-Cursor";
-    # XDG_CURRENT_DESKTOP = "Hyprland";
-    # XDG_SESSION_TYPE = "wayland";
-    # XDG_SESSION_DESKTOP = "Hyprland";
+    XCURSOR_THEME = "Bibata-Modern-Classic";
     GDK_BACKEND = "wayland,x11";
-    # QT_QPA_PLATFORM = "wayland;xcb";
-
 
     EDITOR = "nvim";
     BROWSER = "microsoft-edge";
@@ -38,15 +35,10 @@
     QT_QPA_PLATFORM = "wayland";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
     QT_AUTO_SCREEN_SCALE_FACTOR = "1";
-    # WLR_DRM_DEVICES = "/dev/dri/card1:/dev/dri/card0";
-    WLR_NO_HARDWARE_CURSORS = "1"; # if no cursor,uncomment this line  
+    WLR_NO_HARDWARE_CURSORS = "1"; # if no cursor,uncomment this line
     WLR_RENDERER_ALLOW_SOFTWARE = "1";
-    # GBM_BACKEND = "nvidia-drm";
     CLUTTER_BACKEND = "wayland";
-    # __GLX_VENDOR_LIBRARY_NAME = "nvidia";
-    # LIBVA_DRIVER_NAME = "nvidia";
     WLR_RENDERER = "vulkan";
-    # __NV_PRIME_RENDER_OFFLOAD = "1";
 
     XDG_CURRENT_DESKTOP = "Hyprland";
     XDG_SESSION_DESKTOP = "Hyprland";
@@ -54,15 +46,13 @@
     XDG_CACHE_HOME = "\${HOME}/.cache";
     XDG_CONFIG_HOME = "\${HOME}/.config";
     XDG_BIN_HOME = "\${HOME}/.local/bin";
-    XDG_DATA_HOME = "\${HOME}/.local/share";
   };
   home.pointerCursor = {
-    package = pkgs.numix-cursor-theme;
-    name = "Numix-Cursor";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Classic";
     size = 12;
   };
   home.pointerCursor.gtk.enable = true;
-
 
   gtk = {
     enable = true;
@@ -70,9 +60,7 @@
       name = "Catppuccin-Frappe-Pink";
       package = pkgs.catppuccin-frappe-gtk;
     };
-    cursorTheme = {
-      name = "Numix-Cursor";
-    };
+    cursorTheme = { name = "Bibata-Modern-Classic"; };
     iconTheme = {
       name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
@@ -97,9 +85,7 @@
     '';
   };
 
-  programs.waybar = {
-    enable = true;
-  };
+  programs.waybar = { enable = true; };
   xdg.configFile."waybar/config".source = ./waybar-config;
   xdg.configFile."waybar/style.css".source = ./waybar.css;
 }
