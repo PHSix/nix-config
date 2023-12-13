@@ -9,6 +9,7 @@
 , webkitgtk
 , udev
 , libayatana-appindicator
+, tree
 }:
 
 stdenv.mkDerivation rec {
@@ -17,7 +18,8 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v${version}/clash-verge_${version}_amd64.deb";
-    hash = "sha256-W7vlI0pQyaepLxmR/CyyJ6vNYtZPuFrRYgQ8TDycrLg=";
+    # url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v1.4.4/clash-verge_1.4.4_amd64.deb";
+    hash = "sha256-mQ0lDzZOkypTcF+ImFPToQhT3YMsiSmPYj2Z3HttcIk=";
   };
 
   nativeBuildInputs = [
@@ -30,6 +32,7 @@ stdenv.mkDerivation rec {
     openssl
     webkitgtk
     stdenv.cc.cc
+    tree
   ];
 
   runtimeDependencies = [
@@ -42,7 +45,7 @@ stdenv.mkDerivation rec {
 
     mkdir -p $out/bin
     mv usr/* $out
-    rm $out/bin/{clash,clash-meta}
+    rm $out/bin/clash-meta
 
     runHook postInstall
   '';
@@ -58,6 +61,6 @@ stdenv.mkDerivation rec {
     license = licenses.gpl3Plus;
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
     maintainers = with maintainers; [ zendo ];
-    mainProgram = "clash-verge-rev";
+    mainProgram = "clash-verge";
   };
 }

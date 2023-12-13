@@ -12,6 +12,7 @@ return {
   font_size = 12,
   enable_tab_bar = false,
   color_scheme = "Nord (base16)",
+  window_background_opacity = 0.7,
   enable_wayland = false,
   window_padding = {
     left = 0,

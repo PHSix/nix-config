@@ -53,12 +53,12 @@
           };
           rebuild = {
             description = "Build a nixos for boot.";
-            exec = ''sudo nixos-rebuild boot --flake "$1"'';
+            exec = ''sudo -E nixos-rebuild boot --flake "$1"'';
             category = "nixos";
           };
           switch = {
             description = "Build a nixos and switch.";
-            exec = ''sudo nixos-rebuild switch --flake "$1" '';
+            exec = ''sudo -E nixos-rebuild switch --flake "$1" '';
             category = "nixos";
           };
           gc = {

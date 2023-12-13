@@ -1,4 +1,4 @@
-{ pkgs, system, hyprland, ... }: {
+{ pkgs, system, hyprland, lib, ... }: {
   programs.hyprland = {
     enable = true;
 
@@ -39,6 +39,8 @@
     swww
   ];
 
+
+  hardware.pulseaudio.enable = lib.mkForce false;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
