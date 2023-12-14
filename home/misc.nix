@@ -22,4 +22,11 @@
   # services.gpg-agent = { enable = true; };
 
   xdg.configFile."user-dirs.dirs".source = ./user-dirs.dirs;
+
+  home.file.".ssh/config".text = ''
+    Host github.com
+    Hostname ssh.github.com
+    Port 443
+    User git
+  '';
 }

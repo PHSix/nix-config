@@ -16,7 +16,16 @@
     dconf.enable = true;
   };
 
-  programs.regreet.enable = true;
+  programs.regreet = {
+    enable = true;
+    settings = {
+      background.path = "/etc/greetd/background.png";
+    };
+  };
+
+  environment.etc = {
+    "greetd/background.png".source = ../imgs/default.png;
+  };
 
   environment.systemPackages = with pkgs; [
     greetd.gtkgreet
