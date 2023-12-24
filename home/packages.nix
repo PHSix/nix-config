@@ -8,5 +8,6 @@
     microsoft-edge
     # vscode-fhs
     flameshot
+    vlc
   ];
 }

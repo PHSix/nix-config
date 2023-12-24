@@ -5,7 +5,6 @@
     clock24 = true;
     escapeTime = 0;
     keyMode = "vi";
-    newSession = true;
     prefix = "M-s";
     # terminal = "tmux-256color";
 

@@ -21,7 +21,7 @@
   programs.gpg = { enable = true; };
   # services.gpg-agent = { enable = true; };
 
-  xdg.configFile."user-dirs.dirs".source = ./user-dirs.dirs;
+  # xdg.configFile."user-dirs.dirs".source = ./user-dirs.dirs;
 
   home.file.".ssh/config".text = ''
     Host github.com

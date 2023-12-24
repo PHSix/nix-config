@@ -73,7 +73,7 @@
           };
           remove-generations = {
             description = "remove some system generations profile";
-            exec = ''sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations "$1"'';
+            exec = ''sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +5'';
             category = "nixos";
           };
         };
@@ -95,6 +95,7 @@
             gccStdenv
             htop
             doas
+            nixd
           ];
           inputsFrom =
             [ config.flake-root.devShell config.mission-control.devShell ];

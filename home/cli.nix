@@ -39,11 +39,14 @@
     # rustc
     # cargo
     python310
+
+    termusic
   ];
 
   home.file.".npmrc" = {
     text = ''
       prefix=~/.npm-packages
+      registry=https://registry.npmmirror.com
     '';
   };
 

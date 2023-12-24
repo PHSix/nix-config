@@ -7,7 +7,8 @@ nixpkgs.lib.nixosSystem rec {
   modules = [
     ../hardware/hardware-configuration.nix
 
-    ../desktop/hyprland.nix
+    # ../desktop/hyprland.nix
+    ../desktop/plasma.nix
     ../module/network.nix
     ../module/grub.nix
     ../module/misc.nix
@@ -36,9 +37,9 @@ nixpkgs.lib.nixosSystem rec {
           ../home/wezterm
           ../home/zsh
           ../home/vim
-          ../home/hyprland
-          ../home/mako
-          ../home/wofi
+          # ../home/hyprland
+          # ../home/mako
+          # ../home/wofi
           ../home/neovim-deps.nix
           ../home/mpd.nix
           ../home/joshuto
