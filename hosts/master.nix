@@ -40,7 +40,7 @@ nixpkgs.lib.nixosSystem rec {
           # ../home/hyprland
           # ../home/mako
           # ../home/wofi
-          ../home/neovim-deps.nix
+          ../home/neovim.nix
           ../home/mpd.nix
           ../home/joshuto
           ../home/gitui

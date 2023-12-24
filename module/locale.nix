@@ -63,14 +63,15 @@ in
       };
       defaultFonts.emoji = [ "Twitter Color Emoji" "Noto Color Emoji" ];
       defaultFonts.monospace = [
+        "LXGW WenKai Mono"
         "UbuntuMono Nerd Font Mono"
         "Symbols Nerd Font"
         "Noto Sans CJK SC"
         "Sarasa Mono SC"
       ];
       defaultFonts.sansSerif =
-        [ "Noto Sans CJK SC" "LXGW WenKai Mono" "DejaVu Sans" ];
-      defaultFonts.serif = [ "Noto Sans CJK SC" "LXGW WenKai Mono" ];
+        [ "LXGW WenKai Mono" "Noto Sans CJK SC" "LXGW WenKai Mono" "DejaVu Sans" ];
+      defaultFonts.serif = [ "LXGW WenKai Mono" "Noto Sans CJK SC" "LXGW WenKai Mono" ];
 
       localConf = ''
         <?xml version="1.0" encoding="UTF-8"?>
@@ -120,7 +121,6 @@ in
     fontDir.enable = true;
     enableGhostscriptFonts = true;
     packages = (with pkgs; [
-      # noto-fonts-cjk
       fira
       fira-code
       symbola # 特殊字符
@@ -131,7 +131,7 @@ in
       rofi-emoji
       twitter-color-emoji
       unicode-emoji
-      # vistafonts # many windows font(include consolas)
+      vistafonts # many windows font(include consolas)
       maple-mono-NF
       monego
 
@@ -146,8 +146,8 @@ in
       intel-one-mono
       icursive-nerd-font
     ]) ++ [
-      # pkgs.nerdfonts
-      nerdfonts
+      pkgs.nerdfonts
+      # nerdfonts
     ];
   };
 }

@@ -36,7 +36,7 @@ pkgs.lib.nixosSystem {
           ../home/vim
           ../home/waybar
           ../home/hyprland
-          ../home/neovim-deps.nix
+          ../home/neovim.nix
           ../home/mpd.nix
           ../home/joshuto
           ../home/gitui
@@ -45,4 +45,3 @@ pkgs.lib.nixosSystem {
     }
   ];
 }
-

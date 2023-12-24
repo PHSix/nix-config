@@ -28,7 +28,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/tmux.nix
           ../home/zsh
           ../home/vim
-          ../home/neovim-deps.nix
+          ../home/neovim.nix
           ../home/gitui
           ../home/yazi
         ];
@@ -36,4 +36,3 @@ nixpkgs.lib.nixosSystem rec {
     }
   ];
 }
-

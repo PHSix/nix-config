@@ -29,4 +29,6 @@
     Port 443
     User git
   '';
+
+  fonts.fontconfig.enable = false;
 }
