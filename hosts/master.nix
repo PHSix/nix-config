@@ -1,24 +1,23 @@
 inputs@{ nixpkgs, home-manager, ... }:
 nixpkgs.lib.nixosSystem rec {
 
-  specialArgs = inputs // { inherit system; };
+  specialArgs = inputs // { inherit system; username = "ph"; };
   system = "x86_64-linux";
 
   modules = [
     ../hardware/hardware-configuration.nix
 
-    # ../desktop/hyprland.nix
-    ../desktop/plasma.nix
-    ../module/network.nix
-    ../module/grub.nix
-    ../module/misc.nix
-    ../module/nixos.nix
-    ../module/user.nix
-    ../module/packages.nix
-    ../module/nixpkgs.nix
-    ../module/locale.nix
-    ../module/proxychains.nix
-    ../module/amd.nix
+    ../modules/desktop/plasma.nix
+    ../modules/network.nix
+    ../modules/grub.nix
+    ../modules/misc.nix
+    ../modules/nixos.nix
+    ../modules/user.nix
+    ../modules/packages.nix
+    ../modules/nixpkgs.nix
+    ../modules/locale.nix
+    ../modules/proxychains.nix
+    ../modules/amd.nix
 
     home-manager.nixosModules.home-manager
     {

@@ -1,7 +1,7 @@
 inputs@{ nixpkgs, home-manager, ... }:
 nixpkgs.lib.nixosSystem rec {
 
-  specialArgs = inputs // { inherit system; };
+  specialArgs = inputs // { inherit system; username = "ph"; };
 
   system = "aarch64-linux";
 
@@ -11,9 +11,9 @@ nixpkgs.lib.nixosSystem rec {
         "${modulesPath}/virtualisation/lxc-container.nix"
       ];
     })
-    ../module/nixos.nix
-    ../module/nixpkgs.nix
-    ../module/user.nix
+    ../modules/nixos.nix
+    ../modules/nixpkgs.nix
+    ../modules/user.nix
 
     home-manager.nixosModules.home-manager
     {
