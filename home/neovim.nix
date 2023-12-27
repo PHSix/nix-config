@@ -2,11 +2,8 @@
   programs.neovim = {
     enable = true;
     package = pkgs.neovim-nightly;
-    extraPackages = (with pkgs.python310Packages;
-      [
-        autopep8
-
-      ]) ++ (with pkgs; [
+    extraPackages = (with pkgs.python310Packages; [ autopep8 black ])
+      ++ (with pkgs; [
       gopls # for golang
       typescript
       # nodePackages.typescript-language-server
@@ -18,7 +15,6 @@
       tailwindcss-language-server
       python310Packages.python-lsp-server # for python
       nil
-      nixfmt
       nixpkgs-fmt
       lua-language-server
 

@@ -1,9 +1,27 @@
-# How to setup this config for my nixos?
+<p>
+    <center>
+        <img src="./imgs/nixos-logo.png" width=30% />
+    </center>
+    <center>
+        <font size=18 face=bold>
+            Nix Configurations for pc, laptop and vms
+        </font>
+    </center>
+</p>
 
-1. Exec `sudo -i` enter into root.
-2. Parted your system disk and mounted them.
-3. Exec `nixos-generate-config --root /mnt` for generate default config.
-4. Clone this repository in your system and use your `hardware-configuration.nix`(which generate by `nixos-generate-config` command, it exists in `/mnt/etc/nixos/hardware-configuration.nix`) to replace `hardware/hardware-configuration.nix`
-5. Change current path in repository, exec `nixos-rebuild switch --flake .#nixosSystem` and when exec complete enter your root password.
-6. Reboot system, set the local userr password. And complete some system presets, like connection network etc.
-7. Change current path in repository again, install home-manager by standalone way. And then exec `home-manager switch --flake .#nixosUser` to setup user local environment.
+> This repository stores some flake configurations that I usually use. Includes `master`, `laptop` and `orb-vm`.
+
+# The flake output
+
+```
+git+file:///Users/ph/nix
+├───devShells
+│   ├───aarch64-linux
+│   │   └───default: development environment 'nix-shell'
+│   └───x86_64-linux
+│       └───default omitted (use '--all-systems' to show)
+└───nixosConfigurations
+    ├───laptop: NixOS configuration
+    ├───master: NixOS configuration
+    └───orb-vm: NixOS configuration
+```
