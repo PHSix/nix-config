@@ -17,6 +17,7 @@
       nil
       nixpkgs-fmt
       lua-language-server
+      stylua
 
       # rust-analyzer
       # rustfmt

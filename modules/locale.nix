@@ -25,7 +25,7 @@ in
         fcitx5-gtk
         fcitx5-chewing
         fcitx5-nord
-        # fcitx5-pinyin-zhiwiki
+        fcitx5-pinyin-zhiwiki
 
         libsForQt5.fcitx5-qt
       ];
