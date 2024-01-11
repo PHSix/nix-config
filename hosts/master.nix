@@ -1,13 +1,20 @@
 inputs@{ nixpkgs, home-manager, ... }:
+let
+  desktop = import ../desktop/plasma.nix;
+in
 nixpkgs.lib.nixosSystem rec {
 
-  specialArgs = inputs // { inherit system; username = "ph"; };
+  specialArgs = inputs // {
+    inherit system;
+    username = "ph";
+  };
   system = "x86_64-linux";
 
   modules = [
     ../hardware/hardware-configuration.nix
+    desktop.systemModule
 
-    ../modules/desktop/plasma.nix
+    # ../modules/desktop/plasma.nix
     ../modules/network.nix
     ../modules/grub.nix
     ../modules/misc.nix
@@ -26,6 +33,7 @@ nixpkgs.lib.nixosSystem rec {
       home-manager.users.ph = _: {
 
         imports = [
+          desktop.homeModule
           ../home
           ../home/cli.nix
           ../home/packages.nix

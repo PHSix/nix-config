@@ -1,4 +1,7 @@
 { pkgs, home-manager, ... }:
+let
+  desktop = import ../desktop/hyprland.nix;
+in
 pkgs.lib.nixosSystem {
   inherit pkgs;
 
@@ -7,7 +10,7 @@ pkgs.lib.nixosSystem {
   modules = [
     ../hardware/hardware-configuration.nix
 
-    ../module/hyprland.nix
+    desktop.systemModule
     ../module/network.nix
     ../module/grub.nix
     ../module/misc.nix
@@ -25,6 +28,7 @@ pkgs.lib.nixosSystem {
       home-manager.users.ph = _: {
 
         imports = [
+          desktop.homeModule
           ../home
           ../home/cli.nix
           ../home/packages.nix
