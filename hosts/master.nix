@@ -1,6 +1,6 @@
 inputs@{ nixpkgs, home-manager, ... }:
 let
-  desktop = import ../desktop/plasma.nix;
+  desktop = import ../desktop/plasma.nix { };
 in
 nixpkgs.lib.nixosSystem rec {
 
@@ -11,7 +11,7 @@ nixpkgs.lib.nixosSystem rec {
   system = "x86_64-linux";
 
   modules = [
-    ../hardware/hardware-configuration.nix
+    ../hardware-configuration.nix
     desktop.systemModule
 
     # ../modules/desktop/plasma.nix
@@ -44,9 +44,6 @@ nixpkgs.lib.nixosSystem rec {
           ../home/wezterm
           ../home/zsh
           ../home/vim
-          # ../home/hyprland
-          # ../home/mako
-          # ../home/wofi
           ../home/neovim.nix
           ../home/mpd.nix
           ../home/joshuto

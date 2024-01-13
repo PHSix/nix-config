@@ -8,7 +8,7 @@ pkgs.lib.nixosSystem {
   system = "x86_64-linux";
 
   modules = [
-    ../hardware/hardware-configuration.nix
+    ../hardware-configuration.nix
 
     desktop.systemModule
     ../module/network.nix
