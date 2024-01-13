@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  extraConfig = builtins.readFile ./vimrc;
+  vimrc = builtins.readFile ./vimrc;
 in
 {
   programs.vim = {
@@ -27,11 +27,13 @@ in
     settings = {
       ignorecase = true;
       number = true;
-      shiftwidth = 4;
-      tabstop = 4;
+      shiftwidth = 2;
+      tabstop = 2;
       expandtab = true;
       smartcase = true;
     };
-    inherit extraConfig;
+    extraConfig = ''
+      ${vimrc}
+    '';
   };
 }

@@ -8,6 +8,12 @@ set termguicolors
 set noswapfile
 set cursorline
 
+let g:mapleader = "<space>"
+
+augroup vimrc_augroup
+    autocmd filetype help nmap q <Cmd>q<CR>
+augroup END
+
 colorscheme edge
 noremap ; :
 vmap fy "+y
@@ -31,11 +37,11 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_exclude_filetypes = ['help', 'coc-explorer']
 
 function! ShowDocumentation()
-  if CocAction('hasProvider', 'hover')
-  call CocActionAsync('doHover')
-  else
-  call feedkeys('K', 'in')
-  endif
+    if CocAction('hasProvider', 'hover')
+        call CocActionAsync('doHover')
+    else
+        call feedkeys('K', 'in')
+    endif
 endfunction
 
 function! CheckBackspace() abort
@@ -72,14 +78,6 @@ inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                 \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
-
-" coc-explorer settings
-let g:coc_global_extensions = [
-      \'coc-json', 'coc-git', 'coc-vimlsp', 'coc-go', 
-      \'coc-tsserver', 'coc-eslint', 'coc-marketplace',
-      \ 'coc-explorer', 'coc-snippets', 'coc-pairs'
-      \]
-
 
 " Use <c-space> to trigger completion
 if has('nvim')
