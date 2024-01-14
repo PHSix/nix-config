@@ -13,6 +13,7 @@ in
       vim-commentary
       vim-rooter
       vim-lastplace
+      vim-floaterm
 
       coc-nvim
       coc-go

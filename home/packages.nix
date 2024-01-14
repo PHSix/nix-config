@@ -5,7 +5,7 @@
     clash-verge-rev
     v2raya
     clash-meta
-    microsoft-edge
+    microsoft-edge-beta
     # vscode-fhs
     flameshot
     vlc

@@ -30,6 +30,8 @@ nmap <leader>fb <Cmd>Leaderf buffer<CR>
 
 let g:lightline = {'colorscheme': 'edge'}
 
+let g:floaterm_keymap_toggle = '<C-t>'
+
 let g:Lf_CursorBlink = 0
 let g:Lf_WindowPosition = "popup"
 
