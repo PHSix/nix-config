@@ -1,4 +1,4 @@
-{
+{ ... }: {
   systemModule = { pkgs, system, hyprland, lib, ... }: {
     programs.hyprland = {
       enable = true;
@@ -59,5 +59,11 @@
     };
   };
 
-  homeModule = { };
+  homeModule = { ... }: {
+    imports = [
+      ../home/hyprland
+      ../home/mako
+      ../home/wofi
+    ];
+  };
 }

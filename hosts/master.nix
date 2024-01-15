@@ -1,6 +1,6 @@
 inputs@{ nixpkgs, home-manager, ... }:
 let
-  desktop = import ../desktop/plasma.nix { };
+  desktop = import ../desktop/hyprland.nix { };
 in
 nixpkgs.lib.nixosSystem rec {
 
