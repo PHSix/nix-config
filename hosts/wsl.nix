@@ -1,14 +1,17 @@
-inputs@{ nixpkgs, home-manager, ... }:
+inputs@{ nixpkgs, home-manager, nixos-wsl, ... }:
 nixpkgs.lib.nixosSystem rec {
   system = "x86_64";
   specialArgs = inputs // { inherit system; username = "ph"; };
 
   modules = [
-    ({ modulesPath, ... }: {
-      imports = [
-        "${modulesPath}/virtualisation/lxc-container.nix"
-      ];
-    })
+    nixos-wsl.modules
+
+    {
+      wsl = {
+        enable = true;
+        defaultUser = "ph";
+      };
+    }
     ../modules/nixos.nix
     ../modules/nixpkgs.nix
     ../modules/user.nix

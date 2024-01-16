@@ -18,6 +18,11 @@
     flake-root.url = "github:srid/flake-root";
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

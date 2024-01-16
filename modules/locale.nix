@@ -123,7 +123,7 @@ in
     packages = (with pkgs; [
       fira
       fira-code
-      symbola # 特殊字符
+      # symbola # 特殊字符
       jetbrains-mono
       font-awesome
 
@@ -146,8 +146,8 @@ in
       intel-one-mono
       icursive-nerd-font
     ]) ++ [
-      pkgs.nerdfonts
-      # nerdfonts
+      # pkgs.nerdfonts
+      nerdfonts
     ];
   };
 }

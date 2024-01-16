@@ -38,7 +38,7 @@
     rustup
     # rustc
     # cargo
-    python310
+    python311
 
     termusic
   ];
