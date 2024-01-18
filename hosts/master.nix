@@ -3,7 +3,6 @@ let
   desktop = import ../desktop/hyprland.nix { };
 in
 nixpkgs.lib.nixosSystem rec {
-
   specialArgs = inputs // {
     inherit system;
     username = "ph";
@@ -14,7 +13,6 @@ nixpkgs.lib.nixosSystem rec {
     ../hardware-configuration.nix
     desktop.systemModule
 
-    # ../modules/desktop/plasma.nix
     ../modules/network.nix
     ../modules/grub.nix
     ../modules/misc.nix

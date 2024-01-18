@@ -1,6 +1,6 @@
 inputs@{ nixpkgs, home-manager, nixos-wsl, ... }:
 nixpkgs.lib.nixosSystem rec {
-  system = "x86_64";
+  system = "x86_64-linux";
   specialArgs = inputs // { inherit system; username = "ph"; };
 
   modules = [
