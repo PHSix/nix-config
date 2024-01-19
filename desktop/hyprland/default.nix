@@ -25,7 +25,7 @@
     };
 
     environment.etc = {
-      "greetd/background.png".source = ../imgs/default.png;
+      "greetd/background.png".source = ../../imgs/default.png;
     };
 
     environment.systemPackages = with pkgs; [
@@ -61,9 +61,9 @@
 
   homeModule = { ... }: {
     imports = [
-      ./hyprland/default.nix
-      ../home/mako
-      ../home/wofi
+      ./impl/default.nix
+      ../../home/mako
+      ../../home/wofi
     ];
   };
 }

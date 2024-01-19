@@ -1,6 +1,6 @@
 { pkgs, home-manager, ... }:
 let
-  desktop = import ../desktop/hyprland.nix;
+  desktop = import ../desktop/hyprland/default.nix {};
 in
 pkgs.lib.nixosSystem {
   inherit pkgs;
@@ -39,7 +39,6 @@ pkgs.lib.nixosSystem {
           ../home/zsh
           ../home/vim
           ../home/waybar
-          ../home/hyprland
           ../home/neovim.nix
           ../home/mpd.nix
           ../home/joshuto

@@ -10,7 +10,7 @@
     v2rayA --lite >> /tmp/v2rayA-running.log &
   '';
   xdg.configFile."hypr/scripts/swwl.py".source = ./swwl.py;
-  home.file.".wallpapers/default.png".source = ../../imgs/default.png;
+  home.file.".wallpapers/default.png".source = ../../../imgs/default.png;
 
   home.packages = with pkgs; [
     mako
