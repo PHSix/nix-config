@@ -25,5 +25,5 @@
       enable = true;
     };
   };
-  homeModule = { };
+  homeModule = { ... }: { };
 }

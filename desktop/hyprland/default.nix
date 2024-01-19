@@ -61,7 +61,7 @@
 
   homeModule = { ... }: {
     imports = [
-      ../home/hyprland
+      ./hyprland/default.nix
       ../home/mako
       ../home/wofi
     ];
