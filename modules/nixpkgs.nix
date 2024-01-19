@@ -12,7 +12,7 @@ let
   });
   overlays = [
     selfPkgs
-    inputs.neovim-nightly-overlay.overlay
+    # inputs.neovim-nightly-overlay.overlay
 
     # waybar-overlay
   ];

@@ -112,7 +112,7 @@
             # auto setup zsh env after enter development environment.
             if command -v zsh &> /dev/null
             then
-              zsh
+              exec zsh
             fi
           '';
         };

@@ -7,6 +7,7 @@ set hlsearch
 set termguicolors
 set noswapfile
 set cursorline
+set background=dark
 
 map <space> <leader>
 
@@ -14,7 +15,7 @@ augroup vimrc_augroup
     autocmd filetype help nmap q <Cmd>q<CR>
 augroup END
 
-colorscheme edge
+colorscheme one
 noremap ; :
 vmap fy "+y
 
@@ -28,7 +29,7 @@ nmap <leader>fo <Cmd>Leaderf mru<CR>
 nmap <leader>fw <Cmd>Leaderf rg<CR>
 nmap <leader>fb <Cmd>Leaderf buffer<CR>
 
-let g:lightline = {'colorscheme': 'edge'}
+let g:lightline = {'colorscheme': 'one'}
 
 let g:floaterm_keymap_toggle = '<C-t>'
 

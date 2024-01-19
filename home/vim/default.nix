@@ -14,6 +14,7 @@ in
       vim-rooter
       vim-lastplace
       vim-floaterm
+      vim-one
 
       coc-nvim
       coc-go
