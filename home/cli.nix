@@ -30,8 +30,6 @@
     nurl
     mpv
 
-    emacs
-
     nodejs
     go
     rustup
