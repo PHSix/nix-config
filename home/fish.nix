@@ -37,6 +37,32 @@
       nvi = "nvim";
       fetch = "fastfetch";
     };
+
+    shellInit = ''
+      set -g fish_key_bindings fish_vi_key_bindings
+      bind -M insert \cp history-search-backward
+      bind -M insert \cn history-search-forward
+      bind -M insert \cf forward-char
+      bind -M insert \cb backward-char
+
+      ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+    '';
+
+    functions = {
+      fish_greeting = "";
+      nix-shell = {
+        wraps = "nix-shell";
+        body = ''
+          for ARG in $argv
+            if [ "$ARG" = --run ]
+              command nix-shell $argv
+              return $status
+            end
+          end
+          command nix-shell $argv --run "exec fish"
+        '';
+      };
+    };
   };
   programs.fzf = {
     enable = true;
@@ -50,20 +76,6 @@
   };
 
   programs.yazi.enableFishIntegration = true;
-
-  xdg.configFile."fish/config.fish".text = ''
-    set - g fish_key_bindings fish_vi_key_bindings
-    bind - M insert \cp history-search-backward
-    bind - M insert \cn history-search-forward
-    bind - M insert \cf forward-char
-    bind - M insert \cb backward-char
-
-    ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
-
-    # function fish_greeting                                            
-    #     # do nothing
-    # end
-  '';
 
   home.packages = with pkgs; [
     any-nix-shell
