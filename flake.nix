@@ -106,13 +106,10 @@
             [ config.flake-root.devShell config.mission-control.devShell ];
 
           shellHook = ''
-            alias lg=lazygit
-            alias yz=yazi
-
-            # auto setup zsh env after enter development environment.
-            if command -v zsh &> /dev/null
+            # auto setup fish env after enter development environment.
+            if command -v fish &> /dev/null
             then
-              exec zsh
+              exec fish
             fi
           '';
         };

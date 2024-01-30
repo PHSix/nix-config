@@ -1,7 +1,7 @@
 inputs@{ nixpkgs, home-manager, ... }:
 nixpkgs.lib.nixosSystem rec {
 
-  specialArgs = inputs // { inherit system; username = "ph"; };
+  specialArgs = inputs // { inherit system; username = "ph"; shell = nixpkgs.fish; };
 
   system = "aarch64-linux";
 
@@ -15,6 +15,11 @@ nixpkgs.lib.nixosSystem rec {
     ../modules/nixpkgs.nix
     ../modules/user.nix
 
+    ({ pkgs, ... }: {
+      users.users."ph".shell = pkgs.fish;
+      programs.fish.enable = true;
+    })
+
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
@@ -26,7 +31,8 @@ nixpkgs.lib.nixosSystem rec {
           ../home/cli.nix
           ../home/misc.nix
           ../home/tmux.nix
-          ../home/zsh
+          # ../home/zsh
+          ../home/fish.nix
           ../home/vim
           ../home/neovim.nix
           ../home/gitui

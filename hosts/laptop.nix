@@ -1,6 +1,6 @@
 { pkgs, home-manager, ... }:
 let
-  desktop = import ../desktop/hyprland/default.nix {};
+  desktop = import ../desktop/hyprland/default.nix { };
 in
 pkgs.lib.nixosSystem {
   inherit pkgs;
@@ -21,6 +21,11 @@ pkgs.lib.nixosSystem {
     ../module/hybrid-graphics.nix
     ../module/proxychains.nix
 
+    ({ pkgs, ... }: {
+      users.users."ph".shell = pkgs.fish;
+      programs.fish.enable = true;
+    })
+
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
@@ -36,7 +41,7 @@ pkgs.lib.nixosSystem {
           ../home/tmux.nix
           ../home/kitty.nix
           ../home/alacritty.nix
-          ../home/zsh
+          ../home/fish.nix
           ../home/vim
           ../home/waybar
           ../home/neovim.nix

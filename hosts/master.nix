@@ -24,6 +24,12 @@ nixpkgs.lib.nixosSystem rec {
     ../modules/proxychains.nix
     ../modules/amd.nix
 
+    ({ pkgs, ... }: {
+      users.users."ph".shell = pkgs.fish;
+      programs.fish.enable = true;
+    })
+
+
     home-manager.nixosModules.home-manager
     {
       home-manager.useGlobalPkgs = true;
@@ -40,7 +46,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/kitty.nix
           ../home/alacritty.nix
           ../home/wezterm
-          ../home/zsh
+          ../home/fish.nix
           ../home/vim
           ../home/neovim.nix
           ../home/mpd.nix
