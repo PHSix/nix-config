@@ -1,16 +1,16 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.fish = {
     enable = true;
     shellAbbrs = {
       yz = "yazi";
-      ls = "eza $eza_params";
-      l = "eza --git-ignore $eza_params";
-      ll = "eza --all --header --long $eza_params";
-      llm = "eza --all --header --long --sort=modified $eza_params";
+      ls = "eza";
+      l = "eza --git-ignore";
+      ll = "eza --all --header --long";
+      llm = "eza --all --header --long --sort=modified";
       la = "eza -lbhHigUmuSa";
       lx = "eza -lbhHigUmuSa@";
-      lt = "eza --tree $eza_params";
-      tree = "eza --tree $eza_params";
+      lt = "eza --tree";
+      tree = "eza --tree";
 
       lg = "lazygit";
       cl = "clear";
@@ -58,10 +58,15 @@
     bind - M insert \cf forward-char
     bind - M insert \cb backward-char
 
+    ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
+
     # function fish_greeting                                            
     #     # do nothing
     # end
   '';
-}
 
+  home.packages = with pkgs; [
+    any-nix-shell
+  ];
+}
 
