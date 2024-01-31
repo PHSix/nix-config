@@ -14,7 +14,7 @@ return {
 	enable_tab_bar = false,
 	color_scheme = "Github Dark",
 	-- window_background_opacity = 0.9,
-	enable_wayland = false,
+	enable_wayland = true,
 	window_padding = {
 		left = 0,
 		right = 0,
@@ -33,3 +33,4 @@ return {
 		},
 	},
 }
+
