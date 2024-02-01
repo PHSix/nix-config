@@ -17,10 +17,9 @@ self: super: {
   icursive-nerd-font = super.callPackage ./fonts/icursive-nerd-font.nix { };
   apifox = super.callPackage ./apifox.nix { };
   fcitx5-pinyin-zhiwiki = super.callPackage ./fcitx5-pinyin-zhiwiki.nix { };
-  myVimPlugins = {
-    catppuccin-vim = super.callPackage ./vimPlugins/catppuccin-vim.nix { };
-  };
   catppuccin-frappe-gtk = super.callPackage ./catppuccin-frappe-gtk.nix { };
 
   clash-verge-rev = super.callPackage ./clash-verge-rev.nix { };
+
+  selfVimPlugins.catppuccin-vim = super.callPackage ./vimPlugins/catppuccin-vim.nix { };
 }

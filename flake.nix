@@ -86,36 +86,38 @@
             category = "nixos";
           };
         };
-        devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            vim
-            git
-            lazygit
-            nixpkgs-fmt
-            yazi
-            ripgrep
-            fzf
-            lua-language-server
-            nil
-            neovim
-            nurl
-            gnumake
-            gcc
-            gccStdenv
-            htop
-            doas
-            nixd
-          ];
-          inputsFrom =
-            [ config.flake-root.devShell config.mission-control.devShell ];
+        devShells = {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              vim
+              git
+              lazygit
+              nixpkgs-fmt
+              yazi
+              ripgrep
+              fzf
+              lua-language-server
+              nil
+              neovim
+              nurl
+              gnumake
+              gcc
+              gccStdenv
+              htop
+              doas
+              nixd
+            ];
+            inputsFrom =
+              [ config.flake-root.devShell config.mission-control.devShell ];
 
-          shellHook = ''
-            # auto setup fish env after enter development environment.
-            if command -v fish &> /dev/null
-            then
-              exec fish
-            fi
-          '';
+            shellHook = ''
+              # auto setup fish env after enter development environment.
+              if command -v fish &> /dev/null
+              then
+                exec fish
+              fi
+            '';
+          };
         };
       };
 
