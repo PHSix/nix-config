@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   programs.fish = {
     enable = true;
+
     shellAbbrs = {
       yz = "yazi";
       ls = "eza";
@@ -44,6 +45,13 @@
       bind -M insert \cn history-search-forward
       bind -M insert \cf forward-char
       bind -M insert \cb backward-char
+      bind -M insert \ce end-of-buffer
+      bind -M insert \ca beginning-of-buffer
+
+      set fish_cursor_default     line
+      set fish_cursor_insert      line
+      set fish_cursor_replace_one underscore
+      set fish_cursor_visual      block
 
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';
@@ -64,6 +72,7 @@
       };
     };
   };
+
   programs.fzf = {
     enable = true;
     enableFishIntegration = true;
@@ -76,7 +85,6 @@
   };
 
   programs.yazi.enableFishIntegration = true;
-
   home.packages = with pkgs; [
     any-nix-shell
   ];
