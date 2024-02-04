@@ -1,10 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     htop
-    gcc
-    gccStdenv # for treesitter compiling deps
-    gnumake
-
     wget
     xsel
     ripgrep
@@ -24,18 +20,10 @@
     neofetch
     fastfetch
     bat
-    navi # shell command history finder
 
     # some nix cli utils tool
     nurl
     mpv
-
-    nodejs
-    go
-    rustup
-    # rustc
-    # cargo
-    python311
 
     termusic
   ];

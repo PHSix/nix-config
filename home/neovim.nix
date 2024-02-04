@@ -5,6 +5,8 @@
     extraPackages = (with pkgs.python311Packages; [ autopep8 black python-lsp-server ])
       ++ (with pkgs; [
       gopls # for golang
+      python311
+      nodejs
       typescript
       # nodePackages.typescript-language-server
       nodePackages.volar
@@ -22,6 +24,10 @@
       rust-analyzer
       rustfmt
       watchman
+
+      gcc
+      gccStdenv # for treesitter compiling deps
+      gnumake
     ]);
   };
 }

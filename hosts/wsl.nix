@@ -4,7 +4,7 @@ nixpkgs.lib.nixosSystem rec {
   specialArgs = inputs // { inherit system; username = "ph"; };
 
   modules = [
-    nixos-wsl.modules
+    nixos-wsl.nixosModules.default
 
     {
       wsl = {
@@ -36,6 +36,10 @@ nixpkgs.lib.nixosSystem rec {
           ../home/vim
           ../home/neovim.nix
           ../home/yazi
+
+          ({ pkgs, lib, ... }:
+            (import ../home/dev.nix ({ inherit pkgs lib; } // { useRust = true; useGcc = true; useGo = true; }))
+          )
         ];
       };
     }
