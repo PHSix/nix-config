@@ -15,10 +15,6 @@
   home.packages = with pkgs; [
     mako
     waybar
-    adwaita-qt
-    gnome.adwaita-icon-theme
-
-    bibata-cursors
   ];
 
   home.sessionVariables = {

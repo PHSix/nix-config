@@ -21,6 +21,11 @@
       enable = true;
       settings = {
         background.path = "/etc/greetd/background.png";
+        GTK = {
+          cursor_theme_name = "Bibata-Modern-Classic";
+          icon_theme_name = "Papirus-Dark";
+          theme_name = "Catppuccin-Frappe-Pink";
+        };
       };
     };
 
@@ -43,6 +48,9 @@
       numix-cursor-theme
       catppuccin-cursors
       catppuccin-gtk
+      adwaita-qt
+      gnome.adwaita-icon-theme
+      bibata-cursors
       gtk3
       gtk4
 
@@ -61,7 +69,7 @@
 
   homeModule = { ... }: {
     imports = [
-      ./impl/default.nix
+      ./internal/default.nix
       ../../home/mako
       ../../home/wofi
     ];

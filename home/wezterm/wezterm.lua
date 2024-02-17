@@ -12,8 +12,7 @@ return {
 	audible_bell = "Disabled",
 	font_size = 12,
 	enable_tab_bar = false,
-	color_scheme = "Github Dark",
-	-- window_background_opacity = 0.9,
+	color_scheme = "GitHub Dark",
 	enable_wayland = true,
 	window_padding = {
 		left = 0,

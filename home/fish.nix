@@ -52,6 +52,7 @@
       set fish_cursor_insert      line
       set fish_cursor_replace_one underscore
       set fish_cursor_visual      block
+      fish_add_path $HOME/.npm-packages/bin
 
       ${pkgs.any-nix-shell}/bin/any-nix-shell fish --info-right | source
     '';

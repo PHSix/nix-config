@@ -52,7 +52,7 @@
             description =
               "Setup http and https proxy for 7890 port(rencently use for clash).";
             exec =
-              "export http_proxy=http://localhost:7890 && export https_proxy=http://localhost:7890";
+              "export http_proxy=http://localhost:7897 && export https_proxy=http://localhost:7897";
             category = "Tools";
           };
           build = {
