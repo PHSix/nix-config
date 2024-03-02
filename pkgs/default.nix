@@ -20,6 +20,7 @@ self: super: {
   catppuccin-frappe-gtk = super.callPackage ./catppuccin-frappe-gtk.nix { };
 
   clash-verge-rev = super.callPackage ./clash-verge-rev.nix { };
+  noi = super.callPackage ./noi.nix { };
 
   selfVimPlugins.catppuccin-vim = super.callPackage ./vimPlugins/catppuccin-vim.nix { };
 }

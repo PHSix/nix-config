@@ -34,8 +34,6 @@ in
       expandtab = true;
       smartcase = true;
     };
-    extraConfig = ''
-      ${vimrc}
-    '';
+    extraConfig = vimrc;
   };
 }

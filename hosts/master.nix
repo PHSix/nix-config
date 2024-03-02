@@ -1,6 +1,6 @@
 inputs@{ nixpkgs, home-manager, ... }:
 let
-  desktop = import ../desktop/hyprland/default.nix { };
+  desktop = import ../desktop/plasma.nix { };
 in
 nixpkgs.lib.nixosSystem rec {
   specialArgs = inputs // {
@@ -57,6 +57,10 @@ nixpkgs.lib.nixosSystem rec {
           ({ pkgs, lib, ... }:
             (import ../home/dev.nix ({ inherit pkgs lib; } // { useRust = true; useGcc = true; useGo = true; }))
           )
+
+          ({ pkgs, ... }: {
+            # home.packages = [ pkgs.noi ];
+          })
         ];
       };
     }

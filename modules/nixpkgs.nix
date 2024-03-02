@@ -7,9 +7,7 @@ let
   overlays = [
     selfPkgs
     wezterm-overlay
-    # inputs.neovim-nightly-overlay.overlay
-
-    # waybar-overlay
+    inputs.neovim-nightly-overlay.overlay
   ];
 
 in

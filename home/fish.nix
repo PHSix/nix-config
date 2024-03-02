@@ -19,6 +19,7 @@
       ga = "git add";
       gaa = "git add --all";
       gba = "git branch --all";
+      gl = "git clone";
       gc = "git commit --verbose";
       gca = "git commit --verbose --amend";
       gcA = "git commit --verbose --no-edit --amend";

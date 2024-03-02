@@ -24,6 +24,7 @@
       adwaita-qt
       gnome.adwaita-icon-theme
       libsForQt5.plasma-browser-integration
+      libsForQt5.bismuth
     ];
   };
 
