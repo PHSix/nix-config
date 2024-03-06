@@ -10,7 +10,7 @@ nixpkgs.lib.nixosSystem rec {
   system = "x86_64-linux";
 
   modules = [
-    ../hardware-configuration.nix
+    ../hardwares/master.nix
     desktop.systemModule
 
     ../modules/network.nix

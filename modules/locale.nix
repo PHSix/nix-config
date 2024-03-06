@@ -19,15 +19,14 @@ in
     inputMethod = {
       enabled = "fcitx5";
       fcitx5.addons = with pkgs; [
-        fcitx5-chinese-addons
-        fcitx5-configtool
+        libsForQt5.fcitx5-chinese-addons
+        libsForQt5.fcitx5-configtool
+        libsForQt5.fcitx5-qt
         fcitx5-lua
         fcitx5-gtk
         fcitx5-chewing
         fcitx5-nord
         fcitx5-pinyin-zhiwiki
-
-        libsForQt5.fcitx5-qt
       ];
     };
 
