@@ -112,9 +112,10 @@
 
             shellHook = ''
               # auto setup fish env after enter development environment.
-              if command -v fish &> /dev/null
-              then
-                exec fish
+              if command -v fish; then
+              	exec fish
+              elif command -v zsh; then
+              	exec zsh
               fi
             '';
           };

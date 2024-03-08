@@ -1,10 +1,22 @@
 { ... }: {
   systemModule = { pkgs, ... }: {
-    services.xserver.enable = true;
-    services.xserver.displayManager.sddm.enable = true;
-    services.xserver.desktopManager.plasma5.enable = true;
+    services = {
+      xserver = {
+        enable = true;
+        displayManager = {
+          defaultSession = "plasma";
+          sddm = {
+            enable = true;
+            wayland.enable = true;
+          };
+        };
 
-    environment.plasma5.excludePackages = with pkgs.libsForQt5; [
+        desktopManager.plasma6.enable = true;
+      };
+    };
+
+
+    environment.plasma6.excludePackages = with pkgs.kdePackages; [
       elisa
       # gwenview
       # okular
@@ -15,7 +27,7 @@
       print-manager
     ];
 
-    environment.systemPackages = with pkgs; [
+    environment.systemPackages = (with pkgs; [
       numix-cursor-theme
       catppuccin-cursors
       catppuccin-gtk
@@ -23,9 +35,10 @@
       bibata-cursors
       adwaita-qt
       gnome.adwaita-icon-theme
-      libsForQt5.plasma-browser-integration
-      libsForQt5.bismuth
-    ];
+    ]) ++ (with pkgs.qt6Packages; [
+      # plasma-browser-integration
+      qtstyleplugin-kvantum
+    ]);
   };
 
   homeModule = { ... }: { };

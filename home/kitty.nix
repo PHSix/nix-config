@@ -2,7 +2,7 @@
 let
   fontName = "Macon";
   nerdFontFallback = "Maple Mono NF";
-  opacity = "0.8";
+  opacity = "0.88";
   fontSize = 14;
   colorscheme = ''
     # https://draculatheme.com/kitty
