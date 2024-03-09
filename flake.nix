@@ -122,6 +122,10 @@
         };
       };
 
-      flake = { nixosConfigurations = (import ./hosts/default.nix inputs); };
+      flake = {
+        nixosConfigurations = (import ./hosts/default.nix inputs);
+
+        overlays.default = import ./pkgs/overlay.nix;
+      };
     };
 }

@@ -1,11 +1,11 @@
 inputs@{ system, ... }:
 let
-  selfPkgs = import ../pkgs;
+  pkgsOverlay = import ../pkgs/overlay.nix;
   wezterm-overlay = (final: prev: {
     wezterm = inputs.wezterm.packages.${system}.default;
   });
   overlays = [
-    selfPkgs
+    pkgsOverlay
     wezterm-overlay
     inputs.neovim-nightly-overlay.overlay
   ];

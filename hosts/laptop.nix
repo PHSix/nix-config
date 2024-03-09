@@ -1,25 +1,29 @@
-{ pkgs, home-manager, ... }:
+inputs@{ nixpkgs, home-manager, ... }:
 let
   desktop = import ../desktop/hyprland/default.nix { };
 in
-pkgs.lib.nixosSystem {
-  inherit pkgs;
-
+nixpkgs.lib.nixosSystem rec {
   system = "x86_64-linux";
+  specialArgs = inputs // {
+    inherit system;
+    username = "ph";
+  };
+
 
   modules = [
-    ../hardware-configuration.nix
+    ../hardwares/laptop.nix
 
     desktop.systemModule
-    ../module/network.nix
-    ../module/grub.nix
-    ../module/misc.nix
-    ../module/nixos.nix
-    ../module/user.nix
-    ../module/packages.nix
-    ../module/locale.nix
-    ../module/hybrid-graphics.nix
-    ../module/proxychains.nix
+    ../modules/network.nix
+    ../modules/grub.nix
+    ../modules/misc.nix
+    ../modules/nixpkgs.nix
+    ../modules/nixos.nix
+    ../modules/user.nix
+    ../modules/packages.nix
+    ../modules/locale.nix
+    ../modules/hybrid-graphics.nix
+    ../modules/proxychains.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.fish;
@@ -43,7 +47,6 @@ pkgs.lib.nixosSystem {
           ../home/alacritty.nix
           ../home/fish.nix
           ../home/vim
-          ../home/waybar
           ../home/neovim.nix
           ../home/mpd.nix
           ../home/joshuto
