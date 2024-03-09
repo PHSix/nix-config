@@ -41,7 +41,7 @@
       systems = [ "x86_64-linux" "aarch64-linux" ];
       imports = [ flake-root.flakeModule mission-control.flakeModule ];
 
-      perSystem = { lib, pkgs, config, ... }: {
+      perSystem = { lib, pkgs, config, ... }@perInputs: {
         mission-control.scripts = {
           fmt = {
             description = "Format the top-level Nix files";
@@ -120,6 +120,8 @@
             '';
           };
         };
+
+        packages = import ./pkgs/packages.nix perInputs;
       };
 
       flake = {

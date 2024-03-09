@@ -4,12 +4,10 @@
 , dpkg
 , wrapGAppsHook
 , autoPatchelfHook
-, tauri
-, rustPlatform
-, svelte
-, nodejs
-, npm
+, openssl
+, webkitgtk
 , tree
+, git
 }:
 
 stdenv.mkDerivation rec {
@@ -18,7 +16,6 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://releases.gitbutler.com/releases/release/${version}-703/linux/x86_64/git-butler_${version}_amd64.deb";
-    # https://releases.gitbutler.com/releases/release/0.10.22-703/linux/x86_64/git-butler_0.10.22_amd64.deb
     sha256 = "1zawisja47bj53cqa6qak6gqqjxjr1i2d3f4sn8z3a3gdf5hc7pv";
   };
 
@@ -26,27 +23,24 @@ stdenv.mkDerivation rec {
     dpkg
     wrapGAppsHook
     autoPatchelfHook
+    tree
   ];
 
   buildInputs = [
-    tauri
-    rustPlatform
-    svelte
-    nodejs
-    npm
-    tree
+    openssl
+    webkitgtk
+    stdenv.cc.cc
+    git
   ];
 
   installPhase = ''
     runHook preInstall
+    tree
 
-    mkdir -p $out/bin
-    dpkg-deb -x $src $out
+    mkdir -p $out
+    mv usr/* $out
 
     runHook postInstall
-  '';
-
-  postFixup = ''
   '';
 
   meta = with lib; {
@@ -57,5 +51,3 @@ stdenv.mkDerivation rec {
     mainProgram = "git-butler";
   };
 }
-	
-

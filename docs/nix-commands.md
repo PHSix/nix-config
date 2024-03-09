@@ -40,6 +40,13 @@ nix search nixpkgs cat
 You can get some package's name or description included this keyword.
 Or use the [search.nixos.org](https://search.nixos.org) can do like that.
 
+# Build your package with nixpkgs
+
+```bash
+nix build .#package -L # -L is for print logger
+nix run .#package
+```
+
 # nix experimental commands
 1. `nix search`
 use for instead of `nix-env -qaP`

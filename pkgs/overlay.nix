@@ -11,4 +11,6 @@ final: prev: {
   noi = prev.callPackage ./noi.nix { };
 
   selfVimPlugins.catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { };
+
+  git-butler = prev.callPackage ./git-butler.nix { };
 }
