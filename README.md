@@ -12,17 +12,19 @@
 
 ```bash
 $ nix flake show
-git+file:///Users/ph/nix
+git+file:///home/ph/nix?ref=refs/heads/master&rev=35c9b0787b0430f436f26e63cd37e44727a6c0c9
 ├───devShells
 │   ├───aarch64-linux
-│   │   └───default: development environment 'nix-shell'
+│   │   └───default omitted (use '--all-systems' to show)
 │   └───x86_64-linux
-│       └───default omitted (use '--all-systems' to show)
-└───nixosConfigurations
-    ├───laptop: NixOS configuration
-    ├───master: NixOS configuration
-    ├───orb-vm: NixOS configuration
-    └───wsl: NixOS configuration
+│       └───default: development environment 'nix-shell'
+├───nixosConfigurations
+│   ├───laptop: NixOS configuration
+│   ├───master: NixOS configuration
+│   ├───orb-vm: NixOS configuration
+│   └───wsl: NixOS configuration
+└───overlays
+    └───default: Nixpkgs overlay
 ```
 
 # setup

@@ -50,7 +50,7 @@
           };
           proxy = {
             description =
-              "Setup http and https proxy for 7890 port(rencently use for clash).";
+              "Setup http and https proxy for 7897 port(rencently use for clash-verge).";
             exec =
               "export http_proxy=http://localhost:7897 && export https_proxy=http://localhost:7897";
             category = "Tools";
