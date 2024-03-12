@@ -1,6 +1,6 @@
 { vimUtils, fetchFromGitHub }:
 
-vimUtils.buildVimPluginFrom2Nix {
+vimUtils.buildVimPlugin {
   pname = "catppuccin.vim";
   version = "2023-1-22";
   src = fetchFromGitHub {

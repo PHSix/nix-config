@@ -10,7 +10,8 @@ final: prev: {
   clash-verge-rev = prev.callPackage ./clash-verge-rev.nix { };
   noi = prev.callPackage ./noi.nix { };
 
-  selfVimPlugins.catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { };
+  vimPlugins = prev.vimPlugins // { catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { }; };
+  # selfVimPlugins.catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { };
 
   git-butler = prev.callPackage ./git-butler.nix { };
 }

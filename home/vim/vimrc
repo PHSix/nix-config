@@ -15,7 +15,7 @@ augroup vimrc_augroup
     autocmd filetype help nmap q <Cmd>q<CR>
 augroup END
 
-colorscheme one
+colorscheme catppuccin_mocha
 noremap ; :
 vmap fy "+y
 

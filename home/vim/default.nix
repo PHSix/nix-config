@@ -7,7 +7,7 @@ in
     enable = true;
     plugins = with pkgs.vimPlugins; [
       lightline-vim
-      edge
+      catppuccin-vim
       rainbow
       LeaderF
       vim-commentary
