@@ -13,8 +13,8 @@ let
 in
 {
 
-  nixpkgs.overlays = overlays;
   nixpkgs = {
+    inherit overlays;
 
     config = {
       allowUnfree = true;

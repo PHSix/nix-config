@@ -137,7 +137,7 @@ in
       cascadia-code
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
-      sarasa-gothic
+      # sarasa-gothic
       noto-fonts
       wqy_microhei
       wqy_zenhei

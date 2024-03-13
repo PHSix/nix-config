@@ -19,7 +19,7 @@
   };
 
   programs.gpg = { enable = true; };
-  # services.gpg-agent = { enable = true; };
+  services.gpg-agent = { enable = true; };
 
   # xdg.configFile."user-dirs.dirs".text = ''
   #   # This file is written by xdg-user-dirs-update
