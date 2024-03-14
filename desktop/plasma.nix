@@ -16,13 +16,6 @@
 
     };
 
-    nixpkgs.overlays = [
-      (final: prev: {
-        pinentry = prev.pinentry-qt;
-      })
-    ];
-
-
     environment.plasma6.excludePackages = with pkgs.kdePackages; [
       elisa
       # gwenview
