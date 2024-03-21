@@ -13,7 +13,7 @@ return {
 	font_size = 12,
 	enable_tab_bar = false,
 	color_scheme = "GitHub Dark",
-	enable_wayland = true,
+	enable_wayland = false,
 	window_padding = {
 		left = 0,
 		right = 0,
