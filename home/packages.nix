@@ -10,5 +10,7 @@
     flameshot
     vlc
     git-butler
+
+    telegram-desktop
   ];
 }
