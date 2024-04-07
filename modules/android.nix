@@ -1,8 +1,9 @@
-{ pkgs, ... }: {
+{ pkgs, username ? "ph", ... }: {
   programs.adb.enable = true;
-  users.users.ph.extraGroups = [ "adbusers" ];
+  users.users."${username}".extraGroups = [ "adbusers" ];
 
   environment.systemPackages = with pkgs; [
+    android-udev-rules
     android-studio
     kotlin
   ];

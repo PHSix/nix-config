@@ -23,6 +23,7 @@ nixpkgs.lib.nixosSystem rec {
     ../modules/locale.nix
     ../modules/proxychains.nix
     ../modules/amd.nix
+    ../modules/android.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.fish;
