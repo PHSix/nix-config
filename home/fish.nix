@@ -3,7 +3,7 @@
     enable = true;
 
     shellAbbrs = {
-      yz = "yazi";
+      # yz = "yazi";
       ls = "eza";
       l = "eza --git-ignore";
       ll = "eza --all --header --long";
@@ -70,6 +70,18 @@
             end
           end
           command nix-shell $argv --run "exec fish"
+        '';
+      };
+
+      yz = {
+        wraps = "yz";
+        body = ''
+          set tmp (mktemp -t "yazi-cwd.XXXXXX")
+          yazi $argv --cwd-file="$tmp"
+          if set cwd (cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+          	cd -- "$cwd"
+          end
+          rm -f -- "$tmp"
         '';
       };
     };

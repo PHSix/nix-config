@@ -15,30 +15,30 @@ cache_dir  = ""
 
 [opener]
 folder = [
-	{ exec = 'open -r "$@"', desc = "reveal in finder" },
-	{ exec = '$editor "$@"' },
+	{ run = 'open -r "$@"', desc = "reveal in finder" },
+	{ run = '$editor "$@"' },
 ]
 archive = [
-	{ exec = 'unar "$1"', desc = "extract here" },
+	{ run = 'unar "$1"', desc = "extract here" },
 ]
 text = [
-	{ exec = 'nvim "$@"', block = true },
+	{ run = 'nvim "$@"', block = true },
 ]
 image = [
-	{ exec = 'open "$@"', desc = "open" },
-	{ exec = '''exiftool "$1"; echo "press enter to exit"; read''', block = true, desc = "show exif" },
+	{ run = 'open "$@"', desc = "open" },
+	{ run = '''exiftool "$1"; echo "press enter to exit"; read''', block = true, desc = "show exif" },
 ]
 video = [
-	{ exec = 'mpv "$@"' },
-	{ exec = '''mediainfo "$1"; echo "press enter to exit"; read''', block = true, desc = "show media info" },
+	{ run = 'mpv "$@"' },
+	{ run = '''mediainfo "$1"; echo "press enter to exit"; read''', block = true, desc = "show media info" },
 ]
 audio = [
-	{ exec = 'mpv "$@"' },
-	{ exec = '''mediainfo "$1"; echo "press enter to exit"; read''', block = true, desc = "show media info" },
+	{ run = 'mpv "$@"' },
+	{ run = '''mediainfo "$1"; echo "press enter to exit"; read''', block = true, desc = "show media info" },
 ]
 fallback = [
-	{ exec = 'open "$@"', desc = "open" },
-	{ exec = 'open -r "$@"', desc = "reveal in finder" },
+	{ run = 'open "$@"', desc = "open" },
+	{ run = 'open -r "$@"', desc = "reveal in finder" },
 ]
 
 [open]
