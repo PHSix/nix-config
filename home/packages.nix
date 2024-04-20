@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     google-chrome
-    # clash-verge
     clash-verge-rev
     v2raya
     clash-meta
@@ -12,5 +11,8 @@
     git-butler
 
     telegram-desktop
+
+    feishu
+    qq
   ];
 }

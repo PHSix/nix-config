@@ -2,22 +2,24 @@
   systemModule = { pkgs, ... }: {
     services = {
       gnome = { gnome-keyring = { enable = true; }; };
+
+      displayManager = {
+        gdm.enable = true;
+        # autoLogin.enable = true;
+        # autoLogin.user = "ph";
+      };
       xserver = {
         enable = true;
         # displayManager.gdm.wayland = true;
-        desktopManager = { gnome.enable = true; };
         layout = "us";
         xkbOptions = "caps:escape";
         # xkbOptions = "caps:ctrl";
         autoRepeatDelay = 300;
         autoRepeatInterval = 30;
         libinput.enable = true;
-        displayManager = {
-          gdm.enable = true;
-          # autoLogin.enable = true;
-          # autoLogin.user = "ph";
-        };
       };
+
+      desktopManager = { gnome.enable = true; };
       udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
     };
 
