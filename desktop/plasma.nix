@@ -20,7 +20,7 @@
       # okular
       oxygen
       khelpcenter
-      konsole
+      # konsole
       # plasma-browser-integration
       print-manager
     ];

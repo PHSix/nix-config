@@ -7,6 +7,7 @@
       gopls # for golang
       python311
       nodejs
+      deno
       typescript
       # nodePackages.typescript-language-server
       nodePackages.volar
