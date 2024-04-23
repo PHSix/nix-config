@@ -25,6 +25,8 @@
       print-manager
     ];
 
+    programs.partition-manager.enable = true;
+
     environment.systemPackages = (with pkgs; [
       numix-cursor-theme
       catppuccin-cursors
