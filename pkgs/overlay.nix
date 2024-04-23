@@ -14,4 +14,6 @@ final: prev: {
   # selfVimPlugins.catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { };
 
   git-butler = prev.callPackage ./git-butler.nix { };
+
+  qq = prev.callPackage ./qq/default.nix { };
 }
