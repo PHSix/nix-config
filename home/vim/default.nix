@@ -15,6 +15,7 @@ in
       vim-lastplace
       vim-floaterm
       vim-one
+      vim-smoothie
 
       coc-nvim
       coc-go

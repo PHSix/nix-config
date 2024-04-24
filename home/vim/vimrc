@@ -24,10 +24,14 @@ map <C-j> 3j
 map <C-k> 3k
 map <C-l> 3l
 
+let g:Lf_ShortcutB = 0
+let g:Lf_ShortcutF = 0
 nmap <leader>ff <Cmd>Leaderf file<CR>
 nmap <leader>fo <Cmd>Leaderf mru<CR>
 nmap <leader>fw <Cmd>Leaderf rg<CR>
 nmap <leader>fb <Cmd>Leaderf buffer<CR>
+
+nmap <leader>bd <Cmd>bd<CR>
 
 let g:lightline = {'colorscheme': 'one'}
 
