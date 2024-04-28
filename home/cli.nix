@@ -38,10 +38,10 @@
   home.file.".cargo/config" = {
     text = ''
       [source.crates-io]
-      replace-with = 'mirror'
+      replace-with = 'ustc'
 
-      [source.mirror]
-      registry = "sparse+https://mirrors.tuna.tsinghua.edu.cn/crates.io-index/"
+      [source.ustc]
+      registry = "git://mirrors.ustc.edu.cn/crates.io-index"
     '';
   };
 }
