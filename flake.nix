@@ -25,6 +25,10 @@
     wezterm = {
       url = "github:wez/wezterm?dir=nix";
     };
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =

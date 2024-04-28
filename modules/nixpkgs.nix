@@ -1,4 +1,4 @@
-inputs@{ system, ... }:
+inputs@{ system, fenix, ... }:
 let
   pkgsOverlay = import ../pkgs/overlay.nix;
   wezterm-overlay = (final: prev: {
@@ -8,6 +8,7 @@ let
     pkgsOverlay
     wezterm-overlay
     inputs.neovim-nightly-overlay.overlay
+    fenix.overlays.default
   ];
 
 in

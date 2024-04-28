@@ -10,8 +10,8 @@ nixpkgs.lib.nixosSystem rec {
   system = "x86_64-linux";
 
   modules = [
-    ../hardwares/master.nix
     desktop.systemModule
+    ../hardwares/master.nix
 
     ../modules/network.nix
     ../modules/grub.nix
@@ -56,15 +56,15 @@ nixpkgs.lib.nixosSystem rec {
           ../home/yazi
 
           ({ pkgs, lib, ... }:
-            (import ../home/dev.nix ({ inherit pkgs lib; } // { useRust = true; useGcc = true; useGo = true; }))
+            (import ../home/dev.nix ({
+              inherit pkgs lib;
+              useRust = true;
+              useGcc = true;
+              useGo = true;
+            }))
           )
-
-          ({ pkgs, ... }: {
-            # home.packages = [ pkgs.noi ];
-          })
         ];
       };
     }
   ];
-
 }
