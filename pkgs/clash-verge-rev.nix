@@ -4,7 +4,7 @@
 , dpkg
 , wrapGAppsHook
 , autoPatchelfHook
-, clash-meta
+  # , clash-meta
 , openssl
 , webkitgtk
 , udev
@@ -45,14 +45,14 @@ stdenv.mkDerivation rec {
 
     mkdir -p $out/bin
     mv usr/* $out
-    rm $out/bin/clash-meta
+    # rm $out/bin/clash-meta
 
     runHook postInstall
   '';
 
-  postFixup = ''
-    ln -s ${lib.getExe clash-meta} $out/bin/clash-meta
-  '';
+  # postFixup = ''
+  #   ln -s ${lib.getExe clash-meta} $out/bin/clash-meta
+  # '';
 
   meta = with lib; {
     description = "Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)";

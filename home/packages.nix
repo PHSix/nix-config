@@ -3,16 +3,17 @@
     google-chrome
     clash-verge-rev
     v2raya
-    clash-meta
+    # clash-meta
     microsoft-edge
     vscode-fhs
     flameshot
     vlc
-    git-butler
+    # git-butler
 
     telegram-desktop
 
     feishu
     qq
+    # zed-editor
   ];
 }
