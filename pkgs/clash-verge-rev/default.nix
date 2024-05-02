@@ -11,15 +11,19 @@
 , libayatana-appindicator
 , tree
 }:
-
-stdenv.mkDerivation rec {
+let
+  sources = import ./sources.nix;
+  version = sources.version;
+  hash = sources.hash;
+in
+stdenv.mkDerivation {
   pname = "clash-verge-rev";
 
-  version = "1.6.0";
+  inherit version;
 
   src = fetchurl {
     url = "https://github.com/clash-verge-rev/clash-verge-rev/releases/download/v${version}/clash-verge_${version}_amd64.deb";
-    hash = "sha256-wSpWTQ+AuDG3zKocDVatRqVW5yhrOtcbNI+jfMOaXvg=";
+    inherit hash;
   };
 
   nativeBuildInputs = [

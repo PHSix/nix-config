@@ -8,7 +8,6 @@
     vscode-fhs
     flameshot
     vlc
-    # git-butler
 
     telegram-desktop
 

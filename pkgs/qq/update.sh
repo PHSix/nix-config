@@ -10,7 +10,6 @@ amd64_url=$(jq -r .x64DownloadUrl.deb <<< "$payload")
 arm64_url=$(jq -r .armDownloadUrl.deb <<< "$payload")
 
 echo $amd64_url
-# urlhash=$(grep -oP "(?<=QQNT/)[a-f0-9]+(?=/linuxqq)" <<< "$amd64_url")
 version=$(grep -oP "(?<=/QQ_).*(?=_amd64)" <<< "$amd64_url")
 
 echo $version
