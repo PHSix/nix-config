@@ -20,6 +20,8 @@
     neofetch
     fastfetch
     bat
+    just
+    nixpkgs-fmt
 
     # some nix cli utils tool
     nurl
@@ -38,10 +40,15 @@
   home.file.".cargo/config" = {
     text = ''
       [source.crates-io]
-      replace-with = 'ustc'
-
-      [source.ustc]
-      registry = "git://mirrors.ustc.edu.cn/crates.io-index"
+      replace-with = 'rsproxy-sparse'
+      [source.rsproxy]
+      registry = "https://rsproxy.cn/crates.io-index"
+      [source.rsproxy-sparse]
+      registry = "sparse+https://rsproxy.cn/index/"
+      [registries.rsproxy]
+      index = "https://rsproxy.cn/crates.io-index"
+      [net]
+      git-fetch-with-cli = true
     '';
   };
 }
