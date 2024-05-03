@@ -29,8 +29,8 @@ return {
 	audible_bell = "Disabled",
 	font_size = 12,
 	enable_tab_bar = false,
-	-- color_scheme = "GitHub Dark",
-	color_scheme = scheme_for_appearance(get_appearance()),
+	color_scheme = "GitHub Dark",
+	-- color_scheme = scheme_for_appearance(get_appearance()),
 	enable_wayland = true,
 	window_padding = {
 		left = 0,
