@@ -51,7 +51,7 @@
       overlays.default = import ./pkgs/overlay.nix;
 
       formatter = forEachSystem ({ pkgs, ... }: pkgs.nixpkgs-fmt);
-      devshell = forEachSystem ({ pkgs, ... }: {
+      devShells = forEachSystem ({ pkgs, ... }: {
         default = pkgs.mkShell {
           packages = with pkgs; [
             vim
