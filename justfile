@@ -14,7 +14,7 @@ build target:
 # rebuild nixos for boot
 rebuild target:
 		@echo 'Re-Building {{target}} for boot…'
-		sudo -E nixos-rebuild boot --flake "$1"
+		sudo -E nixos-rebuild boot --flake {{target}}
 
 # rebuild and switch
 switch target:

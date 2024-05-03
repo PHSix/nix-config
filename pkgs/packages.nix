@@ -1,6 +1,5 @@
 { pkgs
 , system
-, config
 , ...
 }:
 let

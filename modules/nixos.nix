@@ -1,5 +1,5 @@
-{ ... }: {
-  system.stateVersion = "24.05";
+{ lib, ... }: {
+  system.stateVersion = lib.trivial.release;
 
   nix = {
     extraOptions = ''

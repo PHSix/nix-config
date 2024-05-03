@@ -10,10 +10,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-parts.url = "github:hercules-ci/flake-parts";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     devshell.url = "github:numtide/devshell";
-    flake-root.url = "github:srid/flake-root";
 
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -31,55 +29,43 @@
     };
   };
 
-  outputs =
-    inputs@{ nixpkgs
-    , home-manager
-    , flake-parts
-    , flake-root
-    , ...
-    }:
-    flake-parts.lib.mkFlake { inherit inputs; } {
+  outputs = inputs@{ nixpkgs, ... }:
+    let
       systems = [ "x86_64-linux" "aarch64-linux" ];
-      imports = [
-        flake-root.flakeModule
-      ];
-
-      perSystem = { lib, pkgs, config, ... }@perInputs: {
-        devShells = {
-          default = pkgs.mkShell {
-            packages = with pkgs; [
-              vim
-              git
-              lazygit
-              nixpkgs-fmt
-              yazi
-              ripgrep
-              fzf
-              lua-language-server
-              nil
-              neovim
-              nurl
-              gnumake
-              gcc
-              gccStdenv
-              htop
-              doas
-              nixd
-            ];
-            inputsFrom =
-              [
-                config.flake-root.devShell
-              ];
+      forEachSystem = func: (builtins.listToAttrs (builtins.map
+        (system: {
+          name = system;
+          value = func {
+            inherit system;
+            pkgs = import nixpkgs {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+            };
           };
+        })
+        systems
+      ));
+    in
+    {
+      nixosConfigurations = import ./hosts/default.nix inputs;
+      overlays.default = import ./pkgs/overlay.nix;
+
+      formatter = forEachSystem ({ pkgs, ... }: pkgs.nixpkgs-fmt);
+      devshell = forEachSystem ({ pkgs, ... }: {
+        default = pkgs.mkShell {
+          packages = with pkgs; [
+            vim
+            git
+            lazygit
+            nixpkgs-fmt
+            yazi
+            ripgrep
+            fzf
+            nurl
+            htop
+          ];
         };
-
-        packages = import ./pkgs/packages.nix perInputs;
-      };
-
-      flake = {
-        nixosConfigurations = (import ./hosts/default.nix inputs);
-
-        overlays.default = import ./pkgs/overlay.nix;
-      };
+      });
+      packages = forEachSystem (inputs': import ./pkgs/packages.nix inputs');
     };
 }
