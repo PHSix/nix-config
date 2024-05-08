@@ -2,7 +2,7 @@
 , stdenv
 , fetchurl
 , dpkg
-, wrapGAppsHook
+, wrapGAppsHook3
 , autoPatchelfHook
   # , clash-meta
 , openssl
@@ -28,7 +28,7 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [
     dpkg
-    wrapGAppsHook
+    wrapGAppsHook3
     autoPatchelfHook
   ];
 
