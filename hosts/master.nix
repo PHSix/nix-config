@@ -36,8 +36,8 @@ nixpkgs.lib.nixosSystem rec {
     {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
+      home-manager.extraSpecialArgs = inputs;
       home-manager.users.ph = _: {
-
         imports = [
           desktop.homeModule
           ../home
