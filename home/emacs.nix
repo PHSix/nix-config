@@ -1,12 +1,8 @@
-{ pkgs, ... }: {
-  programs.emacs = {
+{ pkgs, nix-doom-emacs, ... }: {
+  imports = [ nix-doom-emacs.hmModule ];
+  programs.doom-emacs = {
     enable = true;
+    # doomPrivateDir = ./doom.d; # Directory containing your config.el, init.el
+    # and packages.el files
   };
-
-  services.emacs.enable = true;
-
-  home.packages = with pkgs; [
-    libtool
-    cmake
-  ];
 }

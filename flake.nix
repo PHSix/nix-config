@@ -11,7 +11,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    devshell.url = "github:numtide/devshell";
 
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -23,6 +22,10 @@
     wezterm = {
       url = "github:wez/wezterm?dir=nix";
     };
+
+    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+
+    # rust package manager
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";

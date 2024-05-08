@@ -24,6 +24,7 @@ nixpkgs.lib.nixosSystem rec {
     ../modules/proxychains.nix
     ../modules/amd.nix
     ../modules/android.nix
+    ../modules/virtualisation.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.fish;
@@ -54,6 +55,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/joshuto
           ../home/gitui
           ../home/yazi
+          ../home/emacs.nix
 
           ({ pkgs, lib, ... }:
             (import ../home/dev.nix ({
