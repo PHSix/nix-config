@@ -29,6 +29,8 @@ nixpkgs.lib.nixosSystem rec {
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.fish;
       programs.fish.enable = true;
+
+      networking.firewall.enable = false;
     })
 
 
