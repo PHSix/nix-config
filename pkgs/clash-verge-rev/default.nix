@@ -61,7 +61,7 @@ stdenv.mkDerivation {
   meta = with lib; {
     description = "Continuation of Clash Verge - A Clash Meta GUI based on Tauri (Windows, MacOS, Linux)";
     homepage = "https://github.com/clash-verge-rev/clash-verge-rev";
-    platforms = [ "x86_64-linux" ];
+    platforms = [ "x86_64-linux" "aarch64-linux" ];
     license = licenses.gpl3Plus;
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
     maintainers = with maintainers; [ zendo ];

@@ -32,26 +32,42 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, ... }:
+  outputs = inputs@{ nixpkgs, self, ... }:
     let
       systems = [ "x86_64-linux" "aarch64-linux" ];
-      forEachSystem = func: (builtins.listToAttrs (builtins.map
-        (system: {
-          name = system;
-          value = func {
-            inherit system;
-            pkgs = import nixpkgs {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-            };
-          };
-        })
-        systems
-      ));
+      forAllSystem = nixpkgs.lib.genAttrs systems;
+
+      nixpkgsFor = forAllSystem (system: import nixpkgs {
+        inherit system; overlays = [ self.overlay ];
+        config.allowUnfree = true;
+      });
+      # forEachSystem = func: (builtins.listToAttrs (builtins.map
+      #   (system: {
+      #     name = system;
+      #     value = func {
+      #       inherit system;
+      #       pkgs = import nixpkgs {
+      #         system = "x86_64-linux";
+      #         config.allowUnfree = true;
+      #       };
+      #     };
+      #   })
+      #   systems
+      # ));
+
+      forEachSystem = func: forAllSystem (system: (func { inherit system; pkgs = nixpkgsFor."${system}"; }));
+
+      providePackages = [
+        "clash-verge-rev"
+        "qq"
+        "fcitx5-pinyin-zhiwiki"
+      ];
     in
-    {
+    rec {
       nixosConfigurations = import ./hosts/default.nix inputs;
-      overlays.default = import ./pkgs/overlay.nix;
+      overlay = import ./pkgs/overlay.nix;
+
+      overlays.default = overlay;
 
       formatter = forEachSystem ({ pkgs, ... }: pkgs.nixpkgs-fmt);
       devShells = forEachSystem ({ pkgs, ... }: {
@@ -69,6 +85,14 @@
           ];
         };
       });
-      packages = forEachSystem (inputs': import ./pkgs/packages.nix inputs');
+      packages = forAllSystem (system:
+        (builtins.listToAttrs
+          (builtins.map
+            (package: { name = package; value = nixpkgsFor."${system}"."${package}"; })
+            (builtins.filter
+              (package: builtins.hasAttr package nixpkgsFor."${system}")
+              providePackages))
+        )
+      );
     };
 }
