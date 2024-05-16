@@ -1,0 +1,23 @@
+# Simple workflow for deploying static content to GitHub Pages
+name: Deploy static content to Pages
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["master"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v21
+      - name: Build fcitx5-pinyin-zhiwiki 🔧
+        run: |
+          nix build -L .#fcitx5-pinyin-zhiwiki
+      - name: Build clash-verge-rev 🔧
+        run: |
+          nix build -L .#clash-verge-rev
+      - name: Build qq 🔧
+        run: |
+          nix build -L .#qq
