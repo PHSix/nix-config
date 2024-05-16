@@ -21,6 +21,11 @@
   programs.gpg = { enable = true; };
   services.gpg-agent = { enable = true; };
 
+  home.file.".rgignore".text = "
+		pnpm-lock.yaml
+		*.lock
+	";
+
   # xdg.configFile."user-dirs.dirs".text = ''
   #   # This file is written by xdg-user-dirs-update
   #   # If you want to change or add directories, just edit the line you're

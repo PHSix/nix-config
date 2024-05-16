@@ -27,7 +27,8 @@ nixpkgs.lib.nixosSystem rec {
     ../modules/virtualisation.nix
 
     ({ pkgs, ... }: {
-      users.users."ph".shell = pkgs.fish;
+      users.users."ph".shell = pkgs.zsh;
+      programs.zsh.enable = true;
       programs.fish.enable = true;
 
       networking.firewall.enable = false;
@@ -51,6 +52,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/alacritty.nix
           ../home/wezterm
           ../home/fish.nix
+          ../home/zsh
           ../home/vim
           ../home/neovim.nix
           ../home/mpd.nix

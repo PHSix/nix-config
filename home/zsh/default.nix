@@ -3,7 +3,7 @@
     zsh = {
       enable = true;
       dotDir = ".config/zsh";
-      enableAutosuggestions = true;
+      autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       defaultKeymap = "emacs";
       shellAliases = {
@@ -50,6 +50,17 @@
             rm -f -- "$tmp"
           }
         fi
+
+        function proxy(){
+          export https_proxy=http://localhost:7897
+          export http_proxy=http://localhost:7897
+        }
+
+        function unproxy(){
+          export https_proxy=
+          export http_proxy=
+        }
+
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
         source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
         source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme

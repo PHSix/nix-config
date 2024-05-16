@@ -11,7 +11,7 @@
 
     telegram-desktop
 
-    feishu
+    # feishu
     qq
     # zed-editor
   ];

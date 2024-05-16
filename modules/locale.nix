@@ -25,7 +25,7 @@ in
         fcitx5-lua
         fcitx5-gtk
         fcitx5-chewing
-        fcitx5-nord
+        # fcitx5-nord
         fcitx5-pinyin-zhiwiki
       ];
     };

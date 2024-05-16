@@ -5,6 +5,8 @@
     xsel
     ripgrep
     fzf
+    fd
+    delta
     eza
     tree
     zoxide
@@ -22,6 +24,7 @@
     bat
     just
     nixpkgs-fmt
+    nix-output-monitor
 
     # some nix cli utils tool
     nurl
