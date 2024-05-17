@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   programs.neovim = {
     enable = true;
-    # package = pkgs.neovim;
     extraPackages = (with pkgs.python311Packages; [ autopep8 black python-lsp-server ])
       ++ (with pkgs; [
       gopls # for golang

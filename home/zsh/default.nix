@@ -5,6 +5,7 @@
       dotDir = ".config/zsh";
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
+      enableCompletion = true;
       defaultKeymap = "emacs";
       shellAliases = {
         lg = "lazygit";
@@ -84,9 +85,6 @@
       # zinit
       zsh-vi-mode
       zsh-fzf-tab
-      zsh-fast-syntax-highlighting
-      zsh-completions
-      pure-prompt
       zsh-powerlevel10k
 
       any-nix-shell
