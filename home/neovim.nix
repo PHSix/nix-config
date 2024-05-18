@@ -1,6 +1,7 @@
-{ pkgs, ... }: {
+inputs@{ pkgs, system, ... }: {
   programs.neovim = {
     enable = true;
+    package = inputs.neovim-flake.packages."${system}".neovim;
     extraPackages = (with pkgs.python311Packages; [ autopep8 black python-lsp-server ])
       ++ (with pkgs; [
       gopls # for golang

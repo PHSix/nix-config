@@ -10,7 +10,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    nixpkgs-feat.url = "github:r-ryantm/nixpkgs/auto-update/tree-sitter";
+    neovim-flake = {
+      url = "github:neovim/neovim?dir=contrib";
+      inputs.nixpkgs.follows = "nixpkgs-feat";
+    };
+
 
     hyprland.url = "github:hyprwm/Hyprland";
 
@@ -85,14 +91,17 @@
           ];
         };
       });
-      packages = forAllSystem (system:
-        (builtins.listToAttrs
-          (builtins.map
-            (package: { name = package; value = nixpkgsFor."${system}"."${package}"; })
-            (builtins.filter
-              (package: builtins.hasAttr package nixpkgsFor."${system}")
-              providePackages))
-        )
-      );
+      packages = forAllSystem
+        (system:
+          (builtins.listToAttrs
+            (builtins.map
+              (package: { name = package; value = nixpkgsFor."${system}"."${package}"; })
+              (builtins.filter
+                (package: builtins.hasAttr package nixpkgsFor."${system}")
+                providePackages))
+          ) // {
+            neovim = inputs.neovim-flake.packages."${system}".neovim;
+          }
+        );
     };
 }
