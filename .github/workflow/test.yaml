@@ -1,0 +1,16 @@
+name: Test neovim flake
+
+on:
+  # Runs on pushes targeting the default branch
+  push:
+    branches: ["test"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: cachix/install-nix-action@v21
+      - name: Build neovim-nightly
+        run: |
+          nix build -L .#neovim

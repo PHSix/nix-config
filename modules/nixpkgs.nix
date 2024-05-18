@@ -7,7 +7,7 @@ let
   overlays = [
     pkgsOverlay
     wezterm-overlay
-    inputs.neovim-nightly-overlay.overlay
+    # inputs.neovim-nightly-overlay.overlay
     fenix.overlays.default
   ];
 
