@@ -8,17 +8,17 @@ fmt:
 
 # Test build a nixos flake output.
 build target:
-	@echo 'Building {{target}}…'
+	@echo 'building {{target}}…'
 	nixos-rebuild build --flake {{target}} -L
 
 # rebuild nixos for boot
 rebuild target:
-	@echo 'Re-Building {{target}} for boot…'
+	@echo 'rebuilding {{target}} for boot…'
 	sudo -E nixos-rebuild boot --flake {{target}}
 
 # rebuild and switch
 switch target:
-	@echo 'Build and switch for {{target}}'
+	@echo 'building and switching for {{target}}'
 	sudo -E nixos-rebuild switch --flake {{target}}
 
 # delete nix profile as least {{num}}
@@ -28,3 +28,11 @@ remove-profiles num:
 # list all of nix profiles
 list-profiles:
 	sudo nix-env --profile /nix/var/nix/profiles/system --list-generations
+
+# set proxy for nix-daemon
+daemon-proxy:
+	sudo sh ./scripts/daemon-proxxy.sh
+
+#calc hash file from url
+hash-url:
+	sudo sh ./scripts/hash.sh
