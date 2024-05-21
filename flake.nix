@@ -44,7 +44,8 @@
       forAllSystem = nixpkgs.lib.genAttrs systems;
 
       nixpkgsFor = forAllSystem (system: import nixpkgs {
-        inherit system; overlays = [ self.overlay ];
+        inherit system; 
+        overlays = [ self.overlay ];
         config.allowUnfree = true;
       });
       # forEachSystem = func: (builtins.listToAttrs (builtins.map
