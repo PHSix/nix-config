@@ -7,23 +7,7 @@ let
   overlays = [
     pkgsOverlay
     wezterm-overlay
-    inputs.neovim-flake.overlay
-
-    # (final: prev: {
-    #   neovim = inputs.neovim-flake.packages."${system}".neovim;
-
-      # neovim-stable = prev.neovim.overrideAttrs (finalAttrs: previousAttrs: rec {
-      #   version = "0.10.0";
-      #   src = prev.fetchFromGitHub {
-      #     owner = "neovim";
-      #     repo = "neovim";
-      #     rev = "v${finalAttrs.version}";
-      #     hash = "sha256-CcaBqA0yFCffNPmXOJTo8c9v1jrEBiqAl8CG5Dj5YxE=";
-      #   };
-      #
-      # });
-    # })
-    # inputs.neovim-nightly-overlay.overlay
+    inputs.neovim-nightly-overlay.overlays.default
     fenix.overlays.default
   ];
 

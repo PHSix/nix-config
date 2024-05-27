@@ -13,6 +13,7 @@
 
     # feishu
     qq
+    qbittorrent
     # zed-editor
   ];
 }

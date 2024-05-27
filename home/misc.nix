@@ -21,10 +21,10 @@
   programs.gpg = { enable = true; };
   services.gpg-agent = { enable = true; };
 
-  home.file.".rgignore".text = "
-		pnpm-lock.yaml
-		*.lock
-	";
+  #  home.file.".rgignore".text = "
+  # 	pnpm-lock.yaml
+  # 	*.lock
+  # ";
 
   # xdg.configFile."user-dirs.dirs".text = ''
   #   # This file is written by xdg-user-dirs-update
