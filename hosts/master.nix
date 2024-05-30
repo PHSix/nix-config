@@ -24,7 +24,7 @@ nixpkgs.lib.nixosSystem rec {
     ../modules/nixpkgs.nix
     ../modules/locale.nix
     ../modules/proxychains.nix
-    ../modules/amd.nix
+    ../modules/amdgpu.nix
     ../modules/android.nix
     ../modules/virtualisation.nix
 
