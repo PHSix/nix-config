@@ -15,5 +15,8 @@
     qq
     qbittorrent
     # zed-editor
+
+    wineWowPackages.stable
+    thunderbird
   ];
 }

@@ -25,6 +25,7 @@
     just
     nixpkgs-fmt
     nix-output-monitor
+    unrar
 
     # some nix cli utils tool
     nurl
