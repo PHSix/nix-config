@@ -21,8 +21,8 @@ inputs@{ pkgs, system, ... }: {
       lua-language-server
       stylua
 
-      rust-analyzer
-      rustfmt
+      # rust-analyzer
+      # rustfmt
       watchman
 
       gcc
