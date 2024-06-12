@@ -31,7 +31,7 @@ list-profiles:
 
 # set proxy for nix-daemon
 daemon-proxy:
-	sudo sh ./scripts/daemon-proxxy.sh
+	sudo sh ./scripts/daemon-proxy.sh
 
 #calc hash file from url
 hash-url:
