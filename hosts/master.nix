@@ -63,14 +63,11 @@ nixpkgs.lib.nixosSystem rec {
           ../home/yazi
           ../home/emacs.nix
 
-          ({ pkgs, lib, ... }:
-            (import ../home/dev.nix ({
-              inherit pkgs lib;
-              useRust = true;
-              useGcc = true;
-              useGo = true;
-            }))
-          )
+          (import ../home/dev.nix ({
+            useRust = true;
+            useGcc = true;
+            useGo = true;
+          }))
         ];
       };
     }

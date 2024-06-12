@@ -37,9 +37,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/neovim.nix
           ../home/yazi
 
-          ({ pkgs, lib, ... }:
-            (import ../home/dev.nix ({ inherit pkgs lib; } // { useRust = true; useGcc = true; useGo = true; }))
-          )
+          (import ../home/dev.nix { useRust = true; useGcc = true; useGo = true; })
         ];
       };
     }
