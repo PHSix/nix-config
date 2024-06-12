@@ -41,7 +41,7 @@
     '';
   };
 
-  home.file.".cargo/config" = {
+  home.file.".cargo/config.toml" = {
     text = ''
       [source.crates-io]
       replace-with = 'rsproxy-sparse'
