@@ -1,3 +1,5 @@
+#!/bin/sh
+
 mkdir /run/systemd/system/nix-daemon.service.d/
 cat << EOF >/run/systemd/system/nix-daemon.service.d/override.conf  
 [Service]
