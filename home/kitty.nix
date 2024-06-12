@@ -1,7 +1,8 @@
 { ... }:
 let
-  fontName = "Macon";
-  nerdFontFallback = "Maple Mono NF";
+  fontName = "JetBrains Mono NL";
+  # nerdFontFallback = "Maple Mono NF";
+  nerdFontFallback = "Macon";
   opacity = "0.88";
   fontSize = 14;
   colorscheme = ''
