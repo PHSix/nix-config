@@ -6,6 +6,7 @@
     # clash-meta
     microsoft-edge
     vscode-fhs
+    gopls
     flameshot
     vlc
 
@@ -14,9 +15,10 @@
     # feishu
     qq
     qbittorrent
-    # zed-editor
 
     wineWowPackages.stable
+    wineWowPackages.fonts
+    # wineWowPackages.waylandFull
     thunderbird
   ];
 }
