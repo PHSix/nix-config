@@ -5,9 +5,10 @@
   programs.java.enable = true;
 
   environment.systemPackages = with pkgs; [
-    # android-udev-rules
-    # android-tools
+    android-udev-rules
+    android-tools
     # android-studio
+    flutter
     kotlin
 
     jetbrains-toolbox

@@ -1,4 +1,4 @@
-inputs@{ system, fenix, ... }:
+inputs@{ system, fenix, android-nixpkgs, ... }:
 let
   pkgsOverlay = import ../pkgs/overlay.nix;
   wezterm-overlay = (final: prev: {
@@ -9,6 +9,7 @@ let
     wezterm-overlay
     inputs.neovim-nightly-overlay.overlays.default
     fenix.overlays.default
+    android-nixpkgs.overlays.default
   ];
 
 in

@@ -10,9 +10,15 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
@@ -21,9 +27,13 @@
 
     wezterm = {
       url = "github:wez/wezterm?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-doom-emacs.url = "github:nix-community/nix-doom-emacs";
+    android-nixpkgs = {
+      url = "github:tadfisher/android-nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # rust package manager
     fenix = {
@@ -42,19 +52,6 @@
         overlays = [ self.overlay ];
         config.allowUnfree = true;
       });
-      # forEachSystem = func: (builtins.listToAttrs (builtins.map
-      #   (system: {
-      #     name = system;
-      #     value = func {
-      #       inherit system;
-      #       pkgs = import nixpkgs {
-      #         system = "x86_64-linux";
-      #         config.allowUnfree = true;
-      #       };
-      #     };
-      #   })
-      #   systems
-      # ));
 
       forEachSystem = func: forAllSystem (system: (func { inherit system; pkgs = nixpkgsFor."${system}"; }));
 
