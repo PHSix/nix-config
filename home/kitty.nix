@@ -2,7 +2,7 @@
 let
   fontName = "JetBrains Mono NL";
   # nerdFontFallback = "Maple Mono NF";
-  nerdFontFallback = "Macon";
+  nerdFontFallback = "Symbols Nerd Font";
   opacity = "0.88";
   fontSize = 14;
   colorscheme = ''

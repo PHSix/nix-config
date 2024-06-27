@@ -14,6 +14,8 @@
     # ];
     settings = {
       substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
+
+      trusted-users = [ "root" "ph" ];
     };
     gc = {
       automatic = true;

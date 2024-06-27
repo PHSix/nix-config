@@ -16,5 +16,5 @@ in
   catppuccin-frappe-gtk = prev.callPackage ./catppuccin-frappe-gtk.nix { };
   clash-verge-rev = prev.callPackage ./clash-verge-rev/default.nix { };
   vimPlugins = prev.vimPlugins // { catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { }; };
-  qq = prev.callPackage ./qq/default.nix { };
+  # qq = prev.callPackage ./qq/default.nix { };
 }
