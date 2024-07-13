@@ -9,7 +9,7 @@ in
       lightline-vim
       catppuccin-vim
       rainbow
-      LeaderF
+      # LeaderF
       vim-commentary
       vim-rooter
       vim-lastplace

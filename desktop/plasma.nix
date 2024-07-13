@@ -34,7 +34,7 @@
 
       bibata-cursors
       adwaita-qt
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
     ]) ++ (with pkgs.qt6Packages; [
       # plasma-browser-integration
       qtstyleplugin-kvantum

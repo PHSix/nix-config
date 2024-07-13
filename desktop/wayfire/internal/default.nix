@@ -3,6 +3,6 @@
 
   home.packages = with pkgs; [
     adwaita-qt
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
   ];
 }

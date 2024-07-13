@@ -49,7 +49,7 @@
       catppuccin-cursors
       catppuccin-gtk
       adwaita-qt
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       bibata-cursors
       gtk3
       gtk4

@@ -70,7 +70,7 @@
 
       gnome.dconf-editor
       gnome.gnome-tweaks
-      gnome.adwaita-icon-theme
+      adwaita-icon-theme
       nordic
       # nordzy-icon-theme
       nordzy-cursor-theme

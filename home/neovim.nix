@@ -9,7 +9,7 @@ inputs@{ pkgs, ... }: {
       deno
       typescript
       # nodePackages.typescript-language-server
-      nodePackages.volar
+      # nodePackages.volar
       nodePackages.eslint
       nodePackages.prettier
       vscode-langservers-extracted
