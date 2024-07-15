@@ -5,8 +5,6 @@
     useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  # sound config
-  sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   # for sercet

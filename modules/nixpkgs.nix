@@ -21,6 +21,7 @@ in
     config = {
       allowUnfree = true;
       allowAliases = false;
+      android_sdk.accept_license = true;
     };
 
     system = system;
