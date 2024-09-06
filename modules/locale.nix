@@ -69,8 +69,8 @@ in
         "Sarasa Mono SC"
       ];
       defaultFonts.sansSerif =
-        [ "LXGW WenKai Mono" "Noto Sans CJK SC" "LXGW WenKai Mono" "DejaVu Sans" ];
-      defaultFonts.serif = [ "LXGW WenKai Mono" "Noto Sans CJK SC" "LXGW WenKai Mono" ];
+        [ "LXGW WenKai Mono" "Noto Sans CJK SC" "DejaVu Sans" ];
+      defaultFonts.serif = [ "LXGW WenKai Mono" "Noto Sans CJK SC" ];
 
       localConf = ''
         <?xml version="1.0" encoding="UTF-8"?>
