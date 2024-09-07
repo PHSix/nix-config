@@ -20,6 +20,11 @@
       fsType = "ext4";
     };
 
+  fileSystems."/mnt/disk" = {
+    device = "/dev/sda2";
+    fsType = "ntfs-3g";
+  };
+
   fileSystems."/boot" =
     {
       device = "/dev/disk/by-uuid/18F7-9412";
