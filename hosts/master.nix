@@ -27,6 +27,7 @@ nixpkgs.lib.nixosSystem rec {
     ../modules/amdgpu.nix
     ../modules/android.nix
     ../modules/virtualisation.nix
+    ../modules/ollama.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.zsh;
