@@ -17,7 +17,8 @@ in
     defaultLocale = "zh_CN.UTF-8";
     supportedLocales = [ "zh_CN.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
     inputMethod = {
-      enabled = "fcitx5";
+      enable = true;
+      type = "fcitx5";
       fcitx5.addons = with pkgs; [
         libsForQt5.fcitx5-chinese-addons
         libsForQt5.fcitx5-configtool
