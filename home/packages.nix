@@ -20,5 +20,9 @@
     wineWowPackages.fonts
     # wineWowPackages.waylandFull
     thunderbird
+
+    upscayl
+
+    jetbrains.idea-community
   ];
 }
