@@ -10,7 +10,7 @@ inputs@{ pkgs, ... }: {
       typescript
       # nodePackages.typescript-language-server
       # nodePackages.volar
-      nodePackages.eslint
+      eslint
       nodePackages.prettier
       vscode-langservers-extracted
       tailwindcss-language-server

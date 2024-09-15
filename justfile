@@ -19,7 +19,7 @@ rebuild target:
 # rebuild and switch
 switch target:
 	@echo 'building and switching for {{target}}'
-	sudo -E nixos-rebuild switch --flake {{target}}
+	sudo -E nixos-rebuild switch --flake {{target}} -L
 
 # delete nix profile as least {{num}}
 remove-profiles num:

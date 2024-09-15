@@ -5,7 +5,13 @@
     useXkbConfig = true; # use xkbOptions in tty.
   };
 
-  hardware.pulseaudio.enable = true;
+  # hardware.pulseaudio.enable = true;
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  # };
 
   # for sercet
   services.gnome.gnome-keyring.enable = true;
