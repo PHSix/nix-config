@@ -24,5 +24,8 @@
     upscayl
 
     jetbrains.idea-community
+
+    dbeaver-bin
+    snipaste
   ];
 }

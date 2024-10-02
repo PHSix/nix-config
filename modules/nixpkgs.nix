@@ -6,7 +6,7 @@ let
   });
   overlays = [
     pkgsOverlay
-    wezterm-overlay
+    # wezterm-overlay
     inputs.neovim-nightly-overlay.overlays.default
     fenix.overlays.default
     android-nixpkgs.overlays.default

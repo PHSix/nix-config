@@ -53,7 +53,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/tmux.nix
           ../home/kitty.nix
           ../home/alacritty.nix
-          ../home/wezterm
+          # ../home/wezterm
           ../home/fish.nix
           ../home/zsh
           ../home/vim

@@ -19,6 +19,8 @@
     podman-tui # status of containers in the terminal
     # docker-compose # start group of containers for dev
     podman-compose # start group of containers for dev
+
+    lazydocker # docker-compose wrapper
   ];
 
   # enable docker service
