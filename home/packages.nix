@@ -26,6 +26,7 @@
     jetbrains.idea-community
 
     dbeaver-bin
-    snipaste
+
+    floorp
   ];
 }
