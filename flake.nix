@@ -1,7 +1,7 @@
 {
   description = "Personal nixos config `flake.nix`.";
   inputs = {
-    nixpkgs = { url = "nixpkgs/nixos-unstable"; };
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     nixos-cn = {
       url = "github:nixos-cn/flakes";
       inputs.nixpkgs.follows = "nixpkgs";
