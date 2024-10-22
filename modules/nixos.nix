@@ -3,7 +3,7 @@
 
   nix = {
     extraOptions = ''
-      experimental-features = nix-command flakes repl-flake
+      experimental-features = nix-command flakes
       flake-registry = https://cdn.jsdelivr.net/gh/NixOS/flake-registry/flake-registry.json
     '';
 

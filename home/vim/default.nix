@@ -22,7 +22,7 @@ in
       coc-json
       coc-vimlsp
       coc-explorer
-      coc-python
+      coc-pyright
       coc-snippets
       coc-pairs
       coc-git

@@ -14,12 +14,12 @@ build target:
 # rebuild nixos for boot
 rebuild target:
 	@echo 'rebuilding {{target}} for boot…'
-	sudo -E nixos-rebuild boot --flake {{target}}
+	sudo nixos-rebuild boot --flake {{target}}
 
 # rebuild and switch
 switch target:
 	@echo 'building and switching for {{target}}'
-	sudo -E nixos-rebuild switch --flake {{target}} -L
+	sudo nixos-rebuild switch --flake {{target}} -L
 
 # delete nix profile as least {{num}}
 remove-profiles num:

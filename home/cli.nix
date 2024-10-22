@@ -10,7 +10,6 @@
     eza
     tree
     zoxide
-    mycli
     sqlite
     lazygit
     ranger
