@@ -8,4 +8,5 @@ final: prev:
   fcitx5-pinyin-zhiwiki = prev.callPackage ./fcitx5-pinyin-zhiwiki.nix { };
   catppuccin-frappe-gtk = prev.callPackage ./catppuccin-frappe-gtk.nix { };
   vimPlugins = prev.vimPlugins // { catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { }; };
+  qq = prev.callPackage ./qq/default.nix { };
 }
