@@ -2,16 +2,6 @@
 #     font config
 #     input method
 { config, pkgs, lib, ... }:
-let
-  # nerdfonts package default have too many font zip to download, override for it
-  nerdfonts = pkgs.nerdfonts.override {
-    fonts = [
-      "FiraCode"
-      "UbuntuMono"
-      "NerdFontsSymbolsOnly"
-    ];
-  };
-in
 {
   i18n = {
     defaultLocale = "zh_CN.UTF-8";
@@ -146,8 +136,10 @@ in
       intel-one-mono
       icursive-nerd-font
     ]) ++ [
-      # pkgs.nerdfonts
-      nerdfonts
+      pkgs.nerd-fonts.fira-code
+      pkgs.nerd-fonts.fira-mono
+      pkgs.nerd-fonts.ubuntu-mono
+      pkgs.nerd-fonts.symbols-only
     ];
   };
 }
