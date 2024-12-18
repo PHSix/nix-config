@@ -66,7 +66,7 @@ keymap = [
   { keys = ["]"], command = "parent_cursor_move_down" },
 
   { keys = ["c", "d"], command = ":cd " },
-  { keys = ["d", "d"], command = "cut_files" },
+  { keys = ["x"], command = "cut_files" },
   { keys = ["y", "y"], command = "copy_files" },
   { keys = ["y", "n"], command = "copy_filename" },
   { keys = ["y", "."], command = "copy_filename_without_extension" },
@@ -77,13 +77,13 @@ keymap = [
   { keys = ["p", "L"], command = "symlink_files --relative=true" },
 
   { keys = ["delete"], command = "delete_files" },
-  { keys = ["d", "D"], command = "delete_files" },
+  { keys = ["d"], command = "delete_files" },
 
   { keys = ["p", "p"], command = "paste_files" },
   { keys = ["p", "o"], command = "paste_files --overwrite=true" },
 
   # { keys = ["a"], command = "rename_append" },
-  { keys = ["a"], command = ":touch" },
+  { keys = ["a"], command = ":touch " },
   { keys = ["r"], command = "rename_append" },
   { keys = ["A"], command = "rename_prepend" },
 
@@ -127,11 +127,10 @@ keymap = [
   { keys = ["g", "r"], command = "cd /" },
   { keys = ["g", "c"], command = "cd ~/.config" },
   { keys = ["g", "n"], command = "cd ~/.config/nvim" },
-  { keys = ["g", "d"], command = "cd ~/Downloads" },
+  { keys = ["g", "d"], command = "cd ~/Download" },
   { keys = ["g", "e"], command = "cd /etc" },
   { keys = ["g", "h"], command = "cd ~/" },
-  { keys = ["g", "w"], command = "cd ~/Workspace"},
-  { keys = ["g", "p"], command = "cd ~/Project"},
+  { keys = ["g", "w"], command = "cd ~/repos"},
   { keys = ["?"], command = "help" },
 
 ]

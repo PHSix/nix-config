@@ -59,7 +59,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/vim
           ../home/neovim.nix
           ../home/mpd.nix
-          ../home/joshuto
+          # ../home/joshuto
           ../home/gitui
           ../home/yazi
           ../home/emacs.nix
