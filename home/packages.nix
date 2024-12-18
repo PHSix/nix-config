@@ -1,10 +1,12 @@
-{ pkgs, ... }: {
+{ pkgs, zen-browser, system, ... }: {
   home.packages = with pkgs; [
     google-chrome
     clash-verge-rev
     v2raya
     # clash-meta
-    microsoft-edge
+    # microsoft-edge
+    zen-browser.packages."${system}".default
+    
     vscode-fhs
     gopls
     flameshot
