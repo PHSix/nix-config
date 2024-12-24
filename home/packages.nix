@@ -5,8 +5,8 @@
     v2raya
     # clash-meta
     # microsoft-edge
-    zen-browser.packages."${system}".default
-    
+    zen-browser.packages."${system}"
+
     vscode-fhs
     gopls
     flameshot
@@ -25,7 +25,7 @@
 
     upscayl
 
-    jetbrains.idea-community
+    # jetbrains.idea-community
 
     dbeaver-bin
 
