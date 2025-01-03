@@ -5,7 +5,7 @@
     v2raya
     # clash-meta
     # microsoft-edge
-    zen-browser.packages."${system}"
+    zen-browser.packages."${system}".default
 
     vscode-fhs
     gopls
