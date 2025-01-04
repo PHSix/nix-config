@@ -13,6 +13,7 @@
     vlc
 
     telegram-desktop
+    element-desktop
 
     # feishu
     qq
@@ -29,6 +30,5 @@
 
     dbeaver-bin
 
-    floorp
   ];
 }
