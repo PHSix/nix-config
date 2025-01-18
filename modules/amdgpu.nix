@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, ... }:
 {
   hardware.graphics.enable = true;
   boot.initrd.kernelModules = [ "amdgpu" ];

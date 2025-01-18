@@ -3,6 +3,7 @@ inputs@{ pkgs, ... }: {
     enable = true;
     extraPackages = (with pkgs.python311Packages; [ autopep8 black python-lsp-server ])
       ++ (with pkgs; [
+      zls
       gopls # for golang
       python311
       nodejs

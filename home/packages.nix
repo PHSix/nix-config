@@ -26,9 +26,12 @@
 
     upscayl
 
+
+    jetbrains.webstorm
     # jetbrains.idea-community
 
     dbeaver-bin
 
+    zig
   ];
 }

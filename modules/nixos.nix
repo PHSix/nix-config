@@ -13,7 +13,7 @@
     #   "repl-flake" # can use for explain personal profile: nix repl ~/nixos-config
     # ];
     settings = {
-      substituters = [ "https://mirror.sjtu.edu.cn/nix-channels/store" ];
+      substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 
       trusted-users = [ "root" "ph" ];
     };
