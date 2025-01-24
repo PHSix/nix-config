@@ -1,14 +1,16 @@
-{
+{ ... }: {
   systemModule = { pkgs, ... }: {
     services = {
       gnome = { gnome-keyring = { enable = true; }; };
 
-      displayManager = {
-        gdm.enable = true;
-        # autoLogin.enable = true;
-        # autoLogin.user = "ph";
-      };
+
       xserver = {
+        displayManager = {
+          gdm.enable = true;
+          # autoLogin.enable = true;
+          # autoLogin.user = "ph";
+        };
+        desktopManager = { gnome.enable = true; };
         enable = true;
         # displayManager.gdm.wayland = true;
         layout = "us";
@@ -19,8 +21,7 @@
         libinput.enable = true;
       };
 
-      desktopManager = { gnome.enable = true; };
-      udev.packages = with pkgs; [ gnome.gnome-settings-daemon ];
+      udev.packages = with pkgs; [ gnome-settings-daemon ];
     };
 
     programs = {
@@ -35,7 +36,7 @@
       gnome-photos
       gnome-tour
       xterm
-    ]) ++ (with pkgs.gnome; [
+    ]) ++ (with pkgs; [
       cheese
       # gedit
       epiphany
@@ -68,13 +69,13 @@
 
       wl-clipboard
 
-      gnome.dconf-editor
-      gnome.gnome-tweaks
+      dconf-editor
+      gnome-tweaks
       adwaita-icon-theme
       nordic
       # nordzy-icon-theme
       nordzy-cursor-theme
-    ]) ++ (with pkgs.gnome; [
+    ]) ++ (with pkgs; [
       gnome-tweaks
       gnome-boxes
       gnome-screenshot

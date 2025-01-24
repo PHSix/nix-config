@@ -1,6 +1,7 @@
 inputs@{ nixpkgs, home-manager, ... }:
 let
   desktop = import ../desktop/plasma.nix { };
+  # desktop = import ../desktop/gnome.nix { };
   system = "x86_64-linux";
   specialArgs = inputs // {
     inherit system;
@@ -13,8 +14,11 @@ nixpkgs.lib.nixosSystem rec {
 
   modules = [
     desktop.systemModule
+    inputs.daeuniverse.nixosModules.dae
+    inputs.daeuniverse.nixosModules.daed
     ../hardwares/master.nix
 
+    ../modules/dae.nix
     ../modules/network.nix
     ../modules/grub.nix
     ../modules/misc.nix
