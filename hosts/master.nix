@@ -14,8 +14,6 @@ nixpkgs.lib.nixosSystem rec {
 
   modules = [
     desktop.systemModule
-    inputs.daeuniverse.nixosModules.dae
-    inputs.daeuniverse.nixosModules.daed
     ../hardwares/master.nix
 
     ../modules/dae.nix
