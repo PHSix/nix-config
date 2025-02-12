@@ -20,7 +20,6 @@
         lt = "eza --tree --level=2";
         gp = "git pull";
         gP = "git push";
-        # ra = "ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd \"$LASTDIR\"";
         cn = "touch";
         mk = "mkdir";
         gl = "git clone";
@@ -40,10 +39,6 @@
         }
       ];
       initExtra = ''
-        if type "joshuto" > /dev/null; then
-          alias yz="yazi"
-          alias ra="yazi"
-        fi
         function proxy(){
           export https_proxy=http://localhost:7897
           export http_proxy=http://localhost:7897

@@ -1,29 +1,23 @@
-inputs@{ pkgs, ... }: {
+{ pkgs, ... }: {
   programs.neovim = {
     enable = true;
-    extraPackages = (with pkgs.python311Packages; [ autopep8 black python-lsp-server ])
+    extraPackages = (with pkgs.python313Packages; [ autopep8 black python-lsp-server ])
       ++ (with pkgs; [
       zls
       gopls # for golang
-      python311
+      python313
       nodejs
       deno
       typescript
-      # nodePackages.typescript-language-server
-      # nodePackages.volar
-      eslint
       nodePackages.prettier
       vscode-langservers-extracted
       tailwindcss-language-server
-      basedpyright
-      # python310Packages.python-lsp-server # for python
+      # basedpyright
       nil
       nixpkgs-fmt
       lua-language-server
       stylua
 
-      # rust-analyzer
-      # rustfmt
       watchman
 
       gcc

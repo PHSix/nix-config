@@ -4,7 +4,6 @@
       enable = true;
 
       shellAbbrs = {
-        # yz = "yazi";
         ls = "eza";
         l = "eza --git-ignore";
         ll = "eza --all --header --long";

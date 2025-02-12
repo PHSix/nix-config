@@ -1,4 +1,4 @@
-{ ... }: {
+_: {
   programs.proxychains = {
     enable = true;
     proxies = {

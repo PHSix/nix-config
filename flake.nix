@@ -62,6 +62,7 @@
         "clash-verge-rev"
         "qq"
         "fcitx5-pinyin-zhiwiki"
+        "cherry-studio"
       ];
     in
     rec {
@@ -93,7 +94,9 @@
               (package: { name = package; value = nixpkgsFor."${system}"."${package}"; })
               (builtins.filter
                 (package: builtins.hasAttr package nixpkgsFor."${system}")
-                providePackages))
+                providePackages
+              )
+            )
           )
         );
     };

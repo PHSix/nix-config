@@ -23,10 +23,6 @@
 
   };
 
-  # set nix daemon proxy for user(it's important for chinese users)
-  # systemd.services.nix-daemon.environment.http_proxy = "http://localhost:7890";
-  # systemd.services.nix-daemon.environment.https_proxy = "http://localhost:7890";
-
   location = {
     latitude = 23.0;
     longitude = 113.0;
@@ -121,7 +117,7 @@
       rofi-emoji
       twitter-color-emoji
       unicode-emoji
-      vistafonts # many windows font(include consolas)
+      vista-fonts # many windows font(include consolas)
       maple-mono-NF
       monego
 

@@ -7,11 +7,6 @@
       flake-registry = https://cdn.jsdelivr.net/gh/NixOS/flake-registry/flake-registry.json
     '';
 
-    # experimental-features = [
-    #   "nix-command"
-    #   "flakes"
-    #   "repl-flake" # can use for explain personal profile: nix repl ~/nixos-config
-    # ];
     settings = {
       substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
 

@@ -3,7 +3,6 @@
     google-chrome
     clash-verge-rev
     v2raya
-    # clash-meta
     # microsoft-edge
     zen-browser.packages."${system}".default
 
@@ -14,6 +13,7 @@
 
     telegram-desktop
     element-desktop
+    cherry-studio
 
     # feishu
     qq

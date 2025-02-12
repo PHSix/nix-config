@@ -1,4 +1,4 @@
-{ pkgs, username, ... }:
+{ username, ... }:
 {
   security.doas.enable = true;
   users.users."${username}" = {

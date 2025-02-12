@@ -9,4 +9,5 @@ final: prev:
   catppuccin-frappe-gtk = prev.callPackage ./catppuccin-frappe-gtk.nix { };
   vimPlugins = prev.vimPlugins // { catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { }; };
   qq = prev.callPackage ./qq/default.nix { };
+  cherry-studio = prev.callPackage ./cherry-studio.nix { };
 }
