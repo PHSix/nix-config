@@ -1,16 +1,15 @@
 { usePython ? true
-, useNodejs ? true
+, useJs ? true
 , useGcc ? true
 , useRust ? false
 , useGo ? false
 }:
 let
   f = state: packages: if state then packages else [ ];
-  ff = state: packages: if state then packages else { };
 in
-{ pkgs, ... }: ({
+{ pkgs, ... }: {
   home.packages = f usePython (with pkgs;[ python313 ])
-    ++ f useNodejs (with pkgs; [ nodejs deno ])
+    ++ f useJs (with pkgs; [ nodejs deno ])
     ++ f useGcc (with pkgs; [ gcc gnumake cmake gccStdenv ])
     # ++ f useRust (with pkgs; [ rustc cargo ])
     ++ f useRust (with pkgs; [
@@ -29,7 +28,6 @@ in
     ++ f useGo (with pkgs; [ go ])
   ;
 
-} // ff useRust {
   home.file.".cargo/config.toml" = {
     text = ''
       [source.crates-io]
@@ -44,7 +42,6 @@ in
       git-fetch-with-cli = true
     '';
   };
-} // ff useNodejs {
   home.file.".npmrc" =
     {
       text = ''
@@ -53,5 +50,5 @@ in
       '';
     };
 }
-)
+
 
