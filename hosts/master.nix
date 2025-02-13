@@ -2,9 +2,9 @@ inputs@{ nixpkgs, home-manager, ... }:
 let
   desktop = import ../desktop/plasma.nix { };
   system = "x86_64-linux";
+  username = "ph";
   specialArgs = inputs // {
-    inherit system;
-    username = "ph";
+    inherit system username;
   };
 in
 nixpkgs.lib.nixosSystem rec {
@@ -13,9 +13,22 @@ nixpkgs.lib.nixosSystem rec {
 
   modules = [
     desktop.systemModule
+
+    # dae need secret files to encrypt subscriptions
+    inputs.agenix.nixosModules.default
+    {
+      age.identityPaths = [ "/home/${username}/.age/key.txt" ];
+      age.secrets.dae.file = ../secrets/dae.age;
+      environment.systemPackages = [
+        inputs.agenix.packages.${system}.default
+      ];
+      imports = [
+        ../modules/dae.nix
+      ];
+    }
+
     ../hardwares/master.nix
 
-    ../modules/dae.nix
     ../modules/network.nix
     ../modules/grub.nix
     ../modules/misc.nix
