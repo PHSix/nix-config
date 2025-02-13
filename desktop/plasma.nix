@@ -35,6 +35,9 @@
       bibata-cursors
       adwaita-qt
       adwaita-icon-theme
+
+      # enable corner radius
+      kde-rounded-corners
     ]) ++ (with pkgs.qt6Packages; [
       # plasma-browser-integration
       qtstyleplugin-kvantum

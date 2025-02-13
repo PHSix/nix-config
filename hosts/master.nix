@@ -1,7 +1,6 @@
 inputs@{ nixpkgs, home-manager, ... }:
 let
   desktop = import ../desktop/plasma.nix { };
-  # desktop = import ../desktop/gnome.nix { };
   system = "x86_64-linux";
   specialArgs = inputs // {
     inherit system;
