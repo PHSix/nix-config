@@ -66,6 +66,7 @@
         "fcitx5-pinyin-zhiwiki"
         "cherry-studio"
       ];
+
     in
     rec {
       nixosConfigurations = import ./hosts/default.nix inputs;
@@ -74,21 +75,64 @@
       overlays.default = overlay;
 
       formatter = forEachSystem ({ pkgs, ... }: pkgs.nixpkgs-fmt);
-      devShells = forEachSystem ({ pkgs, ... }: {
-        default = pkgs.mkShell {
-          packages = with pkgs; [
-            vim
-            git
-            lazygit
-            nixpkgs-fmt
-            yazi
-            ripgrep
-            fzf
-            nurl
-            htop
-          ];
-        };
-      });
+      devShells = forEachSystem ({ pkgs, system, ... }:
+        let
+          # Helper function to create shell scripts
+          mkShellScript = name: text: pkgs.writeShellScriptBin name text;
+        in
+        {
+          default = pkgs.mkShell {
+            packages = with pkgs; [
+              vim
+              git
+              lazygit
+              nixpkgs-fmt
+              yazi
+              ripgrep
+              fzf
+              nurl
+              htop
+
+              # Custom shell scripts
+              (mkShellScript "gc" "sudo nix-collect-garbage -d")
+              (mkShellScript "fmt" "nixpkgs-fmt {./*.nix,./**/*.nix}")
+              (mkShellScript "build" ''
+                if [ -z "$1" ]; then
+                  echo "Usage: build <target>"
+                  exit 1
+                fi
+                echo "building $1…"
+                nixos-rebuild build --flake $1 -L
+              '')
+              (mkShellScript "rebuild" ''
+                if [ -z "$1" ]; then
+                  echo "Usage: rebuild <target>"
+                  exit 1
+                fi
+                echo "rebuilding $1 for boot…"
+                sudo nixos-rebuild boot --flake $1 -L
+              '')
+              (mkShellScript "switch" ''
+                if [ -z "$1" ]; then
+                  echo "Usage: switch <target>"
+                  exit 1
+                fi
+                echo "building and switching for $1"
+                sudo nixos-rebuild switch --flake $1 -L
+              '')
+              (mkShellScript "remove-profiles" ''
+                if [ -z "$1" ]; then
+                  echo "Usage: remove-profiles <num>"
+                  exit 1
+                fi
+                sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +$1
+              '')
+              (mkShellScript "list-profiles" "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations")
+              (mkShellScript "daemon-proxy" "sudo sh ./scripts/daemon-proxy.sh")
+              (mkShellScript "hash-url" "sudo sh ./scripts/hash.sh")
+            ];
+          };
+        });
       packages = forAllSystem
         (system:
           (builtins.listToAttrs
