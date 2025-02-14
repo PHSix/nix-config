@@ -39,6 +39,10 @@
         }
       ];
       initExtra = ''
+        if type "yazi" > /dev/null; then
+          alias yz="yazi"
+          alias ra="yazi"
+        fi
         function proxy(){
           export https_proxy=http://localhost:7897
           export http_proxy=http://localhost:7897
