@@ -80,6 +80,7 @@
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
         source ~/.config/zsh/.p10k.zsh
+        any-nix-shell zsh --info-right | source /dev/stdin
         # eval "$(zoxide init zsh)"
       '';
     };

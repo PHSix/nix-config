@@ -1,22 +1,21 @@
 { pkgs, zen-browser, system, ... }: {
   home.packages = with pkgs; [
     google-chrome
-    clash-verge-rev
-    v2raya
-    # microsoft-edge
+    microsoft-edge
     zen-browser.packages."${system}".default
 
-    vscode-fhs
-    gopls
+    snipaste
     flameshot
     vlc
 
+    vscode-fhs
     telegram-desktop
     element-desktop
     cherry-studio
-
-    # feishu
+    httpie-desktop
+    discord
     qq
+
     qbittorrent
 
     wineWowPackages.stable
