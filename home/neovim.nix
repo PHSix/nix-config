@@ -1,8 +1,7 @@
 { pkgs, ... }: {
   programs.neovim = {
     enable = true;
-    extraPackages = (with pkgs.python313Packages; [ autopep8 black python-lsp-server ])
-      ++ (with pkgs; [
+    extraPackages = (with pkgs.python313Packages; [ autopep8 black python-lsp-server ]) ++ (with pkgs; [
       zls
       gopls # for golang
       python313

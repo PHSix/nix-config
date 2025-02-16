@@ -11,7 +11,6 @@ in
   home.packages = f usePython (with pkgs;[ python313 ])
     ++ f useJs (with pkgs; [ nodejs deno ])
     ++ f useGcc (with pkgs; [ gcc gnumake cmake gccStdenv ])
-    # ++ f useRust (with pkgs; [ rustc cargo ])
     ++ f useRust (with pkgs; [
 
     (fenix.complete.withComponents [

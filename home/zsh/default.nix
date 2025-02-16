@@ -96,7 +96,6 @@
     sessionVariables = { EDITOR = "nvim"; };
     sessionPath = [ "$HOME/.npm-packages/bin" ];
     packages = with pkgs; [
-      # zinit
       zsh-vi-mode
       zsh-fzf-tab
       zsh-powerlevel10k

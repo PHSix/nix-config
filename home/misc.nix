@@ -1,6 +1,4 @@
-{ ... }: {
-
-  # for git config
+_: {
   programs.git = {
     enable = true;
     userName = "ph";
@@ -10,17 +8,10 @@
   programs.gpg = { enable = true; };
   services.gpg-agent = { enable = true; };
 
-  #  home.file.".rgignore".text = "
-  # 	pnpm-lock.yaml
-  # 	*.lock
-  # ";
-
-  # home.file.".ssh/config".text = ''
-  #   Host github.com
-  #   Hostname ssh.github.com
-  #   Port 443
-  #   User git
-  # '';
+  home.file.".rgignore".text = "
+    pnpm-lock.yaml
+    *.lock
+  ";
 
   fonts.fontconfig.enable = false;
 }

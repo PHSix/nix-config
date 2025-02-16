@@ -74,13 +74,12 @@ nixpkgs.lib.nixosSystem rec {
           ../home/vim
           ../home/neovim.nix
           ../home/mpd.nix
-          # ../home/joshuto
           ../home/gitui
           ../home/yazi
           ../home/emacs.nix
 
           (import ../home/dev.nix ({
-            useRust = false;
+            useRust = true;
             useGcc = true;
             useGo = true;
           }))

@@ -61,14 +61,32 @@ can help user quickly edit the package Nix expression in $EDITOR, but not search
 6. `nix flake show`
 output your flake.nix products.
 ```
-git+file:///Users/ph/nix
+git+file:///home/ph/nix-config
 ├───devShells
 │   ├───aarch64-linux
-│   │   └───default: development environment 'nix-shell'
+│   │   └───default omitted (use '--all-systems' to show)
 │   └───x86_64-linux
-│       └───default omitted (use '--all-systems' to show)
-└───nixosConfigurations
-    ├───laptop: NixOS configuration
-    ├───master: NixOS configuration
-    └───orb-vm: NixOS configuration
+│       └───default: development environment 'nix-shell'
+├───formatter
+│   ├───aarch64-linux omitted (use '--all-systems' to show)
+│   └───x86_64-linux: package 'nixpkgs-fmt-1.3.0'
+├───nixosConfigurations
+│   ├───laptop: NixOS configuration
+│   ├───master: NixOS configuration
+│   ├───orb-vm: NixOS configuration
+│   └───wsl: NixOS configuration
+├───overlay: Nixpkgs overlay
+├───overlays
+│   └───default: Nixpkgs overlay
+└───packages
+    ├───aarch64-linux
+    │   ├───cherry-studio omitted (use '--all-systems' to show)
+    │   ├───clash-verge-rev omitted (use '--all-systems' to show)
+    │   ├───fcitx5-pinyin-zhiwiki omitted (use '--all-systems' to show)
+    │   └───qq omitted (use '--all-systems' to show)
+    └───x86_64-linux
+        ├───cherry-studio: package 'cherry-studio-0.9.24'
+        ├───clash-verge-rev: package 'clash-verge-rev-2.0.3'
+        ├───fcitx5-pinyin-zhiwiki: package 'fcitx5-pinyin-zhwiki-20230128'
+        └───qq: package 'qq-3.2.15_241224'
 ```

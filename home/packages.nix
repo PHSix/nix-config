@@ -27,7 +27,7 @@
 
 
     jetbrains.webstorm
-    # jetbrains.idea-community
+    jetbrains.idea-community
 
     dbeaver-bin
 
