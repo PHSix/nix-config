@@ -66,6 +66,7 @@ nixpkgs.lib.nixosSystem rec {
           ../home/misc.nix
           ../home/tmux.nix
           ../home/kitty.nix
+          ../home/ghostty.nix
           ../home/alacritty.nix
           # ../home/wezterm
           ../home/fish.nix
