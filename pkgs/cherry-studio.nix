@@ -1,17 +1,14 @@
-# 在 nix-config 仓库中的 packages/cherry-studio/default.nix
-
 { appimageTools
 , lib
 , fetchurl
 , electron
 }:
-
 let
   pname = "cherry-studio";
-  version = "0.9.19";
+  version = "0.9.24";
   src = fetchurl {
     url = "https://github.com/CherryHQ/cherry-studio/releases/download/v${version}/Cherry-Studio-${version}-x86_64.AppImage";
-    sha256 = "1krhixpgxnw6phrnz9p7f86cvmpk5janbqbnls9rsic2azypdf31";
+    sha256 = "0mb25rgj1id10ysr4731kxlpbd436y898cy62nsvs3s2ikphvv5p";
   };
 
   appimageContents = appimageTools.extractType2 {
@@ -51,9 +48,9 @@ appimageTools.wrapType2 {
   '';
 
   meta = with lib; {
-    description = "Electron-based LLM Client";
-    homepage = "https://github.com/cherry-studio/cherry-studio";
-    license = licenses.unfree; # 根据实际许可证调整
+    description = "🍒 Cherry Studio is a desktop client that supports for multiple LLM providers. Support deepseek-r1 ";
+    homepage = "https://github.com/CherryHQ/cherry-studio";
+    license = licenses.apsl20;
     maintainers = [ ];
     platforms = [ "x86_64-linux" ];
   };
