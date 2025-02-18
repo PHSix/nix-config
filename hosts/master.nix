@@ -23,25 +23,25 @@ nixpkgs.lib.nixosSystem rec {
         inputs.agenix.packages.${system}.default
       ];
       imports = [
-        ../modules/dae.nix
+        ../system/dae.nix
       ];
     }
 
     ../hardwares/master.nix
 
-    ../modules/network.nix
-    ../modules/grub.nix
-    ../modules/misc.nix
-    ../modules/nixos.nix
-    ../modules/user.nix
-    ../modules/packages.nix
-    ../modules/nixpkgs.nix
-    ../modules/locale.nix
-    ../modules/proxychains.nix
-    ../modules/amdgpu.nix
-    ../modules/android.nix
-    ../modules/virtualisation.nix
-    ../modules/ollama.nix
+    ../system/network.nix
+    ../system/grub.nix
+    ../system/misc.nix
+    ../system/nixos.nix
+    ../system/user.nix
+    ../system/packages.nix
+    ../system/nixpkgs.nix
+    ../system/locale.nix
+    ../system/proxychains.nix
+    ../system/amdgpu.nix
+    ../system/android.nix
+    ../system/virtualisation.nix
+    ../system/ollama.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.zsh;

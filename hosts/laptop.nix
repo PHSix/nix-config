@@ -14,16 +14,16 @@ nixpkgs.lib.nixosSystem rec {
     ../hardwares/laptop.nix
 
     desktop.systemModule
-    ../modules/network.nix
-    ../modules/grub.nix
-    ../modules/misc.nix
-    ../modules/nixpkgs.nix
-    ../modules/nixos.nix
-    ../modules/user.nix
-    ../modules/packages.nix
-    ../modules/locale.nix
-    ../modules/hybrid-graphics.nix
-    ../modules/proxychains.nix
+    ../system/network.nix
+    ../system/grub.nix
+    ../system/misc.nix
+    ../system/nixpkgs.nix
+    ../system/nixos.nix
+    ../system/user.nix
+    ../system/packages.nix
+    ../system/locale.nix
+    ../system/hybrid-graphics.nix
+    ../system/proxychains.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.fish;

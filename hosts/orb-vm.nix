@@ -11,9 +11,9 @@ nixpkgs.lib.nixosSystem rec {
         "${modulesPath}/virtualisation/lxc-container.nix"
       ];
     })
-    ../modules/nixos.nix
-    ../modules/nixpkgs.nix
-    ../modules/user.nix
+    ../system/nixos.nix
+    ../system/nixpkgs.nix
+    ../system/user.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.fish;

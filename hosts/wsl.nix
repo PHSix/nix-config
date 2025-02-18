@@ -12,9 +12,9 @@ nixpkgs.lib.nixosSystem rec {
         defaultUser = "ph";
       };
     }
-    ../modules/nixos.nix
-    ../modules/nixpkgs.nix
-    ../modules/user.nix
+    ../system/nixos.nix
+    ../system/nixpkgs.nix
+    ../system/user.nix
 
     ({ pkgs, ... }: {
       users.users."ph".shell = pkgs.fish;

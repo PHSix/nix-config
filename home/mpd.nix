@@ -1,5 +1,5 @@
 # source code url: https://github.com/nix-community/home-manager/blob/master/modules/services/mpd.nix
-_: {
+{
   programs.ncmpcpp = {
     enable = true;
     mpdMusicDir = "~/Music";
