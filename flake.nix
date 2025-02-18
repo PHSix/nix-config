@@ -50,7 +50,12 @@
   outputs = inputs@{ nixpkgs, self, ... }:
     let
       systems = [ "x86_64-linux" "aarch64-linux" ];
-      forAllSystem = nixpkgs.lib.genAttrs systems;
+
+      # genAttrs :: [ String ] -> (String -> Any) -> AttrSet
+      # sample: ["a", "b"] -> x: "${x}-1" -> { a = "a-1"; b = "b-1"; }
+      genAttrs = nixpkgs.lib.genAttrs;
+
+      forAllSystem = genAttrs systems;
 
       nixpkgsFor = forAllSystem (system: import nixpkgs {
         inherit system;
@@ -60,11 +65,16 @@
 
       forEachSystem = func: forAllSystem (system: (func { inherit system; pkgs = nixpkgsFor."${system}"; }));
 
-      providePackages = [
-        "clash-verge-rev"
+      providePackageNames = [
         "qq"
         "fcitx5-pinyin-zhiwiki"
         "cherry-studio"
+        "monego"
+        "monaco-nerd-font"
+        "monaco-font"
+        "hactor"
+        "icursive-nerd-font"
+        "catppuccin-frappe-gtk"
       ];
 
     in
@@ -78,11 +88,15 @@
       devShells = forEachSystem ({ pkgs, system, ... }:
         let
           # Helper function to create shell scripts
-          mkShellScript = name: text: pkgs.writeShellScriptBin name text;
+          mkShellBin = name: text: pkgs.writeShellScriptBin name text;
+
+          binsAttr = import ./shell-scripts.nix;
+          binNames = builtins.attrNames binsAttr;
+          bins = builtins.map (name: mkShellBin name binsAttr.${name}) binNames;
         in
         {
           default = pkgs.mkShell {
-            packages = with pkgs; [
+            packages = (with pkgs; [
               vim
               git
               lazygit
@@ -92,58 +106,18 @@
               fzf
               nurl
               htop
-
-              # Custom shell scripts
-              (mkShellScript "gc" "sudo nix-collect-garbage -d")
-              (mkShellScript "fmt" "nixpkgs-fmt {./*.nix,./**/*.nix}")
-              (mkShellScript "build" ''
-                if [ -z "$1" ]; then
-                  echo "Usage: build <target>"
-                  exit 1
-                fi
-                echo "building $1…"
-                nixos-rebuild build --flake $1 -L
-              '')
-              (mkShellScript "rebuild" ''
-                if [ -z "$1" ]; then
-                  echo "Usage: rebuild <target>"
-                  exit 1
-                fi
-                echo "rebuilding $1 for boot…"
-                sudo nixos-rebuild boot --flake $1 -L
-              '')
-              (mkShellScript "switch" ''
-                if [ -z "$1" ]; then
-                  echo "Usage: switch <target>"
-                  exit 1
-                fi
-                echo "building and switching for $1"
-                sudo nixos-rebuild switch --flake $1 -L
-              '')
-              (mkShellScript "remove-profiles" ''
-                if [ -z "$1" ]; then
-                  echo "Usage: remove-profiles <num>"
-                  exit 1
-                fi
-                sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +$1
-              '')
-              (mkShellScript "list-profiles" "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations")
-              (mkShellScript "daemon-proxy" "sudo sh ./scripts/daemon-proxy.sh")
-              (mkShellScript "hash-url" "sudo sh ./scripts/hash.sh")
-            ];
+            ]) ++ bins;
           };
         });
+
       packages = forAllSystem
         (system:
-          (builtins.listToAttrs
-            (builtins.map
-              (package: { name = package; value = nixpkgsFor."${system}"."${package}"; })
-              (builtins.filter
-                (package: builtins.hasAttr package nixpkgsFor."${system}")
-                providePackages
-              )
-            )
-          )
+          let
+            hasPackage = name: builtins.hasAttr name nixpkgsFor."${system}";
+            names = builtins.filter hasPackage providePackageNames;
+            packageList = builtins.map (name: { name = name; value = nixpkgsFor."${system}"."${name}"; }) names;
+          in
+          builtins.listToAttrs packageList
         );
     };
 }
