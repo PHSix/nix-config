@@ -40,9 +40,23 @@
       ];
       initExtra = ''
         if type "yazi" > /dev/null; then
-          alias yz="yazi"
-          alias ra="yazi"
+
+          function yz() {
+            local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+            yazi "$@" --cwd-file="$tmp"
+            if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+              builtin cd -- "$cwd"
+            fi
+            rm -f -- "$tmp"
+          }
         fi
+
+        if type "ranger" > /dev/null; then
+          function ra() {
+            ranger --choosedir="$PWD" "$@"
+          }
+        fi
+
         function proxy(){
           export https_proxy=http://localhost:7897
           export http_proxy=http://localhost:7897
@@ -55,7 +69,6 @@
 
         source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
         source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
-        source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
 
         autoload -Uz compinit && compinit
 
@@ -79,9 +92,9 @@
         zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
         zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-        source ~/.config/zsh/.p10k.zsh
         any-nix-shell zsh --info-right | source /dev/stdin
-        # eval "$(zoxide init zsh)"
+        eval "$(zoxide init zsh)"
+        eval "$(starship init zsh)"
       '';
     };
 
@@ -98,11 +111,12 @@
     packages = with pkgs; [
       zsh-vi-mode
       zsh-fzf-tab
-      zsh-powerlevel10k
+      # zsh-powerlevel10k
+      starship
 
       any-nix-shell
     ];
 
-    file.".config/zsh/.p10k.zsh".source = ./p10k.zsh;
+    # file.".config/zsh/.p10k.zsh".source = ./p10k.zsh;
   };
 }
