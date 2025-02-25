@@ -1,7 +1,14 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+let
+  py-deps = pkgs.python313Packages.withPackages (
+    py-pkgs:
+    (with py-pkgs; [ autopep8 black python-lsp-server ])
+  );
+in
+{
   programs.neovim = {
     enable = true;
-    extraPackages = (with pkgs.python313Packages; [ autopep8 black python-lsp-server ]) ++ (with pkgs; [
+    extraPackages = with pkgs; [
       zls
       gopls # for golang
       python313
@@ -16,12 +23,14 @@
       nixpkgs-fmt
       lua-language-server
       stylua
+      postgres
+      py-deps
 
       watchman
 
       gcc
       gccStdenv # for treesitter compiling deps
       gnumake
-    ]);
+    ];
   };
 }
