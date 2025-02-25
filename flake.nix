@@ -2,10 +2,6 @@
   description = "Personal nixos config `flake.nix`.";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixos-cn = {
-      url = "github:nixos-cn/flakes";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
