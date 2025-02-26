@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ lib, nixpkgs, ... }: {
   system.stateVersion = lib.trivial.release;
 
   nix = {
@@ -8,7 +8,10 @@
     '';
 
     settings = {
-      substituters = [ "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store" ];
+      substituters = [
+        "https://mirror.sjtu.edu.cn/nix-channels/store"
+        "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+      ];
 
       trusted-users = [ "root" "ph" ];
     };
