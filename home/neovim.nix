@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  py-deps = pkgs.python313Packages.withPackages (
+  py-deps = pkgs.python3.withPackages (
     py-pkgs:
     (with py-pkgs; [ autopep8 black python-lsp-server ])
   );
@@ -23,7 +23,7 @@ in
       nixpkgs-fmt
       lua-language-server
       stylua
-      postgres
+      postgresql
       py-deps
 
       watchman
