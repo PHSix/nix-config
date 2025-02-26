@@ -136,6 +136,7 @@
       pkgs.nerd-fonts.fira-mono
       pkgs.nerd-fonts.ubuntu-mono
       pkgs.nerd-fonts.symbols-only
+      pkgs.nerd-fonts.hack
     ];
   };
 }
