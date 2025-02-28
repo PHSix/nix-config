@@ -41,6 +41,9 @@
 
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     daeuniverse.url = "github:daeuniverse/flake.nix";
+
+    niri.url = "github:sodiboo/niri-flake";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = inputs@{ nixpkgs, self, ... }:
