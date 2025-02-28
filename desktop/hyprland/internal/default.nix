@@ -1,15 +1,13 @@
 { pkgs, ... }: {
-  xdg.configFile."hypr/hyprland.conf".source = ./hyprland.conf;
-  xdg.configFile."hypr/autostart.sh".text = ''
+  home.file.".config/hypr/hyprland.conf".source = ./hyprland.conf;
+  home.file.".config/hypr/autostart.sh".text = ''
     nm-applet &
     python3 ~/.config/hypr/scripts/swwl.py &
     udiskie &
     fcitx5 &
     mako &
-    rm /tmp/v2rayA-running.log
-    v2rayA --lite >> /tmp/v2rayA-running.log &
   '';
-  xdg.configFile."hypr/scripts/swwl.py".source = ./swwl.py;
+  home.file.".config/hypr/scripts/swwl.py".source = ./swwl.py;
   home.file.".wallpapers/default.png".source = ../../../imgs/default.png;
 
   home.packages = with pkgs; [
