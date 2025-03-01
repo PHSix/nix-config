@@ -71,7 +71,6 @@ git+file:///home/ph/nix-config
 │   ├───aarch64-linux omitted (use '--all-systems' to show)
 │   └───x86_64-linux: package 'nixpkgs-fmt-1.3.0'
 ├───nixosConfigurations
-│   ├───laptop: NixOS configuration
 │   ├───master: NixOS configuration
 │   ├───orb-vm: NixOS configuration
 │   └───wsl: NixOS configuration
@@ -80,13 +79,23 @@ git+file:///home/ph/nix-config
 │   └───default: Nixpkgs overlay
 └───packages
     ├───aarch64-linux
+    │   ├───catppuccin-frappe-gtk omitted (use '--all-systems' to show)
     │   ├───cherry-studio omitted (use '--all-systems' to show)
-    │   ├───clash-verge-rev omitted (use '--all-systems' to show)
     │   ├───fcitx5-pinyin-zhiwiki omitted (use '--all-systems' to show)
+    │   ├───hactor omitted (use '--all-systems' to show)
+    │   ├───icursive-nerd-font omitted (use '--all-systems' to show)
+    │   ├───monaco-font omitted (use '--all-systems' to show)
+    │   ├───monaco-nerd-font omitted (use '--all-systems' to show)
+    │   ├───monego omitted (use '--all-systems' to show)
     │   └───qq omitted (use '--all-systems' to show)
     └───x86_64-linux
+        ├───catppuccin-frappe-gtk: package 'cattpuccin-frappe-gtk-0.2.7'
         ├───cherry-studio: package 'cherry-studio-0.9.24'
-        ├───clash-verge-rev: package 'clash-verge-rev-2.0.3'
         ├───fcitx5-pinyin-zhiwiki: package 'fcitx5-pinyin-zhwiki-20230128'
-        └───qq: package 'qq-3.2.15_241224'
+        ├───hactor: package 'hactor-1.0.0'
+        ├───icursive-nerd-font: package 'icursive-nerd-font-1.0.0'
+        ├───monaco-font: package 'monaco-1.0.0'
+        ├───monaco-nerd-font: package 'monaco-nerd-fonts-1.0.0'
+        ├───monego: package 'monego-1.0.0'
+        └───qq: package 'qq-3.2.15_250110'
 ```

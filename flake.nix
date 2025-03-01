@@ -1,49 +1,20 @@
 {
   description = "Personal nixos config `flake.nix`.";
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    wezterm = {
-      url = "github:wez/wezterm?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    android-nixpkgs = {
-      url = "github:tadfisher/android-nixpkgs";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # rust package manager
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     agenix.url = "github:ryantm/agenix";
-
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    android-nixpkgs .url = "github:tadfisher/android-nixpkgs";
     daeuniverse.url = "github:daeuniverse/flake.nix";
-
+    # rust package manager
+    fenix.url = "github:nix-community/fenix";
+    home-manager.url = "github:nix-community/home-manager";
+    hyprland.url = "github:hyprwm/Hyprland";
+    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     niri.url = "github:sodiboo/niri-flake";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
     stylix.url = "github:danth/stylix";
+    wezterm.url = "github:wez/wezterm?dir=nix";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
   };
 
   outputs = inputs@{ nixpkgs, self, ... }:
@@ -58,7 +29,9 @@
 
       nixpkgsFor = forAllSystem (system: import nixpkgs {
         inherit system;
-        overlays = [ self.overlay ];
+        overlays = [
+          self.overlay
+        ];
         config.allowUnfree = true;
       });
 
@@ -112,8 +85,8 @@
       packages = forAllSystem
         (system:
           let
-            hasPackage = name: builtins.hasAttr name nixpkgsFor."${system}";
-            names = builtins.filter hasPackage providePackageNames;
+            includedPackage = name: builtins.hasAttr name nixpkgsFor."${system}";
+            names = builtins.filter includedPackage providePackageNames;
             packageList = builtins.map (name: { name = name; value = nixpkgsFor."${system}"."${name}"; }) names;
           in
           builtins.listToAttrs packageList

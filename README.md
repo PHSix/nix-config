@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./imgs/nixos-logo.png" width=30% />
+    <img src="./config/nixos-logo.png" width=30% />
 </p>
 
 <h2 align="center">
@@ -19,7 +19,6 @@ git+file:///home/ph/nix?ref=refs/heads/master&rev=35c9b0787b0430f436f26e63cd37e4
 │   └───x86_64-linux
 │       └───default: development environment 'nix-shell'
 ├───nixosConfigurations
-│   ├───laptop: NixOS configuration
 │   ├───master: NixOS configuration
 │   ├───orb-vm: NixOS configuration
 │   └───wsl: NixOS configuration
@@ -43,6 +42,3 @@ mkfs.ext4 /dev/nvme0n1p2
 4. Generation nixos configurations in `/mnt`, exec `nixos-generate-config --root /mnt`, and then that will generate a `hardware-configuration.nix` file and `configuration.nix`.
 5. Clone this repo to your local. Copy `hardware-configuration.nix` to `${REPO_PATH}/hardware/`.
 6. Change `cwd` to `$REPO_PATH` and exec `nixos-install --root /mnt --flake .#master`.
-
-## wsl
-## orb-vm

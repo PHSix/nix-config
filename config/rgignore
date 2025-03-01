@@ -1,0 +1,10 @@
+pnpm-lock.yaml
+*.lock
+.git
+node_modules/
+dist/
+.DS_Store
+.env
+.idea/
+.vscode/
+*-debug.log
