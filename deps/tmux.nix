@@ -1,5 +1,8 @@
 let
-  f = { ... }: {
+  f = { pkgs, ... }: {
+    home.packages = with pkgs; [
+      sesh
+    ];
     programs.tmux = {
       enable = true;
       baseIndex = 1;
@@ -82,9 +85,24 @@ let
         bind 8 select-window -t 8
         bind 9 select-window -t 9
         bind f resize-pane -Z
-        bind t set -g status
+        # bind t set -g status
         # bind f next-window
         # bind b previous-window
+
+        bind-key "t" run-shell "sesh connect \"$(
+          sesh list --icons | fzf-tmux -p 80%,70% \
+            --no-sort --ansi --border-label ' sesh ' --prompt '⚡  ' \
+            --header '  ^a all ^t tmux ^g configs ^x zoxide ^d tmux kill ^f find' \
+            --bind 'tab:down,btab:up' \
+            --bind 'ctrl-a:change-prompt(⚡  )+reload(sesh list --icons)' \
+            --bind 'ctrl-t:change-prompt(🪟  )+reload(sesh list -t --icons)' \
+            --bind 'ctrl-g:change-prompt(⚙️  )+reload(sesh list -c --icons)' \
+            --bind 'ctrl-x:change-prompt(📁  )+reload(sesh list -z --icons)' \
+            --bind 'ctrl-f:change-prompt(🔎  )+reload(fd -H -d 2 -t d -E .Trash . ~)' \
+            --bind 'ctrl-d:execute(tmux kill-session -t {2..})+change-prompt(⚡  )+reload(sesh list --icons)' \
+            --preview-window 'right:55%' \
+            --preview 'sesh preview {}'
+        )\""
 
         # global settings
         set -g prefix M-s # set your prefix(replace C-b)(设置前缀键)
