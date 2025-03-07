@@ -22,6 +22,7 @@ let
           rust-analyzer-nightly
         ])
         ++ add-deps "go" ([ go ])
+        ++ add-deps "ocaml" ([ ocaml opam ])
       ;
 
       home.file.".npmrc" =
