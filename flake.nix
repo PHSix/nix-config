@@ -4,7 +4,6 @@
     agenix.url = "github:ryantm/agenix";
     android-nixpkgs .url = "github:tadfisher/android-nixpkgs";
     daeuniverse.url = "github:daeuniverse/flake.nix";
-    # rust package manager
     fenix.url = "github:nix-community/fenix";
     home-manager.url = "github:nix-community/home-manager";
     hyprland.url = "github:hyprwm/Hyprland";
@@ -12,9 +11,12 @@
     niri.url = "github:sodiboo/niri-flake";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixvim.url = "github:nix-community/nixvim";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
+
+    coc-nvim-overlay.url = "github:PHSix/coc-nvim-overlay";
   };
 
   outputs = inputs@{ nixpkgs, self, ... }:
@@ -31,6 +33,10 @@
         inherit system;
         overlays = [
           self.overlay
+
+          inputs.coc-nvim-overlay.overlays."${system}".default
+
+          inputs.neovim-nightly-overlay.overlays.default
         ];
         config.allowUnfree = true;
       });
@@ -47,6 +53,8 @@
         "hactor"
         "icursive-nerd-font"
         "catppuccin-frappe-gtk"
+        "coc-nix"
+        "vitesse-nvim"
       ];
 
     in

@@ -1,5 +1,14 @@
 final: prev:
-(builtins.mapAttrs (_: value: prev.callPackage value { })
+let
+  call = x: builtins.mapAttrs (_: value: prev.callPackage value { }) x;
+  plugins = call {
+    catppuccin-vim = ./vimPlugins/catppuccin-vim.nix;
+    hlsearch-nvim = ./vimPlugins/hlsearch-nvim.nix;
+    fcitx-nvim = ./vimPlugins/fcitx-nvim.nix;
+    vitesse-nvim = ./vimPlugins/vitesse-nvim.nix;
+  };
+in
+(call
   {
     monego = ./fonts/monego.nix;
     monaco-nerd-font = ./fonts/monaco-nerd-font.nix;
@@ -10,6 +19,6 @@ final: prev:
     catppuccin-frappe-gtk = ./catppuccin-frappe-gtk.nix;
     qq = ./qq/default.nix;
     cherry-studio = ./cherry-studio.nix;
-  }) // {
-  vimPlugins = prev.vimPlugins // { catppuccin-vim = prev.callPackage ./vimPlugins/catppuccin-vim.nix { }; };
+  }) // plugins // {
+  vimPlugins = prev.vimPlugins // plugins;
 }

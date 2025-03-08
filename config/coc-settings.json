@@ -1,0 +1,206 @@
+{
+  "semanticTokens.enable": false,
+  "snippets.snipmate.enable": true,
+  "snippets.ultisnips.enable": false,
+  "coc.preferences.formatOnSave": true,
+  "coc.preferences.enableMessageDialog": true,
+  "outline.autoPreview": true,
+  "diagnostic.floatConfig": {
+    "border": true,
+    "title": "diagnostic",
+    "rounded": true
+  },
+  "hover.floatConfig": {
+    "border": true,
+    "title": "doc"
+  },
+  "signature.floatConfig": {
+    "shadow": true
+  },
+  "suggest.removeDuplicateItems": true,
+  "suggest.completionItemKindLabels": {
+    "default": " ",
+    "text": "",
+    "method": "󰆧",
+    "function": "󰊕",
+    "constructor": "",
+    "field": "󰇽",
+    "variable": "󰂡",
+    "class": "󰠱",
+    "interface": "",
+    "module": "",
+    "property": "󰜢",
+    "unit": "",
+    "value": "󰎠",
+    "enum": "",
+    "keyword": "󰌋",
+    "snippet": "",
+    "color": "󰏘",
+    "file": "󰈙",
+    "reference": "",
+    "folder": "󰉋",
+    "enumMember": "",
+    "constant": "󰏿",
+    "struct": "",
+    "event": "",
+    "operator": "󰆕",
+    "typeParameter": "󰅲"
+  },
+  "suggest.pumFloatConfig": {
+    "border": true
+  },
+  "suggest.virtualText": false,
+  "diagnostic.errorSign": " ",
+  "diagnostic.warningSign": " ",
+  "diagnostic.hintSign": " ",
+  "diagnostic.infoSign": " ",
+  "diagnostic.enableMessage": "jump",
+  "diagnostic.virtualText": true,
+  "typescript.format.enable": false,
+  "explorer.position": "right",
+  "explorer.git.enable": false,
+  "explorer.trash.command": "nodejs:module",
+  "explorer.diagnostic.enableSubscriptNumber": false,
+  "explorer.keyMappings.global": {
+    "s": "open:vsplit",
+    "S": "open:split",
+    "o": [
+      "wait",
+      "expandable?",
+      [
+        "expanded?",
+        "collapse",
+        "expand"
+      ],
+      "open"
+    ],
+    "d": "delete",
+    "x": "cutFile",
+    "H": "toggleHidden"
+  },
+  "explorer.sources": [
+    {
+      "name": "file",
+      "expand": true
+    }
+  ],
+  "explorer.icon.customIcons": {
+    "icons": {
+      "nix": {
+        "code": "",
+        "color": "#3f5d72"
+      },
+      "justfile": {
+        "code": "",
+        "color": "#526064"
+      }
+    },
+    "extensions": {
+      "nix": "nix"
+    },
+    "filenames": {
+      "vimrc": "vim",
+      "justfile": "justfile"
+    },
+    "dirnames": {},
+    "patternMatches": {},
+    "dirPatternMatches": {}
+  },
+  "explorer.icon.enableNerdfont": true,
+  "explorer.enableFloatinput": true,
+  "Lua.format.enable": false,
+  "Lua.hint.enable": false,
+  "eslint.autoFixOnSave": true,
+  "eslint.format.enable": false,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "html",
+    "markdown",
+    "json",
+    "jsonc",
+    "yaml",
+    "toml",
+    "xml",
+    "gql",
+    "graphql",
+    "astro",
+    "css",
+    "less",
+    "scss",
+    "pcss",
+    "postcss"
+  ],
+  "prettier.enable": true,
+  "prettier.requireConfig": true,
+  "colors.enable": true,
+  "tailwindCSS.colorDecorators": true,
+  "go.checkForUpdates": "disabled",
+  "emmet.excludeLanguages": [
+    "markdown",
+    "typescriptreact",
+    "javascriptreact",
+    "javascript",
+    "typescript"
+  ],
+  "git.addedSign.text": "│",
+  "git.changedSign.text": "│",
+  "git.removedSign.text": "│",
+  "git.changeRemovedSign.text": "│",
+  "git.topRemovedSign.text": "│",
+  "git.addGBlameToVirtualText": true,
+  "[markdown]": {
+    "coc.preferences.formatOnSave": false
+  },
+  "nil.formatting.command": [
+    "nixpkgs-fmt"
+  ],
+  "git.enableGutters": true,
+  "volar.tsLocale": "en",
+  "typescript.locale": "en",
+  "eslint.rules.customizations": [
+    {
+      "rule": "react-hooks/exhaustive-deps",
+      "severity": "off"
+    }
+  ],
+  "vtsls.experimental.completion.entriesLimit": 20,
+  "vtsls.experimental.completion.enableServerSideFuzzyMatch": true,
+  "suggest.triggerCompletionWait": 50,
+  "eslint.experimental.useFlatConfig": true,
+  "dart.showTodos": false,
+  "[dart]": {
+    "inlayHint.enable": false
+  },
+  "pairs.enableCharacters": [
+    "(",
+    "[",
+    "{",
+    "'",
+    "\"",
+    "`"
+  ],
+  "typescript.implementationsCodeLens.enabled": false,
+  "typescript.referencesCodeLens.enabled": false,
+  // some modules contain many useless types especially aws-sdk, will make auto complete list very long and slow
+  "typescript.preferences.autoImportFileExcludePatterns": [
+    "node_modules/@iconify-json",
+    "node_modules/@@google-cloud",
+    "node_modules/@mui/icons-material",
+    "node_modules/@mui/lab",
+    "node_modules/@mui/system",
+    "node_modules/@mui/x-*/**",
+    "node_modules/**/internals",
+    "node_modules/aws-sdk",
+    "node_modules/framer-motion",
+    "node_modules/typescript"
+  ],
+  "typescript.suggestionActions.enabled": false,
+  "javascript.suggestionActions.enabled": false,
+  "Lua.diagnostics.globals": [
+    "vim"
+  ]
+}

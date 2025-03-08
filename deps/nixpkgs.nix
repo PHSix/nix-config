@@ -10,6 +10,7 @@ let
     inputs.neovim-nightly-overlay.overlays.default
     fenix.overlays.default
     android-nixpkgs.overlays.default
+    inputs.coc-nvim-overlay.overlays."${system}".default
   ];
 
 in
