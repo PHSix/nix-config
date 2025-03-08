@@ -1,4 +1,6 @@
+{ config, ... }:
 let
+  sourceEnv = if config?age?secrets?env then "source ${config.age.secrets.env.path}" else "";
   f = { pkgs, ... }: {
     programs = {
       zsh = {
@@ -96,6 +98,7 @@ let
           any-nix-shell zsh --info-right | source /dev/stdin
           eval "$(zoxide init zsh)"
           eval "$(starship init zsh)"
+          ${sourceEnv}
         '';
       };
 
