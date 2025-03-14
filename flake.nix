@@ -37,18 +37,6 @@
 
       forEachSystem = func: forAllSystem (system: (func { inherit system; pkgs = nixpkgsFor."${system}"; }));
 
-      providePackageNames = [
-        "qq"
-        "fcitx5-pinyin-zhiwiki"
-        "cherry-studio"
-        "monego"
-        "monaco-nerd-font"
-        "monaco-font"
-        "hactor"
-        "icursive-nerd-font"
-        "catppuccin-frappe-gtk"
-      ];
-
     in
     rec {
       nixosConfigurations = import ./hosts/default.nix inputs;
@@ -82,14 +70,6 @@
           };
         });
 
-      packages = forAllSystem
-        (system:
-          let
-            includedPackage = name: builtins.hasAttr name nixpkgsFor."${system}";
-            names = builtins.filter includedPackage providePackageNames;
-            packageList = builtins.map (name: { name = name; value = nixpkgsFor."${system}"."${name}"; }) names;
-          in
-          builtins.listToAttrs packageList
-        );
+      packages = forAllSystem (system: nixpkgsFor."${system}");
     };
 }

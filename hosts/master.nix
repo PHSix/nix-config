@@ -8,7 +8,7 @@ let
     go = true;
     gcc = true;
     python = true;
-    ocaml = false;
+    ocaml = true;
   };
   specialArgs = inputs // {
     inherit system username devEnv;
