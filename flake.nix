@@ -7,7 +7,6 @@
     fenix.url = "github:nix-community/fenix";
     home-manager.url = "github:nix-community/home-manager";
     hyprland.url = "github:hyprwm/Hyprland";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     niri.url = "github:sodiboo/niri-flake";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -15,8 +14,7 @@
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
-
-    coc-nvim-overlay.url = "github:PHSix/coc-nvim-overlay";
+    nvim-flake.url = "github:PHSix/nvim-flake";
   };
 
   outputs = inputs@{ nixpkgs, self, ... }:
@@ -33,10 +31,6 @@
         inherit system;
         overlays = [
           self.overlay
-
-          inputs.coc-nvim-overlay.overlays."${system}".default
-
-          inputs.neovim-nightly-overlay.overlays.default
         ];
         config.allowUnfree = true;
       });
@@ -53,8 +47,6 @@
         "hactor"
         "icursive-nerd-font"
         "catppuccin-frappe-gtk"
-        "coc-nix"
-        "vitesse-nvim"
       ];
 
     in
@@ -77,7 +69,7 @@
         {
           default = pkgs.mkShell {
             packages = (with pkgs; [
-              vim
+              inputs.nvim-flake.packages.${system}.nvim
               git
               lazygit
               nixpkgs-fmt
