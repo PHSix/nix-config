@@ -4,7 +4,6 @@
     agenix.url = "github:ryantm/agenix";
     android-nixpkgs .url = "github:tadfisher/android-nixpkgs";
     daeuniverse.url = "github:daeuniverse/flake.nix";
-    fenix.url = "github:nix-community/fenix";
     home-manager.url = "github:nix-community/home-manager";
     hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
@@ -15,6 +14,10 @@
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nvim-flake.url = "github:PHSix/nvim-flake";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ nixpkgs, self, ... }:

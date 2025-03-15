@@ -1,4 +1,4 @@
-inputs@{ system, fenix, android-nixpkgs, ... }:
+inputs@{ system, rust-overlay, android-nixpkgs, ... }:
 let
   pkgsOverlay = import ../pkgs/overlay.nix;
   wezterm-overlay = (final: prev: {
@@ -7,7 +7,7 @@ let
   overlays = [
     pkgsOverlay
     wezterm-overlay
-    fenix.overlays.default
+    rust-overlay.overlays.default
     android-nixpkgs.overlays.default
   ];
 

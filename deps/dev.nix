@@ -10,16 +10,10 @@ let
         ++ add-deps "nodejs" ([ nodejs ])
         ++ add-deps "gcc" ([ gcc gnumake cmake gccStdenv ])
         ++ add-deps "rust" ([
-          (fenix.complete.withComponents [
-            "cargo"
-            "clippy"
-            "rust-src"
-            "rustc"
-            "rustfmt"
-          ])
-          cargo-generate
-          wasm-pack
-          rust-analyzer-nightly
+          (rust-bin.stable.latest.default.override {
+            extensions = [ "rust-src" "rust-analyzer" "rustfmt" "clippy" "cargo" "rustc" ];
+            targets = [ "x86_64-unknown-linux-gnu" "wasm32-unknown-unknown" ];
+          })
         ])
         ++ add-deps "go" ([ go ])
         ++ add-deps "ocaml" ([ ocaml opam ])
