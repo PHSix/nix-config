@@ -20,6 +20,14 @@
     };
   };
 
+  nixConfig = {
+    extraOptions = ''
+      experimental-features = nix-command flakes
+      flake-registry = https://cdn.jsdelivr.net/gh/NixOS/flake-registry/flake-registry.json
+    '';
+    extra-experimental-features = "pipe-operators";
+  };
+
   outputs = inputs@{ nixpkgs, self, ... }:
     let
       systems = [ "x86_64-linux" "aarch64-linux" ];
