@@ -1,6 +1,6 @@
 { config, ... }:
 let
-  sourceEnv = if config?age?secrets?env then "source ${config.age.secrets.env.path}" else "";
+  sourceEnv = "source ${config.age.secrets.env.path}";
   f = { pkgs, ... }: {
     programs = {
       zsh = {

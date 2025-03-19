@@ -7,6 +7,8 @@
         settings = {
           font-size = 12;
           confirm-close-surface = false;
+          cursor-style-blink = false;
+          theme = "catppuccin-mocha";
           keybind = [
             "ctrl+enter=unbind"
           ];

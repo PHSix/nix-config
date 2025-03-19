@@ -33,6 +33,7 @@
         telegram-desktop
         element-desktop
         feishu
+        github-desktop
 
         qbittorrent
 

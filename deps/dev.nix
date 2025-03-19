@@ -18,14 +18,6 @@ let
         ++ add-deps "go" ([ go ])
         ++ add-deps "ocaml" ([ ocaml opam ])
       ;
-
-      home.file.".npmrc" =
-        {
-          text = ''
-            prefix=~/.npm-packages
-            registry=https://registry.npmmirror.com
-          '';
-        };
     };
 in
 {

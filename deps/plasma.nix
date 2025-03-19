@@ -30,6 +30,7 @@
     numix-cursor-theme
     catppuccin-cursors
     catppuccin-gtk
+    catppuccin-kde
 
     bibata-cursors
     adwaita-qt

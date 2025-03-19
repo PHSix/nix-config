@@ -47,6 +47,7 @@ nixpkgs.lib.nixosSystem {
     ../deps/ollama.nix
     ../deps/packages.nix
     ../deps/plasma.nix
+    ../deps/rofi.nix
     ../deps/tmux.nix
     ../deps/user.nix
     ../deps/vim.nix
