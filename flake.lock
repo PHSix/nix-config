@@ -1624,11 +1624,11 @@
         "nixvim": "nixvim_2"
       },
       "locked": {
-        "lastModified": 1742393339,
-        "narHash": "sha256-z9RQLpUrhWCmZ7MxG2VdB/iHUUW8yQ0XNbS1QqsaKo0=",
+        "lastModified": 1742481395,
+        "narHash": "sha256-WQvMEftmj0IvSm5x1up8ngBfc5zMkSL4tn8rIk324MI=",
         "owner": "PHSix",
         "repo": "nvim-flake",
-        "rev": "660bfc3ea10ffa17ea48cf6de0256029509acf02",
+        "rev": "8648ee900c25228832de2ef1b1b4699ba0d5b1f6",
         "type": "github"
       },
       "original": {
