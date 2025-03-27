@@ -9,6 +9,7 @@ let
     gcc = true;
     python = true;
     ocaml = true;
+    deno = true;
   };
   specialArgs = inputs // {
     inherit system username devEnv;
