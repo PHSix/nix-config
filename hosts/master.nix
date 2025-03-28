@@ -49,6 +49,7 @@ nixpkgs.lib.nixosSystem {
     ../deps/packages.nix
     ../deps/plasma.nix
     ../deps/rofi.nix
+    ../deps/starship.nix
     ../deps/tmux.nix
     ../deps/user.nix
     ../deps/vim.nix
