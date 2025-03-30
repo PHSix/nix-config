@@ -42,7 +42,7 @@
           element-desktop
           feishu
           github-desktop
-          qqmusic
+          # qqmusic
 
           qbittorrent
 
