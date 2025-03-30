@@ -1,10 +1,25 @@
-{ pkgs, username ? "ph", ... }:
+{
+  pkgs,
+  username ? "ph",
+  ...
+}:
 let
   androidComposition = pkgs.androidenv.composeAndroidPackages {
     cmdLineToolsVersion = "8.0";
-    buildToolsVersions = [ "34.0.0" "30.0.3" ];
-    platformVersions = [ "34" "33" "29" "28" ]; #具体需要用那个版本 还是要看代码里面 以及真机/模拟器的版本
-    abiVersions = [ "armeabi-v7a" "arm64-v8a" ];
+    buildToolsVersions = [
+      "34.0.0"
+      "30.0.3"
+    ];
+    platformVersions = [
+      "34"
+      "33"
+      "29"
+      "28"
+    ];
+    abiVersions = [
+      "armeabi-v7a"
+      "arm64-v8a"
+    ];
     extraLicenses = [
       "android-googletv-license"
       "android-sdk-arm-dbt-license"
@@ -26,9 +41,8 @@ in
     android-udev-rules
     androidSdk
     # android-studio-full
-    # android-tools
-    # android-studio
-    flutter
+    android-tools
+    android-studio
     jdk17
     kotlin
   ];

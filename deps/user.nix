@@ -5,10 +5,19 @@ let
       enable = true;
       userName = username;
       userEmail = "chenyi.ph@outlook.com";
+
+      extraConfig = {
+        pull.rebase = false;
+      };
+
     };
 
-    programs.gpg = { enable = true; };
-    services.gpg-agent = { enable = true; };
+    programs.gpg = {
+      enable = true;
+    };
+    services.gpg-agent = {
+      enable = true;
+    };
 
     home.file.".rgignore".source = ../config/rgignore;
 
@@ -19,7 +28,14 @@ in
   security.doas.enable = true;
   users.users."${username}" = {
     isNormalUser = true;
-    extraGroups = [ "networkmanager" "wheel" "dialout" "docker" "seat" "libvirtd" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "dialout"
+      "docker"
+      "seat"
+      "libvirtd"
+    ];
     shell = pkgs.zsh;
   };
   programs.zsh.enable = true;
