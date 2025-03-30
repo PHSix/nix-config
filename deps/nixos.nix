@@ -1,4 +1,5 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   system.stateVersion = lib.trivial.release;
 
   nix = {
@@ -9,11 +10,14 @@
 
     settings = {
       substituters = [
-        # "https://mirror.sjtu.edu.cn/nix-channels/store"
         "https://mirrors.ustc.edu.cn/nix-channels/store"
       ];
 
-      trusted-users = [ "root" "ph" ];
+      trusted-users = [
+        "root"
+        "ph"
+      ];
+
     };
     gc = {
       automatic = true;
