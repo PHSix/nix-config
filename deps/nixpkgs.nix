@@ -1,9 +1,16 @@
-inputs@{ system, rust-overlay, android-nixpkgs, ... }:
+inputs@{
+  system,
+  rust-overlay,
+  android-nixpkgs,
+  ...
+}:
 let
   pkgsOverlay = import ../pkgs/overlay.nix;
-  wezterm-overlay = (final: prev: {
-    wezterm = inputs.wezterm.packages.${system}.default;
-  });
+  wezterm-overlay = (
+    final: prev: {
+      wezterm = inputs.wezterm.packages.${system}.default;
+    }
+  );
   overlays = [
     pkgsOverlay
     wezterm-overlay
@@ -13,7 +20,6 @@ let
 
 in
 {
-
   nixpkgs = {
     inherit overlays;
 
