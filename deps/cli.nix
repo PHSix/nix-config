@@ -4,6 +4,7 @@
       { pkgs, ... }:
       {
         home.packages = with pkgs; [
+          nix-tree
           htop
           wget
           xsel
