@@ -1,33 +1,16 @@
 {
   pkgs,
-  config,
-  aikadm,
   ...
 }:
-let
-  argv = {
-    sessionDir = [ config.services.displayManager.sessionData.desktops.out ];
-  };
-  cmd = "${pkgs.aikadm.cmdWithArgs argv}";
-in
 {
-  nixpkgs.overlays = [ aikadm.overlays.default ];
   services = {
-    greetd = {
-      enable = true;
-      settings.default_session = {
-        command = cmd;
-        user = "greeter";
+    displayManager = {
+      defaultSession = "plasma";
+      sddm = {
+        enable = true;
+        wayland.enable = true;
       };
     };
-
-    # displayManager = {
-    #   defaultSession = "plasma";
-    #   sddm = {
-    #     enable = true;
-    #     wayland.enable = true;
-    #   };
-    # };
     xserver = {
       enable = true;
     };
