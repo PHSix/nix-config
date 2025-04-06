@@ -12,6 +12,7 @@ let
     }
   );
   overlays = [
+    inputs.aikadm.overlays.default
     pkgsOverlay
     wezterm-overlay
     rust-overlay.overlays.default
