@@ -1,5 +1,6 @@
 let
-  f = { pkgs, ... }:
+  f =
+    { pkgs, ... }:
     let
       vimrc = builtins.readFile ../config/vimrc;
     in

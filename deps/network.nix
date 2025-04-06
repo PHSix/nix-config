@@ -1,7 +1,9 @@
 _: {
   networking = {
     hostName = "nixos";
-    networkmanager = { enable = true; };
+    networkmanager = {
+      enable = true;
+    };
   };
   services.openssh.enable = true;
 

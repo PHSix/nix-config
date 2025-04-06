@@ -44,7 +44,5 @@ in
 
   networking.firewall.enable = false;
 
-  hmModules = [
-    misc
-  ];
+  hmModules = [ misc ];
 }

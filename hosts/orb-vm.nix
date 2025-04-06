@@ -15,9 +15,7 @@ nixpkgs.lib.nixosSystem rec {
     (
       { modulesPath, ... }:
       {
-        imports = [
-          "${modulesPath}/virtualisation/lxc-container.nix"
-        ];
+        imports = [ "${modulesPath}/virtualisation/lxc-container.nix" ];
       }
     )
 

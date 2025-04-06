@@ -1,5 +1,13 @@
-{ lib, username, config, ... }:
-let types = lib.types; in {
+{
+  lib,
+  username,
+  config,
+  ...
+}:
+let
+  types = lib.types;
+in
+{
   options.hmModules = lib.mkOption {
     type = types.listOf lib.types.unspecified;
     default = [ ];
@@ -7,10 +15,12 @@ let types = lib.types; in {
   };
   config = {
     home-manager.users."${username}" = hm-inputs: {
-      imports = [{
-        home.stateVersion = hm-inputs.lib.trivial.release;
-        programs.home-manager.enable = true;
-      }] ++ config.hmModules;
+      imports = [
+        {
+          home.stateVersion = hm-inputs.lib.trivial.release;
+          programs.home-manager.enable = true;
+        }
+      ] ++ config.hmModules;
     };
   };
 }

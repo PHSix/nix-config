@@ -107,9 +107,7 @@ let
           EDITOR = "nvim";
         };
         sessionPath = [ "$HOME/.npm-packages/bin" ];
-        packages = with pkgs; [
-          any-nix-shell
-        ];
+        packages = with pkgs; [ any-nix-shell ];
       };
     };
 in

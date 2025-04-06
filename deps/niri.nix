@@ -1,4 +1,9 @@
-{ pkgs, niri, username, ... }:
+{
+  pkgs,
+  niri,
+  username,
+  ...
+}:
 {
   nixpkgs.overlays = [ niri.overlays.niri ];
 
@@ -44,10 +49,15 @@
   };
   hmModules = [
     (
-      { pkgs, niri, config, lib, ... }: {
-        imports = [
-          niri.homeModules.niri
-        ];
+      {
+        pkgs,
+        niri,
+        config,
+        lib,
+        ...
+      }:
+      {
+        imports = [ niri.homeModules.niri ];
         home = {
           packages = with pkgs; [
             brightnessctl
@@ -172,7 +182,9 @@
               { proportion = 2.0 / 3.0; }
               { proportion = 1.0; }
             ];
-            default-column-width = { proportion = 1.0 / 2.0; };
+            default-column-width = {
+              proportion = 1.0 / 2.0;
+            };
           };
 
           hotkey-overlay.skip-at-startup = true;
@@ -245,21 +257,21 @@
               spring = {
                 damping-ratio = 1.0;
                 stiffness = 2000;
-                epsilon = 0.0001;
+                epsilon = 1.0e-4;
               };
             };
             horizontal-view-movement = {
               spring = {
                 damping-ratio = 1.0;
                 stiffness = 1000;
-                epsilon = 0.0001;
+                epsilon = 1.0e-4;
               };
             };
             window-movement = {
               spring = {
                 damping-ratio = 1.0;
                 stiffness = 1000;
-                epsilon = 0.0001;
+                epsilon = 1.0e-4;
               };
             };
             shaders = {
@@ -353,7 +365,7 @@
               clip-to-geometry = true;
             }
             {
-              matches = [{ is-focused = false; }];
+              matches = [ { is-focused = false; } ];
               opacity = 0.95;
             }
           ];

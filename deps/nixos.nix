@@ -1,8 +1,4 @@
-{
-  lib,
-  username,
-  ...
-}:
+{ lib, username, ... }:
 {
   system.stateVersion = lib.trivial.release;
 
@@ -13,9 +9,7 @@
     '';
 
     settings = {
-      substituters = [
-        "https://mirrors.ustc.edu.cn/nix-channels/store"
-      ];
+      substituters = [ "https://mirrors.ustc.edu.cn/nix-channels/store" ];
 
       trusted-users = [
         "root"

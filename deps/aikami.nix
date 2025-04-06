@@ -1,15 +1,9 @@
-{
-  pkgs,
-  config,
-  ...
-}:
+{ pkgs, config, ... }:
 let
   aikadm = pkgs.aikadm;
   out = config.services.displayManager.sessionData.desktops.out;
   argv = {
-    sessionDir = [
-      (builtins.trace "aikadm out: ${out}" out)
-    ];
+    sessionDir = [ (builtins.trace "aikadm out: ${out}" out) ];
   };
   cmd = "${aikadm.cmdWithArgs argv}";
 in

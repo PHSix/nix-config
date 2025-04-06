@@ -1,5 +1,4 @@
-{ nvim-flake, system, ... }: {
-  environment.systemPackages = [
-    nvim-flake.packages.${system}.nvim
-  ];
+{ nvim-flake, system, ... }:
+{
+  environment.systemPackages = [ nvim-flake.packages.${system}.nvim ];
 }

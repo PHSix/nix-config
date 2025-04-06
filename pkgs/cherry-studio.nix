@@ -1,7 +1,8 @@
-{ appimageTools
-, lib
-, fetchurl
-, electron
+{
+  appimageTools,
+  lib,
+  fetchurl,
+  electron,
 }:
 let
   pname = "cherry-studio";
@@ -11,9 +12,7 @@ let
     sha256 = "sha256-51soGIYEYGWuw8klpqupiV3Ouvx+waENS77au4MWews=";
   };
 
-  appimageContents = appimageTools.extractType2 {
-    inherit pname version src;
-  };
+  appimageContents = appimageTools.extractType2 { inherit pname version src; };
 
 in
 appimageTools.wrapType2 {
@@ -28,13 +27,16 @@ appimageTools.wrapType2 {
 
   multiPkgs = null;
 
-  extraPkgs = pkgs: (appimageTools.defaultFhsEnvArgs.multiPkgs pkgs) ++ [
-    pkgs.xorg.libxshmfence
-    pkgs.libGL
-    pkgs.nss
-    pkgs.gtk3
-    pkgs.dbus
-  ];
+  extraPkgs =
+    pkgs:
+    (appimageTools.defaultFhsEnvArgs.multiPkgs pkgs)
+    ++ [
+      pkgs.xorg.libxshmfence
+      pkgs.libGL
+      pkgs.nss
+      pkgs.gtk3
+      pkgs.dbus
+    ];
 
   extraInstallCommands = ''
     mkdir -p $out/share/applications $out/share/icons/hicolor/512x512/apps

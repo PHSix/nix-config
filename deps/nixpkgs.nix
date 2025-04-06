@@ -6,11 +6,7 @@ inputs@{
 }:
 let
   pkgsOverlay = import ../pkgs/overlay.nix;
-  wezterm-overlay = (
-    final: prev: {
-      wezterm = inputs.wezterm.packages.${system}.default;
-    }
-  );
+  wezterm-overlay = (final: prev: { wezterm = inputs.wezterm.packages.${system}.default; });
   overlays = [
     inputs.aikadm.overlays.default
     pkgsOverlay

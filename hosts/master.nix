@@ -26,6 +26,7 @@ nixpkgs.lib.nixosSystem {
     inputs.home-manager.nixosModules.home-manager
     ../modules/hmModules.nix
 
+    # ../deps/aikami.nix
     ../deps/agenix.nix
     ../deps/amdgpu.nix
     ../deps/android.nix

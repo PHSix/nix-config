@@ -11,4 +11,3 @@ stdenv.mkDerivation {
     find . -name '*.ttf'    -exec install -Dt $out/share/fonts/opentype {} \;
   '';
 }
-

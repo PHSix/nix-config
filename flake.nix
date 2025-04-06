@@ -21,10 +21,6 @@
   };
 
   nixConfig = {
-    extraOptions = ''
-      experimental-features = nix-command flakes
-      flake-registry = https://cdn.jsdelivr.net/gh/NixOS/flake-registry/flake-registry.json
-    '';
     extra-experimental-features = "pipe-operators";
   };
 
@@ -46,9 +42,7 @@
         system:
         import nixpkgs {
           inherit system;
-          overlays = [
-            self.overlay
-          ];
+          overlays = [ self.overlay ];
           config.allowUnfree = true;
         }
       );
@@ -94,6 +88,8 @@
                 fzf
                 nurl
                 htop
+                nixfmt-rfc-style
+                treefmt
               ])
               ++ bins;
           };

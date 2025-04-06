@@ -9,12 +9,11 @@
           confirm-close-surface = false;
           cursor-style-blink = false;
           theme = "catppuccin-mocha";
-          keybind = [
-            "ctrl+enter=unbind"
-          ];
+          shell-integration = "none";
+          shell-integration-features = "no-cursor,sudo,title";
+          keybind = [ "ctrl+enter=unbind" ];
         };
       };
     })
   ];
 }
-

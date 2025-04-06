@@ -42,6 +42,7 @@
           element-desktop
           feishu
           github-desktop
+          gitbutler
           # qqmusic
 
           qbittorrent
