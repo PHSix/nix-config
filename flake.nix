@@ -5,15 +5,15 @@
     android-nixpkgs.url = "github:tadfisher/android-nixpkgs";
     daeuniverse.url = "github:daeuniverse/flake.nix";
     home-manager.url = "github:nix-community/home-manager";
-    hyprland.url = "github:hyprwm/Hyprland";
     niri.url = "github:sodiboo/niri-flake";
     nixos-wsl.url = "github:nix-community/NixOS-WSL";
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    nixvim.url = "github:nix-community/nixvim";
+    nixpkgs-stable.url = "nixpkgs/nixos-24.11";
     stylix.url = "github:danth/stylix";
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nvim-flake.url = "github:PHSix/nvim-flake";
+    aikadm.url = "git+file:///home/ph/repos/aikadm";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
