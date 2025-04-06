@@ -1,7 +1,17 @@
-inputs@{ nixpkgs, home-manager, nixos-wsl, ... }:
+inputs@{
+  nixpkgs,
+  home-manager,
+  nixos-wsl,
+  ...
+}:
+let
+  username = "ph";
+in
 nixpkgs.lib.nixosSystem rec {
   system = "x86_64-linux";
-  specialArgs = inputs // { inherit system; username = "ph"; };
+  specialArgs = inputs // {
+    inherit system username;
+  };
 
   modules = [
     nixos-wsl.nixosModules.default
@@ -10,7 +20,7 @@ nixpkgs.lib.nixosSystem rec {
     {
       wsl = {
         enable = true;
-        defaultUser = "ph";
+        defaultUser = username;
       };
     }
     ../deps/cli.nix

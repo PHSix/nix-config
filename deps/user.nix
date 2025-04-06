@@ -35,6 +35,7 @@ in
       "docker"
       "seat"
       "libvirtd"
+      "adbusers"
     ];
     shell = pkgs.zsh;
   };

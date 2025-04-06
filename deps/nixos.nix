@@ -1,4 +1,8 @@
-{ lib, ... }:
+{
+  lib,
+  username,
+  ...
+}:
 {
   system.stateVersion = lib.trivial.release;
 
@@ -15,7 +19,7 @@
 
       trusted-users = [
         "root"
-        "ph"
+        username
       ];
 
     };

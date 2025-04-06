@@ -1,16 +1,25 @@
 inputs@{ nixpkgs, home-manager, ... }:
-nixpkgs.lib.nixosSystem rec {
 
-  specialArgs = inputs // { inherit system; username = "ph"; shell = nixpkgs.fish; };
+let
+  username = "ph";
+in
+nixpkgs.lib.nixosSystem rec {
+  specialArgs = inputs // {
+    inherit system username;
+    shell = nixpkgs.fish;
+  };
 
   system = "aarch64-linux";
 
   modules = [
-    ({ modulesPath, ... }: {
-      imports = [
-        "${modulesPath}/virtualisation/lxc-container.nix"
-      ];
-    })
+    (
+      { modulesPath, ... }:
+      {
+        imports = [
+          "${modulesPath}/virtualisation/lxc-container.nix"
+        ];
+      }
+    )
 
     home-manager.nixosModules.home-manager
     ../modules/hmModules.nix
