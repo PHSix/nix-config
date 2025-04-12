@@ -4,4 +4,5 @@ in
 {
   "dae.age".publicKeys = [ ageKey ];
   "env.age".publicKeys = [ ageKey ];
+  "nixAccessTokens.age".publicKeys = [ ageKey ];
 }

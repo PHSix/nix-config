@@ -1,4 +1,9 @@
-{ lib, username, ... }:
+{
+  lib,
+  username,
+  config,
+  ...
+}:
 {
   system.stateVersion = lib.trivial.release;
 
@@ -6,6 +11,7 @@
     extraOptions = ''
       experimental-features = nix-command flakes
       flake-registry = https://cdn.jsdelivr.net/gh/NixOS/flake-registry/flake-registry.json
+      !include ${config.age.secrets.nixAccessTokens.path}
     '';
 
     settings = {
