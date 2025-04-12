@@ -1223,11 +1223,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1743343787,
-        "narHash": "sha256-F33aufOKmaY1UpDSGZJkpttCc4PGzZ4WsGl98hrUVfk=",
+        "lastModified": 1743346156,
+        "narHash": "sha256-RW5ZE/IMnvqMPpqCufDT5/X6feJuCBuKTPdRtDFQOaY=",
         "owner": "PHSix",
         "repo": "nvim-flake",
-        "rev": "17761e3d167dc83dceaab7997d7af33af5654cd6",
+        "rev": "a1327ad5f8077756e38e9b7d5609b211fa47f87c",
         "type": "github"
       },
       "original": {
