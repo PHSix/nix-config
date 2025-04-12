@@ -41,7 +41,8 @@
           telegram-desktop
           element-desktop
           feishu
-          github-desktop
+          bilibili
+          eolink
           # qqmusic
 
           qbittorrent
