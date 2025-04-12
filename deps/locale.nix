@@ -152,6 +152,9 @@
         lxgw-wenkai
         intel-one-mono
         icursive-nerd-font
+
+        maple-mono.NF
+        maple-mono.CN
       ])
       ++ [
         pkgs.nerd-fonts.fira-code
