@@ -40,7 +40,13 @@ let
         ++ add-deps "ocaml" [
           ocaml
           opam
+        ]
+        ++ add-deps "kotlin" [
+          gradle
+          jdk21
+          kotlin
         ];
+
     };
 in
 {

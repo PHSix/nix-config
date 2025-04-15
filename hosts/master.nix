@@ -10,6 +10,7 @@ let
     python = true;
     ocaml = true;
     deno = true;
+    kotlin = true;
   };
   # shell = nixpkgs.legacyPackages.x86_64-linux.;
   specialArgs = inputs // {
