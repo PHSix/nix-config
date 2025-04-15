@@ -1,5 +1,10 @@
-{ pkgs, username, ... }:
+inputs@{
+  pkgs,
+  username,
+  ...
+}:
 let
+  shell = if builtins.hasAttr "shell" inputs then inputs.shell else pkgs.fish;
   misc = _: {
     programs.git = {
       enable = true;
@@ -37,7 +42,7 @@ in
       "libvirtd"
       "adbusers"
     ];
-    shell = pkgs.zsh;
+    inherit shell;
   };
   programs.zsh.enable = true;
   programs.fish.enable = true;

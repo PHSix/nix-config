@@ -19,7 +19,5 @@
     dive
     podman-tui
     podman-compose
-
-    lazydocker
   ];
 }

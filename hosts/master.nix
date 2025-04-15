@@ -11,8 +11,13 @@ let
     ocaml = true;
     deno = true;
   };
+  # shell = nixpkgs.legacyPackages.x86_64-linux.;
   specialArgs = inputs // {
-    inherit system username devEnv;
+    inherit
+      system
+      username
+      devEnv
+      ;
   };
 in
 nixpkgs.lib.nixosSystem {
@@ -48,13 +53,13 @@ nixpkgs.lib.nixosSystem {
     ../deps/nixpkgs.nix
     ../deps/ollama.nix
     ../deps/packages.nix
+    ../deps/podman.nix
     ../deps/plasma.nix
     ../deps/rofi.nix
-    ../deps/starship.nix
+    # ../deps/starship.nix
     ../deps/tmux.nix
     ../deps/user.nix
     ../deps/vim.nix
-    ../deps/virtualisation.nix
-    ../deps/zsh.nix
+    # ../deps/zsh.nix
   ];
 }

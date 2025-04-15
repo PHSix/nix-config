@@ -1,6 +1,10 @@
-_: {
+inputs:
+let
+  hostName = if builtins.hasAttr "hostName" inputs then inputs.hostName else "nixos";
+in
+{
   networking = {
-    hostName = "nixos";
+    inherit hostName;
     networkmanager = {
       enable = true;
     };
