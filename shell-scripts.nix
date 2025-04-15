@@ -17,7 +17,7 @@
     echo "rebuilding $1 for switch…"
     sudo nixos-rebuild boot --flake $1 -L
   '';
-  switch = ''
+  sw = ''
     if [ -z "$1" ]; then
       echo "Usage: switch <target>"
       exit 1
