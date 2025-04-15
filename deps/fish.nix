@@ -42,6 +42,24 @@ let
             nvi = "nvim";
             fetch = "fastfetch";
           };
+          plugins = with pkgs; [
+            {
+              name = "done";
+              src = fishPlugins.done.src;
+            }
+            {
+              name = "fzf-fish";
+              src = fishPlugins.fzf-fish.src;
+            }
+            {
+              name = "forgit";
+              src = fishPlugins.forgit.src;
+            }
+            {
+              name = "hydro";
+              src = fishPlugins.hydro.src;
+            }
+          ];
 
           shellInit = ''
             set -g fish_key_bindings fish_vi_key_bindings
