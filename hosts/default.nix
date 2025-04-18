@@ -4,4 +4,5 @@ inputs@{ ... }:
   laptop = import ./laptop.nix inputs;
   orb-vm = import ./orb-vm.nix inputs;
   wsl = import ./wsl.nix inputs;
+  lenovo = import ./lenovo.nix inputs;
 }
