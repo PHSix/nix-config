@@ -27,17 +27,17 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1743601408,
-        "narHash": "sha256-nU6iSe0KBAGCGha9XZuar+wTssrnwd4pxaIS+UUEeWA=",
-        "ref": "refs/heads/main",
-        "rev": "44eb18863035dbefa28f6fa5eab4eda57ea19154",
-        "revCount": 65,
-        "type": "git",
-        "url": "file:///home/ph/repos/aikadm"
+        "lastModified": 1744002783,
+        "narHash": "sha256-FnV4Bv4W37/42lrxaUDc7cmRLBk/IvxApntb2tmCs+I=",
+        "owner": "HumXC",
+        "repo": "aikadm",
+        "rev": "c77f9335fae17571ce6584cabf084063859015e7",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/ph/repos/aikadm"
+        "owner": "HumXC",
+        "repo": "aikadm",
+        "type": "github"
       }
     },
     "aikadm-frontend": {

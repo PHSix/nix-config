@@ -35,7 +35,6 @@ nixpkgs-stable.lib.nixosSystem {
     ../deps/fish.nix
     ../deps/grub.nix
     ../deps/home-manager.nix
-    ../deps/locale.nix
     ../deps/misc.nix
     ../deps/network.nix
     ../deps/nixos.nix

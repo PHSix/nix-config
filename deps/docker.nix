@@ -9,9 +9,6 @@
 
     docker = {
       enable = true;
-      settings = {
-        registry-mirrors = [ "https://registry.docker-cn.com" ];
-      };
     };
   };
   environment.systemPackages = with pkgs; [
