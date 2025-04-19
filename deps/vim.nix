@@ -15,19 +15,11 @@ let
           vim-commentary
           vim-rooter
           vim-lastplace
-          vim-floaterm
           vim-one
           vim-smoothie
-
-          coc-nvim
-          coc-go
-          coc-json
-          coc-vimlsp
-          coc-explorer
-          coc-pyright
-          coc-snippets
-          coc-pairs
-          coc-git
+          vim-oscyank
+          vim-caddyfile
+          vim-surround
         ];
         settings = {
           ignorecase = true;
