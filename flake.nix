@@ -65,7 +65,7 @@
 
       formatter = forEachSystem ({ pkgs, ... }: pkgs.nixpkgs-fmt);
       devShells = forEachSystem (
-        { pkgs, system, ... }:
+        { pkgs, ... }:
         let
           # Helper function to create shell scripts
           mkShellBin = name: text: pkgs.writeShellScriptBin name text;
@@ -78,7 +78,6 @@
           default = pkgs.mkShell {
             packages =
               (with pkgs; [
-                inputs.nvim-flake.packages.${system}.nvim
                 git
                 lazygit
                 nixpkgs-fmt
