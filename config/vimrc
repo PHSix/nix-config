@@ -7,6 +7,7 @@ set hlsearch
 set termguicolors
 set noswapfile
 set cursorline
+set nobackup
 set background=dark
 set undodir=~/.cache/vim/undo
 set backupdir=~/.cache/vim/backup
