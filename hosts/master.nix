@@ -12,12 +12,13 @@ let
     deno = true;
     kotlin = true;
   };
-  # shell = nixpkgs.legacyPackages.x86_64-linux.;
+  shell = nixpkgs.legacyPackages.x86_64-linux.zsh;
   specialArgs = inputs // {
     inherit
       system
       username
       devEnv
+      shell
       ;
   };
 in
@@ -61,6 +62,6 @@ nixpkgs.lib.nixosSystem {
     ../deps/tmux.nix
     ../deps/user.nix
     ../deps/vim.nix
-    # ../deps/zsh.nix
+    ../deps/zsh.nix
   ];
 }
