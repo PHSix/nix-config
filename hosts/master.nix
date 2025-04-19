@@ -12,13 +12,11 @@ let
     deno = true;
     kotlin = true;
   };
-  shell = nixpkgs.legacyPackages.x86_64-linux.zsh;
   specialArgs = inputs // {
     inherit
       system
       username
       devEnv
-      shell
       ;
   };
 in

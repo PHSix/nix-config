@@ -4,7 +4,7 @@ inputs@{
   ...
 }:
 let
-  shell = if builtins.hasAttr "shell" inputs then inputs.shell else pkgs.fish;
+  shell = if builtins.hasAttr "shell" inputs then inputs.shell else pkgs.zsh;
   misc = _: {
     programs.git = {
       enable = true;
