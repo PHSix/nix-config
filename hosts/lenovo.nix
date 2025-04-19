@@ -1,4 +1,4 @@
-inputs@{ nixpkgs-stable, ... }:
+inputs@{ nixpkgs, ... }:
 let
   system = "x86_64-linux";
   username = "ilya";
@@ -15,7 +15,7 @@ let
       ;
   };
 in
-nixpkgs-stable.lib.nixosSystem {
+nixpkgs.lib.nixosSystem {
   inherit specialArgs;
   inherit system;
 
