@@ -32,7 +32,6 @@ nixpkgs.lib.nixosSystem {
     ../deps/dae.nix
     ../deps/dev.nix
     ../deps/docker.nix
-    ../deps/fish.nix
     ../deps/grub.nix
     ../deps/home-manager.nix
     ../deps/misc.nix
@@ -43,5 +42,6 @@ nixpkgs.lib.nixosSystem {
     ../deps/tmux.nix
     ../deps/user.nix
     ../deps/vim.nix
+    ../deps/zsh.nix
   ];
 }

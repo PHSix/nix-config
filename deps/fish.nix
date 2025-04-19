@@ -121,9 +121,6 @@ let
       };
 
       home = {
-        sessionVariables = {
-          EDITOR = "nvim";
-        };
         sessionPath = [ "$HOME/.npm-packages/bin" ];
         packages = with pkgs; [ any-nix-shell ];
       };

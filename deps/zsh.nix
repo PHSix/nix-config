@@ -60,6 +60,12 @@ let
               }
             fi
 
+            if type "nvim" > /dev/null; then
+              export EDITOR="nvim"
+            elif type "vim" > /dev/null; then
+              export EDITOR="vim"
+            fi
+
             if type "ranger" > /dev/null; then
               function ra() {
                 ranger --choosedir="$PWD" "$@"
@@ -115,9 +121,6 @@ let
       };
 
       home = {
-        sessionVariables = {
-          EDITOR = "nvim";
-        };
         sessionPath = [ "$HOME/.npm-packages/bin" ];
         packages = with pkgs; [
           zsh-vi-mode

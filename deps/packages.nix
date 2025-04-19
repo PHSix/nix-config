@@ -25,6 +25,8 @@
         home.packages = with pkgs; [
           # browser
           google-chrome
+          chromium
+          puppeteer-cli
           zen-browser.packages.${system}.default
           zen-browser
 
