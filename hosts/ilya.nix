@@ -2,7 +2,7 @@ inputs@{ nixpkgs, ... }:
 let
   system = "x86_64-linux";
   username = "ilya";
-  hostName = "lenovo";
+  hostName = "ilya";
   devEnv = {
     nodejs = true;
   };
@@ -20,7 +20,7 @@ nixpkgs.lib.nixosSystem {
   inherit system;
 
   modules = [
-    ../hardwares/lenovo.nix
+    ../hardwares/ilya.nix
 
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
