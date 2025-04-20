@@ -7,7 +7,7 @@
       exit 1
     fi
     echo "building $1…"
-    nixos-rebuild build --flake $1 -L
+    nixos-rebuild build --flake .#$1 -L
   '';
   rebuild = ''
     if [ -z "$1" ]; then
@@ -15,7 +15,7 @@
       exit 1
     fi
     echo "rebuilding $1 for switch…"
-    sudo nixos-rebuild boot --flake $1 -L
+    sudo nixos-rebuild boot --flake .#$1 -L
   '';
   sw = ''
     if [ -z "$1" ]; then
@@ -23,7 +23,7 @@
       exit 1
     fi
     echo "building and switching for $1"
-    sudo nixos-rebuild switch --flake $1 -L
+    sudo nixos-rebuild switch --flake .#$1 -L
   '';
   remove-profiles = ''
     if [ -z "$1" ]; then
