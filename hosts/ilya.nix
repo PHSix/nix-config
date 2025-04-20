@@ -38,7 +38,7 @@ nixpkgs.lib.nixosSystem {
     ../deps/network.nix
     ../deps/nixos.nix
     ../deps/nixpkgs.nix
-    ../deps/starship.nix
+    # ../deps/starship.nix
     ../deps/tmux.nix
     ../deps/user.nix
     ../deps/vim.nix
