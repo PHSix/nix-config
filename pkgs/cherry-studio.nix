@@ -40,8 +40,9 @@ appimageTools.wrapType2 {
 
   extraInstallCommands = ''
     mkdir -p $out/share/applications $out/share/icons/hicolor/512x512/apps
+    echo "pwd: $(pwd)"
     cp ${appimageContents}/cherrystudio.desktop $out/share/applications/cherry-studio.desktop
-    cp ${appimageContents}/usr/share/icons/hicolor/0x0/apps/cherrystudio.png $out/share/icons/hicolor/512x512/apps/cherry-studio.png
+    cp ${appimageContents}/usr/share/icons/hicolor/512x512/apps/cherrystudio.png $out/share/icons/hicolor/512x512/apps/cherry-studio.png
 
     substituteInPlace $out/share/applications/cherry-studio.desktop \
       --replace-fail 'Exec=AppRun' 'Exec=${pname}' \
