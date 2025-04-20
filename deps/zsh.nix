@@ -36,16 +36,37 @@ let
             nvi = "nvim";
           };
           plugins = [
+            # {
+            #   name = "zsh-nix-shell";
+            #   file = "nix-shell.plugin.zsh";
+            #   src = pkgs.fetchFromGitHub {
+            #     owner = "chisui";
+            #     repo = "zsh-nix-shell";
+            #     rev = "v0.5.0";
+            #     sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+            #   };
+            # }
             {
-              name = "zsh-nix-shell";
-              file = "nix-shell.plugin.zsh";
+              name = "sorin";
+              file = "sorin.zsh-theme";
               src = pkgs.fetchFromGitHub {
-                owner = "chisui";
-                repo = "zsh-nix-shell";
-                rev = "v0.5.0";
-                sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+                owner = "zimfw";
+                repo = "sorin";
+                rev = "master";
+                sha256 = "sha256-s/YLFdhCrJjcqvA6HuQtP0ADjBtOqAP+arjpFM2m4oQ=";
               };
             }
+            # {
+            #   # cybardev/zen.zsh/tree/v2.0
+            #   name = "zen.zsh";
+            #   file = "prompt_zen_setup";
+            #   src = pkgs.fetchFromGitHub {
+            #     owner = "cybardev";
+            #     repo = "zen.zsh";
+            #     tag = "v2.0";
+            #     sha256 = "sha256-s/YLFdhCrJjcqvA6HuQtP0ADjBtOqAP+arjpFM2m4oQ=";
+            #   };
+            # }
           ];
           initExtra = ''
             if type "yazi" > /dev/null; then
@@ -125,12 +146,8 @@ let
         packages = with pkgs; [
           zsh-vi-mode
           zsh-fzf-tab
-          # zsh-powerlevel10k
-
           any-nix-shell
         ];
-
-        # file.".config/zsh/.p10k.zsh".source = ./p10k.zsh;
       };
     };
 in
