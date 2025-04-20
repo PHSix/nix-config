@@ -53,7 +53,7 @@ let
                 owner = "zimfw";
                 repo = "sorin";
                 rev = "master";
-                sha256 = "sha256-s/YLFdhCrJjcqvA6HuQtP0ADjBtOqAP+arjpFM2m4oQ=";
+                sha256 = "sha256-IIAwOmvwyJIrWdNmr2laWbC/6TVN/iXGygUlu0sELHo=";
               };
             }
             # {
