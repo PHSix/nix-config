@@ -6,10 +6,10 @@
 }:
 let
   pname = "cherry-studio";
-  version = "1.1.7";
+  version = "1.2.4";
   src = fetchurl {
     url = "https://github.com/CherryHQ/cherry-studio/releases/download/v${version}/Cherry-Studio-${version}-x86_64.AppImage";
-    sha256 = "sha256-51soGIYEYGWuw8klpqupiV3Ouvx+waENS77au4MWews=";
+    sha256 = "sha256-GJ9p/ERHKw3eGi4ex0XCWa9nd75NsrTU7Z6LAjdmd2w=";
   };
 
   appimageContents = appimageTools.extractType2 { inherit pname version src; };
