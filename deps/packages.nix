@@ -44,7 +44,6 @@
           element-desktop
           feishu
           bilibili
-          eolink
           # qqmusic
 
           qbittorrent
