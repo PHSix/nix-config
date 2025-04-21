@@ -43,5 +43,12 @@ nixpkgs.lib.nixosSystem {
     ../deps/user.nix
     ../deps/vim.nix
     ../deps/zsh.nix
+
+    (
+      { nvim-flake, system, ... }:
+      {
+        environment.systemPackages = [ nvim-flake.packages.${system}.minimal ];
+      }
+    )
   ];
 }
