@@ -45,6 +45,7 @@
           feishu
           bilibili
           # qqmusic
+          bruno
 
           qbittorrent
 
