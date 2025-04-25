@@ -12,9 +12,6 @@ let
         zsh = {
           enable = true;
           dotDir = ".config/zsh";
-          autosuggestion.enable = true;
-          syntaxHighlighting.enable = true;
-          enableCompletion = true;
           defaultKeymap = "emacs";
           shellAliases = {
             lg = "lazygit";
@@ -35,42 +32,8 @@ let
             n = "fastfetch";
             nvi = "nvim";
           };
-          plugins = [
-            # {
-            #   name = "zsh-nix-shell";
-            #   file = "nix-shell.plugin.zsh";
-            #   src = pkgs.fetchFromGitHub {
-            #     owner = "chisui";
-            #     repo = "zsh-nix-shell";
-            #     rev = "v0.5.0";
-            #     sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
-            #   };
-            # }
-            {
-              name = "sorin";
-              file = "sorin.zsh-theme";
-              src = pkgs.fetchFromGitHub {
-                owner = "zimfw";
-                repo = "sorin";
-                rev = "master";
-                sha256 = "sha256-IIAwOmvwyJIrWdNmr2laWbC/6TVN/iXGygUlu0sELHo=";
-              };
-            }
-            # {
-            #   # cybardev/zen.zsh/tree/v2.0
-            #   name = "zen.zsh";
-            #   file = "prompt_zen_setup";
-            #   src = pkgs.fetchFromGitHub {
-            #     owner = "cybardev";
-            #     repo = "zen.zsh";
-            #     tag = "v2.0";
-            #     sha256 = "sha256-s/YLFdhCrJjcqvA6HuQtP0ADjBtOqAP+arjpFM2m4oQ=";
-            #   };
-            # }
-          ];
-          initExtra = ''
+          initContent = ''
             if type "yazi" > /dev/null; then
-
               function yz() {
                 local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
                 yazi "$@" --cwd-file="$tmp"
@@ -92,21 +55,29 @@ let
                 ranger --choosedir="$PWD" "$@"
               }
             fi
+            [[ -f ~/.config/zsh/.p10k.zsh ]] && source ~/.config/zsh/.p10k.zsh
 
-            function proxy(){
-              export https_proxy=http://localhost:7897
-              export http_proxy=http://localhost:7897
-            }
+            source ${pkgs.zinit}/share/zinit/zinit.zsh
 
-            function unproxy(){
-              export https_proxy=
-              export http_proxy=
-            }
+            # Completion styling
+            zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+            zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
+            zstyle ':completion:*' menu no
+            zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+            zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-            source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-            source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
+            # autoload -Uz compinit && compinit
 
-            autoload -Uz compinit && compinit
+            zinit ice depth=1
+            zinit for \
+              light-mode \
+              zsh-users/zsh-autosuggestions \
+              jeffreytse/zsh-vi-mode \
+              zdharma-continuum/fast-syntax-highlighting \
+              zdharma-continuum/history-search-multi-word \
+              zsh-users/zsh-completions \
+              Aloxaf/fzf-tab \
+              romkatv/powerlevel10k
 
             # History
             HISTSIZE=5000
@@ -120,13 +91,6 @@ let
             setopt hist_save_no_dups
             setopt hist_ignore_dups
             setopt hist_find_no_dups
-
-            # Completion styling
-            zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
-            zstyle ':completion:*' list-colors "$\{(s.:.)LS_COLORS}"
-            zstyle ':completion:*' menu no
-            zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-            zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
             any-nix-shell zsh --info-right | source /dev/stdin
             eval "$(zoxide init zsh --cmd j)"
@@ -143,9 +107,8 @@ let
 
       home = {
         sessionPath = [ "$HOME/.npm-packages/bin" ];
+        file.".config/zsh/.p10k.zsh".source = ../config/p10k.zsh;
         packages = with pkgs; [
-          zsh-vi-mode
-          zsh-fzf-tab
           any-nix-shell
         ];
       };
