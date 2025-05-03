@@ -40,6 +40,8 @@
 
       # enable corner radius
       kde-rounded-corners
+
+      kdePackages.wallpaper-engine-plugin
     ])
     ++ (with pkgs.qt6Packages; [
       # plasma-browser-integration
