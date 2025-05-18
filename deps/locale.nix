@@ -15,8 +15,7 @@
       "en_US.UTF-8/UTF-8"
     ];
     inputMethod = {
-      enable = true;
-      type = "fcitx5";
+      enabled = "fcitx5";
       fcitx5.addons = with pkgs; [
         libsForQt5.fcitx5-chinese-addons
         libsForQt5.fcitx5-configtool
