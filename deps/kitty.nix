@@ -2,7 +2,7 @@ let
   f = (
     { ... }:
     let
-      fontName = "JetBrains Mono";
+      fontName = "FiraCode Nerd Font";
       # nerdFontFallback = "Maple Mono NF";
       nerdFontFallback = "Symbols Nerd Font";
       opacity = "1";
@@ -156,5 +156,9 @@ let
   );
 in
 {
+
+  environment.sessionVariables = {
+    GLFW_IM_MODULE = "fcitx";
+  };
   hmModules = [ f ];
 }
