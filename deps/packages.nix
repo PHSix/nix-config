@@ -27,8 +27,8 @@
           google-chrome
           chromium
           puppeteer-cli
+          firefox
           zen-browser.packages.${system}.default
-          zen-browser
 
           snipaste
           flameshot
@@ -57,6 +57,7 @@
           jetbrains.idea-community
 
           warp-terminal
+          alacritty
         ];
       }
     )
