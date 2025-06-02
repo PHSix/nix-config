@@ -15,17 +15,22 @@
       "en_US.UTF-8/UTF-8"
     ];
     inputMethod = {
-      enabled = "fcitx5";
-      fcitx5.addons = with pkgs; [
-        libsForQt5.fcitx5-chinese-addons
-        libsForQt5.fcitx5-configtool
-        libsForQt5.fcitx5-qt
-        fcitx5-lua
-        fcitx5-gtk
-        fcitx5-chewing
-        # fcitx5-nord
-        fcitx5-pinyin-zhiwiki
-      ];
+      enable = true;
+      type = "fcitx5";
+      fcitx5 = {
+        # waylandFrontend = true;
+        addons = with pkgs; [
+          kdePackages.fcitx5-chinese-addons
+          kdePackages.fcitx5-configtool
+          kdePackages.fcitx5-qt
+
+          fcitx5-lua
+          fcitx5-gtk
+          fcitx5-pinyin-moegirl
+          fcitx5-pinyin-zhwiki
+          fcitx5-chewing
+        ];
+      };
     };
 
   };
