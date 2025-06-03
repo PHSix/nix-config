@@ -34,4 +34,6 @@
   '';
   list-profiles = "sudo nix-env --profile /nix/var/nix/profiles/system --list-generations";
   hash-url = "nix-prefetch-url --type sha256 $1 | nix-hash --type sha256 --to-sri";
+
+  ae = "agenix -i ~/.age/key.txt -e $1";
 }
