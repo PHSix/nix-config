@@ -24,13 +24,10 @@ nixpkgs.lib.nixosSystem {
 
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
-    ../modules/hmModules.nix
 
     # ../deps/aikami.nix
     ../deps/agenix.nix
-    ../deps/cli.nix
     ../deps/dae.nix
-    ../deps/dev.nix
     ../deps/docker.nix
     ../deps/grub.nix
     ../deps/home-manager.nix
@@ -38,11 +35,20 @@ nixpkgs.lib.nixosSystem {
     ../deps/network.nix
     ../deps/nixos.nix
     ../deps/nixpkgs.nix
-    ../deps/starship.nix
-    ../deps/tmux.nix
     ../deps/user.nix
-    ../deps/vim.nix
-    ../deps/zsh.nix
+
+    (
+      { pkgs, ... }:
+      {
+        home-manager.useGlobalPkgs = true;
+        home-manager.useUserPackages = true;
+        home-manager.extraSpecialArgs = specialArgs // {
+          inherit pkgs;
+        };
+
+        home-manager.users."${username}" = import ./home.nix;
+      }
+    )
 
     (
       { nvim-flake, system, ... }:

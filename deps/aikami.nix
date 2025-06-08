@@ -16,9 +16,5 @@ in
         user = "greeter";
       };
     };
-
-    displayManager = {
-      defaultSession = "plasma";
-    };
   };
 }

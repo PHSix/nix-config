@@ -1,5 +1,5 @@
 final: prev:
-builtins.mapAttrs (_: value: prev.callPackage value { }) {
+builtins.mapAttrs (_: value: final.callPackage value { }) {
   monego = ./fonts/monego.nix;
   monaco-nerd-font = ./fonts/monaco-nerd-font.nix;
   monaco-font = ./fonts/monaco-font.nix;

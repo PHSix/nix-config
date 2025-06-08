@@ -1,6 +1,4 @@
-_: {
 
-  hmModules = [
     (_: {
       programs.starship = {
         enable = true;
@@ -8,5 +6,3 @@ _: {
         enableZshIntegration = true;
       };
     })
-  ];
-}

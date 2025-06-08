@@ -1,14 +1,16 @@
-inputs@{
-  system,
+{
+  pkgs,
   rust-overlay,
   android-nixpkgs,
+  wezterm,
+  aikadm,
   ...
 }:
 let
   pkgsOverlay = import ../pkgs/overlay.nix;
-  wezterm-overlay = (final: prev: { wezterm = inputs.wezterm.packages.${system}.default; });
+  wezterm-overlay = (final: prev: { wezterm = wezterm.packages.${pkgs.system}.default; });
   overlays = [
-    inputs.aikadm.overlays.default
+    aikadm.overlays.default
     pkgsOverlay
     wezterm-overlay
     rust-overlay.overlays.default
@@ -26,6 +28,6 @@ in
       android_sdk.accept_license = true;
     };
 
-    system = system;
+    system = pkgs.system;
   };
 }

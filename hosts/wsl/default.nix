@@ -23,16 +23,19 @@ nixpkgs.lib.nixosSystem rec {
         defaultUser = username;
       };
     }
-    ../deps/cli.nix
-    ../deps/misc.nix
-    ../deps/tmux.nix
-    ../deps/fish.nix
-    ../deps/vim
-    ../deps/neovim.nix
-    ../deps/yazi
-    ../deps/home-manager.nix
-    ../deps/nixos.nix
-    ../deps/nixpkgs.nix
-    ../deps/user.nix
+    ../../deps/misc.nix
+    ../../deps/neovim.nix
+    ../../deps/home-manager.nix
+    ../../deps/nixos.nix
+    ../../deps/nixpkgs.nix
+    ../../deps/user.nix
+
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.extraSpecialArgs = specialArgs;
+
+      home-manager.users."${username}" = import ./home.nix;
+    }
   ];
 }

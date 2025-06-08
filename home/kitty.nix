@@ -1,5 +1,3 @@
-let
-  f = (
     { ... }:
     let
       fontName = "FiraCode Nerd Font";
@@ -153,12 +151,3 @@ let
       };
 
     }
-  );
-in
-{
-
-  environment.sessionVariables = {
-    GLFW_IM_MODULE = "fcitx";
-  };
-  hmModules = [ f ];
-}

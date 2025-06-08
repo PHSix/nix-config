@@ -1,5 +1,3 @@
-let
-  f =
     { pkgs, ... }:
     {
       home.packages = with pkgs; [ sesh ];
@@ -183,8 +181,4 @@ let
           set -g display-panes-active-colour $base08
         '';
       };
-    };
-in
-{
-  hmModules = [ f ];
-}
+    }

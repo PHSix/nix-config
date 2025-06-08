@@ -20,7 +20,6 @@ nixpkgs.lib.nixosSystem rec {
     )
 
     home-manager.nixosModules.home-manager
-    ../modules/hmModules.nix
 
     ../deps/cli.nix
     ../deps/dev.nix

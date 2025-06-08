@@ -1,5 +1,3 @@
-let
-  f =
     { pkgs, ... }:
     let
       vimrc = builtins.readFile ../config/vimrc;
@@ -31,9 +29,5 @@ let
         };
         extraConfig = vimrc;
       };
-    };
+    }
 
-in
-{
-  hmModules = [ f ];
-}

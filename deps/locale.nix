@@ -46,6 +46,7 @@
       NIX_PROFILES = "${builtins.concatStringsSep " " (lib.reverseList config.environment.profiles)}";
       # to fix gtk application start slow problem, like waybar and clash-verge
       GTK_USE_PORTAL = "0";
+    GLFW_IM_MODULE = "fcitx";
     };
   };
   services.dbus.enable = true;

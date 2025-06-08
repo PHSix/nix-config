@@ -37,7 +37,7 @@ in
     androidSdk
     # android-studio-full
     android-tools
-    # android-studio
+    android-studio
     jdk21
     kotlin
   ];
