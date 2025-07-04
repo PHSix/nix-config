@@ -12,8 +12,6 @@
     wezterm.url = "github:wez/wezterm?dir=nix";
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     nvim-flake.url = "github:PHSix/nvim-flake";
-    maomaowm.url = "github:DreamMaoMao/maomaowm";
-    aikadm.url = "github:HumXC/aikadm";
     rust-overlay = {
       url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";

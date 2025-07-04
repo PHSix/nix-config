@@ -19,7 +19,7 @@ let
   system = "x86_64-linux";
   username = "ph";
   devEnv = {
-    rust = true;
+    rust = false;
     nodejs = true;
     go = true;
     gcc = true;
@@ -40,8 +40,6 @@ let
       wezterm
       zen-browser
       nvim-flake
-      maomaowm
-      aikadm
       rust-overlay
       system
       username
@@ -58,9 +56,7 @@ nixpkgs.lib.nixosSystem {
 
     agenix.nixosModules.default
     home-manager.nixosModules.home-manager
-    maomaowm.nixosModules.maomaowm
 
-    ../../deps/aikami.nix
     ../../deps/agenix.nix
     ../../deps/amdgpu.nix
     ../../deps/android.nix
@@ -77,7 +73,7 @@ nixpkgs.lib.nixosSystem {
     ../../deps/ollama.nix
     ../../deps/packages.nix
     ../../deps/podman.nix
-    # ../deps/plasma.nix
+    ../../deps/plasma.nix
     ../../deps/user.nix
 
     (
