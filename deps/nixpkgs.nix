@@ -3,14 +3,12 @@
   rust-overlay,
   android-nixpkgs,
   wezterm,
-  aikadm,
   ...
 }:
 let
   pkgsOverlay = import ../pkgs/overlay.nix;
   wezterm-overlay = (final: prev: { wezterm = wezterm.packages.${pkgs.system}.default; });
   overlays = [
-    aikadm.overlays.default
     pkgsOverlay
     wezterm-overlay
     rust-overlay.overlays.default

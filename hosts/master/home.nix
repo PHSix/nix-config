@@ -19,7 +19,6 @@
     ../../home/git.nix
     ../../home/gitui.nix
     ../../home/kitty.nix
-    # ../../home/maomaowm.nix
     ../../home/packages.nix
     ../../home/rofi.nix
     ../../home/starship.nix

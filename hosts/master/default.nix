@@ -10,8 +10,6 @@
   wezterm,
   zen-browser,
   nvim-flake,
-  maomaowm,
-  aikadm,
   rust-overlay,
   ...
 }:
