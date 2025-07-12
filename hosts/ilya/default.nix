@@ -20,22 +20,22 @@ nixpkgs.lib.nixosSystem {
   inherit system;
 
   modules = [
-    ../hardwares/ilya.nix
+    ../../hardwares/ilya.nix
 
     inputs.agenix.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
 
     # ../deps/aikami.nix
-    ../deps/agenix.nix
-    ../deps/dae.nix
-    ../deps/docker.nix
-    ../deps/grub.nix
-    ../deps/home-manager.nix
-    ../deps/misc.nix
-    ../deps/network.nix
-    ../deps/nixos.nix
-    ../deps/nixpkgs.nix
-    ../deps/user.nix
+    ../../deps/agenix.nix
+    ../../deps/dae.nix
+    ../../deps/docker.nix
+    ../../deps/grub.nix
+    ../../deps/home-manager.nix
+    ../../deps/misc.nix
+    ../../deps/network.nix
+    ../../deps/nixos.nix
+    ../../deps/nixpkgs.nix
+    ../../deps/user.nix
 
     (
       { pkgs, ... }:
