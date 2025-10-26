@@ -2,11 +2,13 @@
 {
   programs.git = {
     enable = true;
-    userName = username;
-    userEmail = "chenyi.ph@outlook.com";
 
-    extraConfig = {
+    settings = {
       pull.rebase = false;
+      user = {
+        name = username;
+        email = "chenyi.ph@outlook.com";
+      };
     };
 
   };

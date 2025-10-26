@@ -11,7 +11,6 @@ in
   programs = {
     zsh = {
       enable = true;
-      dotDir = ".config/zsh";
       defaultKeymap = "emacs";
       shellAliases = {
         lg = "lazygit";
